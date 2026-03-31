@@ -1668,8 +1668,6 @@ try:
     warshall = warshall_cy
     shortest_path = shortest_path_cy
 except Exception as e:
-    print(e)
-    exit(1)
     print("pheromone.py: error loading cython file; defining in pure python (slower)")
     print("  to build, run:  python3 setup.py build_ext --inplace ")
     rk4 = rk4_py

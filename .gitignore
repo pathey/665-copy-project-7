@@ -1,11 +1,13 @@
-Results/*
+
 src/compiled_packages/*
 src/stubgen_output/*
-src/config/cfg/*
 src/config/schemas/*
 src/nodeTrajectories/*
+mca_routing_bscap
 uv.lock
-src/*.*
+
+Results/
+
 **/__pycache__
 !src/*.py
 !src/mobility_bscap

@@ -10,8 +10,11 @@ from setuptools import setup, Extension
 from Cython.Build import cythonize # type: ignore[reportUnknownVariableType]
 import numpy as np
 
-compile_args = ["-fopenmp", "-O3", "-march=native"]
-link_args = ["-fopenmp", "-march=native"]
+# compile_args = ["-fopenmp", "-O3", "-march=native"]
+# link_args = ["-fopenmp", "-march=native"]
+
+compile_args = ["-O3"]
+link_args = []
 
 print(f"{compile_args = }")
 print(f"{link_args = }")
