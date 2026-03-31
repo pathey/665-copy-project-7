@@ -1,0 +1,13 @@
+Transmitting_Power = 0.007663753805745297, Maximum_Transmitting_Power = 0.02007173615790435
+MAX_Transmission_Range = 1223.8180011750112, MAX_Transmission_Range_Squared = 1497730.4999999998
+parameters.py INITIALIZED
+mobility parameters INITIALIZED
+Seed: 7447
+Traffic flows: 0
+Trajectory Run No./ Mobility Model : TCPIPE_BSCAP_
+Seed value: 7447
+Mobility Model: TCPIPE_BSCAP_
+Number of Nodes: 50 UAVs + 1 BS; Node Speed: 40 m/s
+Data Rate: [1.5, 1.5, 1.5] Mbps
+Percentage Node Failure: 0
+TC_PIPE_mobility_ON: True

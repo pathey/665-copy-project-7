@@ -1,6 +1,6 @@
 Config:
   ### Storage location
-  RESULTS_FOLDER: ./../Results/phase1_daisy_200m_mcs0/
+  RESULTS_FOLDER: ./../Results/phase1_daisy_150m_mcs0/
   NETWORK_GRAPHS:
     eval: ${RESULTS_FOLDER}+"NetworkGraphs/"
   PHEROMONE_GRAPHS:
@@ -18,7 +18,7 @@ Config:
   CHANNEL_AWARE_ROUTE_COMPUTATION: true
   ENABLE_PACKET_REINSERTION: false
   MOBILE_SCENARIO: false
-  STATIC_TOPOLOGY_PATH: "./topologies/daisy_9nodes_200m.txt"
+  STATIC_TOPOLOGY_PATH: "./topologies/daisy_9nodes_150m.txt"
 
   FORCED_ROUTES:
     eval: "[[0,8]]"
