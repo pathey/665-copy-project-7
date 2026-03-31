@@ -1,173 +1,173 @@
 RESULTS_FOLDER:
-- source: phase1_daisy_200m_mcs0.yaml
-  value: ./../Results/phase_daisy_200m_mcs0/
+- source: phase1_daisy_300m_mcs0.yaml
+  value: ./../Results/phase1_daisy_300m_mcs0/
 NETWORK_GRAPHS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${RESULTS_FOLDER}+"NetworkGraphs/"
-- substituted: ./../Results/phase_daisy_200m_mcs0/+"NetworkGraphs/"
-  value: ./../Results/phase_daisy_200m_mcs0/NetworkGraphs/
+- substituted: ./../Results/phase1_daisy_300m_mcs0/+"NetworkGraphs/"
+  value: ./../Results/phase1_daisy_300m_mcs0/NetworkGraphs/
 PHEROMONE_GRAPHS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${RESULTS_FOLDER}+"PheromoneGraphs/"
-- substituted: ./../Results/phase_daisy_200m_mcs0/+"PheromoneGraphs/"
-  value: ./../Results/phase_daisy_200m_mcs0/PheromoneGraphs/
+- substituted: ./../Results/phase1_daisy_300m_mcs0/+"PheromoneGraphs/"
+  value: ./../Results/phase1_daisy_300m_mcs0/PheromoneGraphs/
 TRAJECTORY_FOLDER:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: ./nodeTrajectories/
 DISTANCE_TRANSMISSON_POWER_FOLDER:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${RESULTS_FOLDER}+"DynamicTransmissionPower/"
-- substituted: ./../Results/phase_daisy_200m_mcs0/+"DynamicTransmissionPower/"
-  value: ./../Results/phase_daisy_200m_mcs0/DynamicTransmissionPower/
+- substituted: ./../Results/phase1_daisy_300m_mcs0/+"DynamicTransmissionPower/"
+  value: ./../Results/phase1_daisy_300m_mcs0/DynamicTransmissionPower/
 PRINT_LOGS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 PRINT_LOG_TOPOLOGY_METRICS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 SNAPSHOT_CODE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 ENABLE_MCS_SNR:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 CHANNEL_AWARE_ROUTE_COMPUTATION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 ENABLE_PACKET_REINSERTION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 MOBILE_SCENARIO:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 STATIC_TOPOLOGY_PATH:
-- source: phase1_daisy_200m_mcs0.yaml
-  value: ./topologies/daisy_9nodes_200m.txt
+- source: phase1_daisy_300m_mcs0.yaml
+  value: ./topologies/daisy_9nodes_300m.txt
 FORCED_ROUTES:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[[0,8]]'
 - substituted: '[[0,8]]'
   value:
   - - 0
     - 8
 FORCED_ROUTE_MCS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '{}'
 - substituted: '{}'
   value: {}
 EXT_INTERFERENCE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '{}'
 - substituted: '{}'
   value: {}
 ENABLE_Q_MNGMNT:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 USE_FLOW_PRIORITY:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 STRICT_ROUTE_SELECTION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 QUEUE_MANAGEMENT_PLUS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 CSMA_CA_BACKOFF:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 PRIORITY_BASED_ROUTING:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 ENABLE_POWER_CONTROL:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 ENABLE_CONGESTION_DETECTION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 CONGESTION_BASED_MCS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 ROUTES_WITH_CONGESTION_BASED_MCS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[]'
 - substituted: '[]'
   value: []
 CONGESTION_BASED_MCS_INCREMENT_THRESHOLD:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.7
 CONGESTION_BASED_MCS_DECREMENT_THRESHOLD:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.85
 CONGESTION_BASED_MCS_INCREMENT_STEP:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1
 CONGESTION_BASED_MCS_DECREMENT_STEP:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1
 TCP_ENABLED:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: false
 ENABLE_INDIVIDUAL_PKT_SINR:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 MAX_MAC_PAYLOAD_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 2312*8
 - substituted: 2312*8
   value: 18496
 BASE_PAYLOAD_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MAX_MAC_PAYLOAD_LENGTH}
 - substituted: '18496'
   value: 18496
 USE_PACKET_AGGREGATION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 PACKET_LOSS_RATE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0
 PAYLOAD_DATA_RATE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[3.00]'
 - substituted: '[3.00]'
   value:
   - 3.0
 TARGET_PKT_GENERATION_RATE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[round(61 * i) for i in ${PAYLOAD_DATA_RATE}]'
 - substituted: '[round(61 * i) for i in [3.0]]'
   value:
   - 183.0
 PACKET_INTER_ARRIVAL_TIME:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[1e9 * (1.0/i) for i in ${TARGET_PKT_GENERATION_RATE}]'
 - substituted: '[1e9 * (1.0/i) for i in [183.0]]'
   value:
   - 5464480.87431694
 PACKET_TTL:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 3*1e9
 - substituted: 3*1e9
   value: 3000000000.0
 MOBILITY_MODEL:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: TCPIPE_BSCAP_
 AREA_X:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 4000
 AREA_Y:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${AREA_X}
 - substituted: '4000'
   value: 4000
 NUMBER_OF_BS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1
 NUMBER_OF_NODES:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 9
 MAX_QUEUE_SIZE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: (max(${PAYLOAD_DATA_RATE}) * 1000000 * ${PACKET_TTL} * (len(${FORCED_ROUTES})
     if ${FORCED_ROUTES} else len(${MOBILITY.TARGET_LOCATION})))/(${BASE_PAYLOAD_LENGTH}
     * 8 * 1000)
@@ -175,64 +175,64 @@ MAX_QUEUE_SIZE:
     len([[2000, 4000]])))/(18496 * 8 * 1000)
   value: 60823961.93771626
 NODE_SPEED:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 40
 LLT_SAMPLE_FILE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '"GM_RelavantSamples1.2km" + str(${NODE_SPEED}) + "m-s.dat"'
 - substituted: '"GM_RelavantSamples1.2km" + str(40) + "m-s.dat"'
   value: GM_RelavantSamples1.2km40m-s.dat
 PKT_GENERATION_START_SEC:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 2000
 PKT_GENERATION_END_SEC:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${PKT_GENERATION_START_SEC} + 10
 - substituted: 2000 + 10
   value: 2010
 PKT_GENERATION_START_TIME:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${PKT_GENERATION_START_SEC} * 1e9
 - substituted: 2000 * 1e9
   value: 2000000000000.0
 PKT_GENERATION_END_TIME:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${PKT_GENERATION_END_SEC} * 1e9
 - substituted: 2010 * 1e9
   value: 2010000000000.0
 SIM_TIME:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${PKT_GENERATION_END_TIME} + (${PACKET_TTL} if (${PACKET_TTL} != simpy.core.Infinity)
     else 0) + 1e9
 - substituted: 2010000000000.0 + (3000000000.0 if (3000000000.0 != simpy.core.Infinity)
     else 0) + 1e9
   value: 2014000000000.0
 PKT_FORWARDED_SUCCESSFULLY:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0
 PKT_DROPPED:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1
 DROP_REASON_OVERFLOW:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: Overflow
 DROP_REASON_EXPIRY:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: Expiry
 DROP_REASON_Q_MNGMNT:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: QueueManagement
 DROP_REASON_RETRYLIMIT:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: RetryLimit
 DROP_REASON_NO_ROUTE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: NoRoute
 WAITING_FOR_TX:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: Still in Queue
 MCS_SNR_TABLE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: "{\n  0:{'Modulation':'BPSK','Coding':1/2,'MinSNR(dB)':2,'MinSNR':1.5849,'DataRate':11},\n\
     \  1:{'Modulation':'QPSK','Coding':1/2,'MinSNR(dB)':5,'MinSNR':3.1623,'DataRate':22},\n\
     \  2:{'Modulation':'QPSK','Coding':3/4,'MinSNR(dB)':9,'MinSNR':7.9433,'DataRate':33},\n\
@@ -269,10 +269,10 @@ MCS_SNR_TABLE:
       MinSNR: 12.5893
       DataRate: 44
 DEFAULT_DATA_MCS_INDEX:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0
 MAX_DATA_MCS_INDEX:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: min(1, len(${MCS_SNR_TABLE})-1)
 - substituted: 'min(1, len({0: {''Modulation'': ''BPSK'', ''Coding'': 0.5, ''MinSNR(dB)'':
     2, ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'': ''QPSK'', ''Coding'':
@@ -282,10 +282,10 @@ MAX_DATA_MCS_INDEX:
     12.5893, ''DataRate'': 44}})-1)'
   value: 1
 CONTROL_MCS_INDEX:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0
 MIN_MIN_REQUIRED_SINR:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MCS_SNR_TABLE}[${CONTROL_MCS_INDEX}]["MinSNR"]
 - substituted: '{0: {''Modulation'': ''BPSK'', ''Coding'': 0.5, ''MinSNR(dB)'': 2,
     ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'': ''QPSK'', ''Coding'':
@@ -295,7 +295,7 @@ MIN_MIN_REQUIRED_SINR:
     12.5893, ''DataRate'': 44}}[0]["MinSNR"]'
   value: 1.5849
 MAX_MIN_REQUIRED_SINR:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MCS_SNR_TABLE}[len(${MCS_SNR_TABLE})-1]["MinSNR"]
 - substituted: '{0: {''Modulation'': ''BPSK'', ''Coding'': 0.5, ''MinSNR(dB)'': 2,
     ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'': ''QPSK'', ''Coding'':
@@ -310,163 +310,163 @@ MAX_MIN_REQUIRED_SINR:
     11, ''MinSNR'': 12.5893, ''DataRate'': 44}})-1]["MinSNR"]'
   value: 12.5893
 FREQUENCY:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 2.4 * 1e9
 - substituted: 2.4 * 1e9
   value: 2400000000.0
 WAVELENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: c/${FREQUENCY}
 - substituted: c/2400000000.0
   value: 0.12491352416666666
 RADIO_SWITCHING_TIME:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 100
 STEP_SIZE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 10
 RADIO_SENSITIVITY:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${NOISE_FLOOR} * 1.6
 - substituted: 3.16e-13 * 1.6
   value: 5.056000000000001e-13
 NOISE_FLOOR:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 31.6e-14 * 1
 - substituted: 31.6e-14 * 1
   value: 3.16e-13
 SLOT_DURATION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 20000
 SIFS_DURATION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 10000
 DIFS_DURATION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${SIFS_DURATION} + (2 * ${SLOT_DURATION})
 - substituted: 10000 + (2 * 20000)
   value: 50000
 RTS_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 20*8 + 4*8
 - substituted: 20*8 + 4*8
   value: 192
 CTS_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 14*8 + 4*8
 - substituted: 14*8 + 4*8
   value: 144
 MAC_HEADER_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 30*8 + 1*8
 - substituted: 30*8 + 1*8
   value: 248
 PHY_HEADER_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 128
 ACK_LENGTH:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 30*8 + 1*8
 - substituted: 30*8 + 1*8
   value: 248
 RTS_THRESHOLD:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 255*8
 - substituted: 255*8
   value: 2040
 USE_RTS_CTS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MAX_MAC_PAYLOAD_LENGTH} > ${RTS_THRESHOLD}
 - substituted: 18496 > 2040
   value: true
 CW_MIN:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 16
 CW_MAX:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1024
 MAX_RETRY_LIMIT:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 7
 LOCATION_UPDATE_INTERVAL:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 1 * 1e9
 - substituted: 1 * 1e9
   value: 1000000000.0
 QUEUE_UPDATE_INTERVAL:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: 0.2 * 1e9
 - substituted: 0.2 * 1e9
   value: 200000000.0
 DELTA:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1000000000
 TH1:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1.5
 TH2:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1.1
 ALPHA:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.3
 W1:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.5
 W2:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.5
 HC_THRESHOLD:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 2
 SUR_THRESHOLD:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.7
 FIRST_N_PKTS:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 50
 NODE_LOCATION_WAYPOINT_LOG_FLAG:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: true
 MOBILITY.TC_PIPE_mobility_ON:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MOBILITY_MODEL} == "TCPIPE_BSCAP_"
 - substituted: TCPIPE_BSCAP_ == "TCPIPE_BSCAP_"
   value: true
 MOBILITY.NODE_FAILURE_PERCENTAGE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0
 MOBILITY.MAX_INITIAL_ENERGY:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 360
 MOBILITY.NUM_FAILURES:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: int((${NUMBER_OF_NODES} - 1) * (${MOBILITY.NODE_FAILURE_PERCENTAGE} / 100))
 - substituted: int((9 - 1) * (0 / 100))
   value: 0
 MOBILITY.NUM_ACTIVE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: (${NUMBER_OF_NODES} - 1) - ${MOBILITY.NUM_FAILURES}
 - substituted: (9 - 1) - 0
   value: 8
 MOBILITY.ENERGY_NODE_FAILURE_VALUE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0
 MOBILITY.ENERGY_THRESHOLD:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MOBILITY.ENERGY_NODE_FAILURE_VALUE} + 10
 - substituted: 0 + 10
   value: 10
 MOBILITY.ENERGY_RECHARGE_LEVEL:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: ${MOBILITY.ENERGY_NODE_FAILURE_VALUE} - 10
 - substituted: 0 - 10
   value: -10
 MOBILITY.MAX_ENERGY_DEPLETION_RATE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 0.1
 MOBILITY.ENERGY_DEPLETION_RATE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: np.full(${NUMBER_OF_NODES} - ${NUMBER_OF_BS}, ${MOBILITY.MAX_ENERGY_DEPLETION_RATE})
 - substituted: np.full(9 - 1, 0.1)
   value:
@@ -479,17 +479,17 @@ MOBILITY.ENERGY_DEPLETION_RATE:
   - 0.1
   - 0.1
 MOBILITY.ROUTING_COST_TYPE:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   value: 1
 MOBILITY.TARGET_LOCATION:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[[2000, 4000]]'
 - substituted: '[[2000, 4000]]'
   value:
   - - 2000
     - 4000
 MOBILITY.BS_SCHEME:
-- source: phase1_daisy_200m_mcs0.yaml
+- source: phase1_daisy_300m_mcs0.yaml
   raw: '[[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2,
     ${AREA_Y}]]'
 - substituted: '[[4000, 4000/2], [0.0, 4000/2], [4000/2, 0.0], [4000/2, 4000]]'
