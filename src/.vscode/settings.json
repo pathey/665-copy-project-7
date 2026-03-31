@@ -2,6 +2,9 @@
   "yaml.schemas": {
     "/Users/jacobanderson/Documents/Spring 2026/MCA_Routing_BSCAP/src/config/schemas/schema.json": [
       "config/cfg/*.yaml"
+    ],
+    "/home/peter/Workspace/665/665-copy-project-7/src/config/schemas/schema.json": [
+      "config/cfg/*.yaml"
     ]
   }
 }
