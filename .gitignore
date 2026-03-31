@@ -5,7 +5,7 @@ src/config/schemas/*
 src/nodeTrajectories/*
 mca_routing_bscap
 uv.lock
-src/*.*
+
 **/__pycache__
 !src/*.py
 !src/mobility_bscap

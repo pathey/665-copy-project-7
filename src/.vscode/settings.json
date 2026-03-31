@@ -1,0 +1,7 @@
+{
+  "yaml.schemas": {
+    "/Users/jacobanderson/Documents/Spring 2026/MCA_Routing_BSCAP/src/config/schemas/schema.json": [
+      "config/cfg/*.yaml"
+    ]
+  }
+}
