@@ -1,6 +1,6 @@
 Config:
   ### Storage location
-  RESULTS_FOLDER: ./../Results/default/
+  RESULTS_FOLDER: ./../Results/phase1_daisy_1200m_mcs1_2Mbps/
   NETWORK_GRAPHS:
     eval: ${RESULTS_FOLDER}+"NetworkGraphs/"
   PHEROMONE_GRAPHS:
@@ -18,16 +18,15 @@ Config:
   CHANNEL_AWARE_ROUTE_COMPUTATION: true
   ENABLE_PACKET_REINSERTION: false
   MOBILE_SCENARIO: false
-  STATIC_TOPOLOGY_PATH:
-    eval: ${TRAJECTORY_FOLDER}+"positions/NodePositions.txt"
+  STATIC_TOPOLOGY_PATH: "./topologies/daisy_9nodes_1200m.txt"
 
   FORCED_ROUTES:
-    eval: "[]"
+    eval: "[[0,8]]"
   FORCED_ROUTE_MCS:
     eval: "{}"
   EXT_INTERFERENCE:
     eval: "{}"
-  ENABLE_Q_MNGMNT: true
+  ENABLE_Q_MNGMNT: false
   USE_FLOW_PRIORITY: false
   STRICT_ROUTE_SELECTION: true
   QUEUE_MANAGEMENT_PLUS: false
@@ -57,7 +56,7 @@ Config:
   
   PACKET_LOSS_RATE: 0
   PAYLOAD_DATA_RATE: # Flow data rate, [in Mbps]. The size of the array should be >= number of flows.
-    eval: '[3.00] * 3'
+    eval: '[2.00]'
   
   TARGET_PKT_GENERATION_RATE: 
     eval: '[round(61 * i) for i in ${PAYLOAD_DATA_RATE}]'
@@ -70,14 +69,13 @@ Config:
   
   ### SIMULATION PARAMETERS
   MOBILITY_MODEL: 'TCPIPE_BSCAP_'
-  AREA_X: 12000 # For a daisy chain, AREA_X value should be selected as No. of Nodes * Maximum Link Length (distance between adjacent nodes).
+  AREA_X: 4000 # For a daisy chain, AREA_X value should be selected as No. of Nodes * Maximum Link Length (distance between adjacent nodes).
                 # If using mobile case, BSCAP will attempt to spread the nodes throughout this area; choose number of nodes and area accordingly
   AREA_Y:
     eval: '${AREA_X}'
   
-  NUMBER_OF_BS: 1
-  NUMBER_OF_NODES: 
-    eval: '50 + ${NUMBER_OF_BS}'
+  NUMBER_OF_BS: 1 # base station
+  NUMBER_OF_NODES: 9
   
   MAX_QUEUE_SIZE:
     eval: '(max(${PAYLOAD_DATA_RATE}) * 1000000 * ${PACKET_TTL} * (len(${FORCED_ROUTES}) if ${FORCED_ROUTES} else len(${MOBILITY.TARGET_LOCATION})))/(${BASE_PAYLOAD_LENGTH} * 8 * 1000)'
@@ -118,7 +116,7 @@ Config:
         3:{'Modulation':'16-QAM','Coding':1/2,'MinSNR(dB)':11,'MinSNR':12.5893,'DataRate':44}
       }
   
-  DEFAULT_DATA_MCS_INDEX: 0 # Select an MCS value from 0, 1, or 2
+  DEFAULT_DATA_MCS_INDEX: 1 # Select an MCS value from 0, 1, or 2
   MAX_DATA_MCS_INDEX:
     eval: min(1, len(${MCS_SNR_TABLE})-1) # Set 1st parameter in min
   CONTROL_MCS_INDEX: 0 # Will be sent at power calculated using DEFAULT_DATA_MCS_INDEX at this MCS index

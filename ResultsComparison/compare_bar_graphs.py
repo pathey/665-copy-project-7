@@ -1,32 +1,57 @@
 #!/usr/bin/env python3
 """
-Compare experiment CSV files with bar graphs.
+Compare experiment results with bar graphs and optional delay-over-time overlays.
 
-Usage examples:
-    python3 compare_bar_graphs.py /path/to/all_stats_150.csv /path/to/all_stats_200.csv /path/to/all_stats_300.csv
+You can provide files directly, or let the script auto-discover them.
 
-    python3 compare_bar_graphs.py data/a.csv data/b.csv data/c.csv --labels 150m 200m 300m
+Examples
 
-    python3 compare_bar_graphs.py results/*.csv --output-dir comparison_plots
+1) Direct summary CSV comparison
+    python3 compare_bar_graphs.py stats/a.csv stats/b.csv stats/c.csv
 
-    python3 compare_bar_graphs.py a.csv b.csv --metrics PDR "Avg Delay" "#Retransmissions"
+2) Auto-discover summary CSVs under a parent folder
+    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root
 
-What this script does:
-- Loads one or more experiment CSV files
-- Keeps the per-flow rows (for example rows whose first column contains "Flow")
-- Converts numeric columns to floats where possible
-- Computes the mean value of each metric for each file
-- Creates one bar graph per metric
-- Saves all graphs to the chosen output directory
+3) Auto-discover summary CSVs and use folder names as labels
+    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root --label-mode parent
 
-Notes:
-- If you do not pass --labels, labels are taken from the CSV filenames.
-- By default, all numeric metrics are plotted except "Run No".
-- Use --metrics to limit plotting to specific columns.
+4) Auto-discover delay folders under a parent folder
+    python3 compare_bar_graphs.py --skip-bar-plots --auto-find-delay-dirs /path/to/results_root
+
+5) Do both automatically
+    python3 compare_bar_graphs.py \
+        --auto-find-csvs /path/to/results_root \
+        --auto-find-delay-dirs /path/to/results_root \
+        --label-mode parent
+
+6) Only plot selected metrics
+    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root \
+        --metrics PDR "Avg Delay" "#Retransmissions"
+
+7) Apply a filter to discovered paths
+    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root \
+        --auto-find-delay-dirs /path/to/results_root \
+        --filter mcs0
+
+Discovery rules
+
+Summary CSV auto-discovery:
+- Searches recursively for:
+    all_stats.csv
+    all_stats_*.csv
+- Skips files inside the output directory
+
+Delay directory auto-discovery:
+- Searches recursively for Flow_Node*.csv
+- Uses the containing directory of those files as the experiment folder
+
+Notes
+- Bar-plot comparison uses per-flow rows when present.
+- Delay overlay combines all Flow_Node*.csv files in an experiment folder.
+- Delay overlay plots raw sampled points and a rolling average for each experiment.
 """
 
 import argparse
-import math
 import re
 import sys
 from pathlib import Path
@@ -37,27 +62,31 @@ import pandas as pd
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Compare experiment CSV files with side-by-side bar graphs."
+        description="Compare experiment CSV files with side-by-side bar graphs and optional delay overlays."
     )
+
+    # Manual summary CSV inputs
     parser.add_argument(
         "files",
-        nargs="+",
-        help="CSV files to compare"
+        nargs="*",
+        help="Summary CSV files to compare with bar graphs"
     )
     parser.add_argument(
         "--labels",
         nargs="+",
-        help="Custom labels for the files, in the same order as the file list"
+        help="Custom labels for summary CSV files, in the same order as the file list"
     )
+
+    # Output and bar options
     parser.add_argument(
         "--output-dir",
         default="comparison_plots",
-        help="Directory where plots will be saved (default: comparison_plots)"
+        help="Directory where outputs will be saved (default: comparison_plots)"
     )
     parser.add_argument(
         "--metrics",
         nargs="+",
-        help="Optional list of metric column names to plot"
+        help="Optional list of summary metric column names to plot"
     )
     parser.add_argument(
         "--include-run-no",
@@ -69,6 +98,77 @@ def parse_args():
         action="store_true",
         help="Show plots interactively in addition to saving them"
     )
+    parser.add_argument(
+        "--skip-bar-plots",
+        action="store_true",
+        help="Skip summary bar graph generation"
+    )
+
+    # Manual delay overlay inputs
+    parser.add_argument(
+        "--delay-dirs",
+        nargs="+",
+        help="Experiment folders that contain Flow_Node*.csv files for delay-over-time overlay"
+    )
+    parser.add_argument(
+        "--delay-labels",
+        nargs="+",
+        help="Custom labels for delay overlay folders, in the same order as --delay-dirs"
+    )
+    parser.add_argument(
+        "--delay-window",
+        type=int,
+        default=100,
+        help="Rolling-average window for delay overlay (default: 100)"
+    )
+    parser.add_argument(
+        "--delay-nth",
+        type=int,
+        default=5,
+        help="Plot every nth raw delay point in the overlay scatter (default: 5)"
+    )
+    parser.add_argument(
+        "--delay-scatter-alpha",
+        type=float,
+        default=0.2,
+        help="Scatter transparency for raw delay points (default: 0.2)"
+    )
+    parser.add_argument(
+        "--delay-recursive",
+        action="store_true",
+        help="Recursively search each delay directory for Flow_Node*.csv files"
+    )
+
+    # Auto-discovery
+    parser.add_argument(
+        "--auto-find-csvs",
+        nargs="+",
+        help="One or more root directories to recursively search for all_stats.csv and all_stats_*.csv"
+    )
+    parser.add_argument(
+        "--auto-find-delay-dirs",
+        nargs="+",
+        help="One or more root directories to recursively search for experiment folders containing Flow_Node*.csv"
+    )
+    parser.add_argument(
+        "--label-mode",
+        choices=["stem", "parent", "path"],
+        default="stem",
+        help="How to auto-generate labels when labels are not supplied (default: stem)"
+    )
+    parser.add_argument(
+        "--filter",
+        dest="name_filter",
+        default=None,
+        help="Optional substring filter applied to discovered paths"
+    )
+    parser.add_argument(
+        "--sort",
+        choices=["name", "mtime"],
+        default="name",
+        help="Sort discovered items by name or modified time (default: name)"
+    )
+
     return parser.parse_args()
 
 
@@ -76,6 +176,88 @@ def sanitize_filename(name: str) -> str:
     cleaned = re.sub(r"[^A-Za-z0-9._-]+", "_", name.strip())
     cleaned = cleaned.strip("._")
     return cleaned or "metric"
+
+
+def get_base_packet_id(packet_id: str) -> str:
+    match = re.match(r"(.+)_\w+$", str(packet_id))
+    return match.group(1) if match else str(packet_id)
+
+
+def make_label(path: Path, mode: str, root=None) -> str:
+    if mode == "stem":
+        return path.stem
+    if mode == "parent":
+        return path.parent.name if path.is_file() else path.name
+    if mode == "path" and root is not None:
+        try:
+            return str(path.relative_to(root))
+        except Exception:
+            return str(path)
+    return path.stem
+
+
+def sort_paths(paths, sort_mode: str):
+    if sort_mode == "mtime":
+        return sorted(paths, key=lambda p: p.stat().st_mtime)
+    return sorted(paths, key=lambda p: str(p).lower())
+
+
+def discover_summary_csvs(roots, name_filter=None, sort_mode="name", output_dir=None):
+    matches = []
+    seen = set()
+
+    for root in roots:
+        root = Path(root).expanduser().resolve()
+
+        if not root.exists():
+            raise FileNotFoundError(f"Auto-find CSV root not found: {root}")
+        if not root.is_dir():
+            raise ValueError(f"Auto-find CSV root is not a directory: {root}")
+
+        for pattern in ("all_stats.csv", "all_stats_*.csv"):
+            for path in root.rglob(pattern):
+                resolved = path.resolve()
+
+                if output_dir is not None:
+                    try:
+                        resolved.relative_to(output_dir.resolve())
+                        continue
+                    except Exception:
+                        pass
+
+                if name_filter and name_filter.lower() not in str(resolved).lower():
+                    continue
+
+                if resolved not in seen:
+                    seen.add(resolved)
+                    matches.append(resolved)
+
+    return sort_paths(matches, sort_mode)
+
+
+def discover_delay_dirs(roots, name_filter=None, sort_mode="name"):
+    matches = []
+    seen = set()
+
+    for root in roots:
+        root = Path(root).expanduser().resolve()
+
+        if not root.exists():
+            raise FileNotFoundError(f"Auto-find delay root not found: {root}")
+        if not root.is_dir():
+            raise ValueError(f"Auto-find delay root is not a directory: {root}")
+
+        for path in root.rglob("Flow_Node*.csv"):
+            parent = path.parent.resolve()
+
+            if name_filter and name_filter.lower() not in str(parent).lower():
+                continue
+
+            if parent not in seen:
+                seen.add(parent)
+                matches.append(parent)
+
+    return sort_paths(matches, sort_mode)
 
 
 def load_experiment_csv(path: Path) -> pd.Series:
@@ -90,33 +272,31 @@ def load_experiment_csv(path: Path) -> pd.Series:
     first_col = df.columns[0]
     first_col_as_str = df[first_col].astype(str)
 
-    # Prefer per-flow rows when they exist.
+    # Prefer flow rows if present
     flow_mask = first_col_as_str.str.contains("Flow", case=False, na=False)
     if flow_mask.any():
         df = df[flow_mask]
     else:
-        # Otherwise drop obvious summary/stat rows if present.
+        # Otherwise remove common summary/stat rows
         bad_prefixes = (
             "Mean", "Median", "Std", "CI", "Min", "Max",
-            "Confidence", "Variance"
+            "Confidence", "Variance", "95% CI Lower", "95% CI Upper"
         )
         keep_mask = ~first_col_as_str.str.startswith(bad_prefixes, na=False)
         df = df[keep_mask]
 
     numeric_df = df.apply(pd.to_numeric, errors="coerce")
-
-    # Keep only columns that actually contain numeric data.
     numeric_df = numeric_df.dropna(axis=1, how="all")
 
     if numeric_df.empty:
         raise ValueError(f"No numeric metric columns found in: {path}")
 
-    # Mean over all kept rows.
     return numeric_df.mean(numeric_only=True)
 
 
 def build_summary(file_paths, labels):
     rows = []
+
     for label, file_path in zip(labels, file_paths):
         metrics = load_experiment_csv(file_path)
         metrics["Experiment"] = label
@@ -132,11 +312,9 @@ def choose_metrics(summary: pd.DataFrame, requested_metrics, include_run_no: boo
     if requested_metrics:
         missing = [m for m in requested_metrics if m not in available]
         if missing:
-            available_str = ", ".join(available)
-            missing_str = ", ".join(missing)
             raise ValueError(
-                f"Requested metric(s) not found: {missing_str}\n"
-                f"Available metrics are: {available_str}"
+                f"Requested metric(s) not found: {', '.join(missing)}\n"
+                f"Available metrics are: {', '.join(available)}"
             )
         metrics = requested_metrics
     else:
@@ -166,7 +344,6 @@ def plot_metric(summary: pd.DataFrame, metric: str, output_dir: Path, show: bool
     plt.xticks(rotation=45, ha="right")
     plt.tight_layout()
 
-    # Add value labels above bars.
     y_min = float(values.min()) if len(values) else 0.0
     y_max = float(values.max()) if len(values) else 0.0
     y_range = y_max - y_min
@@ -180,8 +357,7 @@ def plot_metric(summary: pd.DataFrame, metric: str, output_dir: Path, show: bool
         y_text = y + offset if y >= 0 else y - offset
         ax.text(x, y_text, label, ha="center", va=va, fontsize=9)
 
-    filename = sanitize_filename(metric) + ".png"
-    out_path = output_dir / filename
+    out_path = output_dir / f"{sanitize_filename(metric)}.png"
     plt.savefig(out_path, dpi=200, bbox_inches="tight")
 
     if show:
@@ -192,24 +368,182 @@ def plot_metric(summary: pd.DataFrame, metric: str, output_dir: Path, show: bool
     return out_path
 
 
-def main():
-    args = parse_args()
+def find_flow_csvs(experiment_dir: Path, recursive: bool):
+    pattern = "**/Flow_Node*.csv" if recursive else "Flow_Node*.csv"
+    return sorted(experiment_dir.glob(pattern))
 
+
+def load_delay_points_for_experiment(experiment_dir: Path, recursive: bool):
+    flow_csvs = find_flow_csvs(experiment_dir, recursive=recursive)
+
+    if not flow_csvs:
+        raise ValueError(f"No Flow_Node*.csv files found in {experiment_dir}")
+
+    all_frames = []
+
+    for csv_path in flow_csvs:
+        df = pd.read_csv(csv_path)
+
+        required_cols = {"Pkt ID", "Delay (in s)", "Generation Time (in s)"}
+        missing = required_cols - set(df.columns)
+        if missing:
+            raise ValueError(
+                f"Missing required column(s) {sorted(missing)} in flow CSV: {csv_path}"
+            )
+
+        df = df.copy()
+        df["Base Packet ID"] = df["Pkt ID"].apply(get_base_packet_id)
+        df = df.groupby("Base Packet ID").tail(1).reset_index(drop=True)
+
+        df["Delay (in s)"] = pd.to_numeric(df["Delay (in s)"], errors="coerce")
+        df["Generation Time (in s)"] = pd.to_numeric(df["Generation Time (in s)"], errors="coerce")
+
+        df = df[
+            df["Delay (in s)"].notna()
+            & df["Generation Time (in s)"].notna()
+            & (df["Delay (in s)"] > 0)
+        ]
+
+        if df.empty:
+            continue
+
+        df = df[df["Delay (in s)"] != float("inf")]
+        if df.empty:
+            continue
+
+        df["Reception Time (s)"] = df["Generation Time (in s)"] + df["Delay (in s)"]
+        all_frames.append(df[["Reception Time (s)", "Delay (in s)"]])
+
+    if not all_frames:
+        raise ValueError(f"No valid packet-delay rows found in {experiment_dir}")
+
+    combined = pd.concat(all_frames, ignore_index=True)
+    combined = combined.sort_values("Reception Time (s)").reset_index(drop=True)
+    return combined
+
+
+def plot_delay_overlay(
+    experiment_dirs,
+    labels,
+    output_dir: Path,
+    nth: int,
+    scatter_alpha: float,
+    window: int,
+    recursive: bool,
+    show: bool,
+):
+    plt.figure(figsize=(10, 6))
+
+    for experiment_dir, label in zip(experiment_dirs, labels):
+        df = load_delay_points_for_experiment(experiment_dir, recursive=recursive)
+
+        scatter_sample = df.iloc[::max(1, nth), :]
+        plt.scatter(
+            scatter_sample["Reception Time (s)"],
+            scatter_sample["Delay (in s)"],
+            s=8,
+            alpha=scatter_alpha,
+            label=f"{label} (raw)",
+        )
+
+        rolling = df["Delay (in s)"].rolling(window=max(1, window), min_periods=1).mean()
+        plt.plot(
+            df["Reception Time (s)"],
+            rolling,
+            linewidth=2.5,
+            label=f"{label} (avg)",
+        )
+
+    plt.xlabel("Time (s)")
+    plt.ylabel("Delay (s)")
+    plt.title("Packet Delay over Time (Experiment Comparison)")
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+
+    out_path = output_dir / "delay_over_time_comparison.png"
+    plt.savefig(out_path, dpi=300, bbox_inches="tight")
+
+    if show:
+        plt.show()
+    else:
+        plt.close()
+
+    return out_path
+
+
+def get_summary_inputs(args, output_dir: Path):
     file_paths = [Path(f).expanduser().resolve() for f in args.files]
+
+    auto_roots = args.auto_find_csvs or []
+    if auto_roots:
+        discovered = discover_summary_csvs(
+            auto_roots,
+            name_filter=args.name_filter,
+            sort_mode=args.sort,
+            output_dir=output_dir,
+        )
+        existing = set(file_paths)
+        for path in discovered:
+            if path not in existing:
+                file_paths.append(path)
+                existing.add(path)
+
+    if not file_paths and not args.skip_bar_plots:
+        raise ValueError("No summary CSV files found or provided.")
 
     if args.labels:
         if len(args.labels) != len(file_paths):
             raise ValueError(
-                f"You passed {len(args.labels)} labels for {len(file_paths)} files. "
+                f"You passed {len(args.labels)} labels for {len(file_paths)} summary CSV files. "
                 "The counts must match."
             )
         labels = args.labels
     else:
-        labels = [p.stem for p in file_paths]
+        root_for_path_labels = Path(auto_roots[0]).expanduser().resolve() if len(auto_roots) == 1 else None
+        labels = [make_label(p, args.label_mode, root=root_for_path_labels) for p in file_paths]
 
-    output_dir = Path(args.output_dir).expanduser().resolve()
-    output_dir.mkdir(parents=True, exist_ok=True)
+    return file_paths, labels
 
+
+def get_delay_inputs(args):
+    experiment_dirs = [Path(d).expanduser().resolve() for d in (args.delay_dirs or [])]
+
+    auto_roots = args.auto_find_delay_dirs or []
+    if auto_roots:
+        discovered = discover_delay_dirs(
+            auto_roots,
+            name_filter=args.name_filter,
+            sort_mode=args.sort,
+        )
+        existing = set(experiment_dirs)
+        for path in discovered:
+            if path not in existing:
+                experiment_dirs.append(path)
+                existing.add(path)
+
+    if not experiment_dirs:
+        return [], []
+
+    if args.delay_labels:
+        if len(args.delay_labels) != len(experiment_dirs):
+            raise ValueError(
+                f"You passed {len(args.delay_labels)} delay labels for "
+                f"{len(experiment_dirs)} delay directories. The counts must match."
+            )
+        labels = args.delay_labels
+    else:
+        root_for_path_labels = Path(auto_roots[0]).expanduser().resolve() if len(auto_roots) == 1 else None
+        labels = [make_label(p, args.label_mode, root=root_for_path_labels) for p in experiment_dirs]
+
+    return experiment_dirs, labels
+
+
+def run_bar_plot_workflow(args, output_dir: Path):
+    if args.skip_bar_plots:
+        return None, []
+
+    file_paths, labels = get_summary_inputs(args, output_dir)
     summary = build_summary(file_paths, labels)
     metrics_to_plot = choose_metrics(summary, args.metrics, args.include_run_no)
 
@@ -217,16 +551,48 @@ def main():
         raise ValueError("No metrics left to plot after filtering.")
 
     summary_csv = save_summary_csv(summary, output_dir)
+    saved_plots = [plot_metric(summary, metric, output_dir, args.show) for metric in metrics_to_plot]
 
-    saved_plots = []
-    for metric in metrics_to_plot:
-        saved_plots.append(plot_metric(summary, metric, output_dir, args.show))
+    return summary_csv, saved_plots
+
+
+def run_delay_overlay_workflow(args, output_dir: Path):
+    experiment_dirs, labels = get_delay_inputs(args)
+
+    if not experiment_dirs:
+        return None
+
+    return plot_delay_overlay(
+        experiment_dirs=experiment_dirs,
+        labels=labels,
+        output_dir=output_dir,
+        nth=args.delay_nth,
+        scatter_alpha=args.delay_scatter_alpha,
+        window=args.delay_window,
+        recursive=args.delay_recursive,
+        show=args.show,
+    )
+
+
+def main():
+    args = parse_args()
+
+    output_dir = Path(args.output_dir).expanduser().resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    summary_csv, saved_plots = run_bar_plot_workflow(args, output_dir)
+    delay_plot = run_delay_overlay_workflow(args, output_dir)
 
     print("Comparison complete.")
-    print(f"Summary CSV: {summary_csv}")
-    print("Saved plot files:")
-    for path in saved_plots:
-        print(path)
+
+    if summary_csv is not None:
+        print(f"Summary CSV: {summary_csv}")
+        print("Saved bar-plot files:")
+        for path in saved_plots:
+            print(path)
+
+    if delay_plot is not None:
+        print(f"Saved delay overlay plot: {delay_plot}")
 
 
 if __name__ == "__main__":
