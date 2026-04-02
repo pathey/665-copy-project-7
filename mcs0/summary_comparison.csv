@@ -1,0 +1,4 @@
+Experiment,Run No,Packets Generated,Packets Received,PDR,Avg Delay,#Retransmissions,#Forwards,Avg Route Length,%Route Uptime,%HQ Route Uptime,Route Switches,Packet Drop (Expiry),Packet Drop (Queue Management),Packet Drop (Retry),Packet Drop (Overflow),Packet Drop (No Route),Packet Reinserted (TCP)
+500m,1.0,1830.0,1354.0,0.7398907103825136,1.9256302200886264,3714.0,6644.0,4.0,1.0,1.0,0.0,469.0,0.0,7.0,0.0,0.0,0.0
+1000m,1.0,1830.0,575.0,0.314207650273224,1.5529023530434782,4256.0,9627.0,8.0,1.0,1.0,0.0,1220.0,0.0,36.0,0.0,0.0,0.0
+1200m,1.0,1831.0,665.0,0.3631895139268159,1.593540660150376,4878.0,10109.0,8.0,1.0,1.0,0.0,1125.0,0.0,41.0,0.0,0.0,0.0
