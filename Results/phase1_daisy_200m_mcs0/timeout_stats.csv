@@ -1,11 +1,11 @@
-Node Name,CTS Retry,ACK Retry,# Receiver Drops,# Pkts Receiver Drops,# Sent ACKs,# Pkts ACK Sent For,# Retransmissions,# Pkts Retransmitted,# Receptions,# Pkts Received,# Forwards,# Pkts Forwarded
-Node0,1723,6,0,0,0,0,1729,1729,0,0,1822,1822
-Node1,0,0,0,0,0,0,0,0,0,0,0,0
-Node2,1802,16,4,4,1822,1822,1818,1818,1822,1822,1775,1775
-Node3,0,0,0,0,0,0,0,0,0,0,0,0
-Node4,11,5,4,4,1775,1775,16,16,1775,1775,1632,1632
-Node5,0,0,0,0,0,0,0,0,0,0,0,0
-Node6,3,0,0,0,1632,1632,3,3,1632,1632,1332,1332
-Node7,0,0,0,0,0,0,0,0,0,0,0,0
-Node8,0,0,0,0,1332,1332,0,0,1332,1332,0,0
-Node9,0,0,0,0,0,0,0,0,0,0,0,0
+Node Name,CTS Retry,ACK Retry,# Receiver Drops,# Pkts Receiver Drops,# Sent ACKs,# Pkts ACK Sent For,# Retransmissions,# Pkts Retransmitted,# Receptions,# Pkts Received,# Forwards,# Pkts Forwarded,drop_expiry,drop_q_mngmnt,drop_retry,drop_overflow,drop_no_route
+Node0,0,0,0,0,0,0,0,0,0,0,1830,1830,0,0,0,0,0
+Node1,0,0,0,0,0,0,0,0,0,0,0,0,,,,,
+Node2,0,0,0,0,0,0,0,0,0,0,0,0,,,,,
+Node3,0,0,0,0,0,0,0,0,0,0,0,0,,,,,
+Node4,0,0,0,0,1830,1830,0,0,1830,1830,1830,1830,0,0,0,0,0
+Node5,0,0,0,0,0,0,0,0,0,0,0,0,,,,,
+Node6,0,0,0,0,0,0,0,0,0,0,0,0,,,,,
+Node7,0,0,0,0,0,0,0,0,0,0,0,0,,,,,
+Node8,0,0,0,0,1830,1830,0,0,1830,1830,0,0,0,0,0,0,0
+Node9,0,0,0,0,0,0,0,0,0,0,0,0,,,,,

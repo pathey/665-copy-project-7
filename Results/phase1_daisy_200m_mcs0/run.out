@@ -16,14 +16,14 @@ MAX_Transmission_Range = 1223.8180011750112, MAX_Transmission_Range_Squared = 14
 parameters.py INITIALIZED
 mobility parameters INITIALIZED
 node.py: Node0 created with coordinates 0 2000 with routing power 0.007664
-node.py: Node1 created with coordinates 400 2000 with routing power 0.007664
-node.py: Node2 created with coordinates 800 2000 with routing power 0.007664
-node.py: Node3 created with coordinates 1200 2000 with routing power 0.007664
-node.py: Node4 created with coordinates 1600 2000 with routing power 0.007664
-node.py: Node5 created with coordinates 2000 2000 with routing power 0.007664
-node.py: Node6 created with coordinates 2400 2000 with routing power 0.007664
-node.py: Node7 created with coordinates 2800 2000 with routing power 0.007664
-node.py: Node8 created with coordinates 3200 2000 with routing power 0.007664
+node.py: Node1 created with coordinates 200 2000 with routing power 0.007664
+node.py: Node2 created with coordinates 400 2000 with routing power 0.007664
+node.py: Node3 created with coordinates 600 2000 with routing power 0.007664
+node.py: Node4 created with coordinates 800 2000 with routing power 0.007664
+node.py: Node5 created with coordinates 1000 2000 with routing power 0.007664
+node.py: Node6 created with coordinates 1200 2000 with routing power 0.007664
+node.py: Node7 created with coordinates 1400 2000 with routing power 0.007664
+node.py: Node8 created with coordinates 1600 2000 with routing power 0.007664
 node.py: Node9 created with coordinates 0 0 with routing power 0.007664
 SIM_TIME_MOBILITY =  2014
 MAX TRANSMISSION RANGE for all nodes - mobility.py =  1223.8180011750112
@@ -2035,175 +2035,172 @@ Route initialization:  {0: {'Route': [0, 8], 'MCS_Index': [0], 'Priority': 1, 'V
 node.py: Inside packet generation function at node: Node0. Curr time: 2000.000000, Packet inter arrival time: 0.005467
 Path | HC | IL | Max Data Rate Supported | HQ Path | Tangled Path | Cost
 ------------------------------
-[0, 1, 4, 5, 8] | 4 | 8 | 11 | True | False | 2.2857142857142856
-[0, 1, 4, 6, 8] | 4 | 8 | 11 | True | False | 2.2857142857142856
-[0, 1, 4, 7, 8] | 4 | 8 | 11 | True | False | 2.2857142857142856
-[0, 2, 4, 6, 8] | 4 | 8 | 22 | True | False | 1.1428571428571428
-[0, 2, 4, 7, 8] | 4 | 8 | 11 | True | False | 2.2857142857142856
-[0, 2, 5, 8] | 3 | 6 | 11 | True | False | 1.7692307692307692
-[0, 3, 4, 7, 8] | 4 | 8 | 11 | True | False | 2.2857142857142856
-[0, 3, 5, 8] | 3 | 6 | 11 | True | False | 1.7692307692307692
-[0, 3, 6, 8] | 3 | 6 | 11 | True | False | 1.7692307692307692
+[0, 1, 7, 8] | 3 | 6 | 11 | True | False | 2.5344827586206895
+[0, 2, 8] | 2 | 4 | 11 | True | False | 1.7692307692307692
+[0, 3, 8] | 2 | 4 | 11 | True | False | 1.7692307692307692
+[0, 4, 8] | 2 | 4 | 22 | True | False | 0.8846153846153846
+[0, 5, 8] | 2 | 4 | 11 | True | False | 1.7692307692307692
+[0, 6, 8] | 2 | 4 | 11 | True | False | 1.7692307692307692
 Found Route:
- {'Path': [0, 2, 4, 6, 8], 'HC': 4, 'IL': 8, 'Max Data Rate Supported': 22, 'HQ Path': np.True_, 'Tangled Path': False, 'Cost': 1.1428571428571428}
+ {'Path': [0, 4, 8], 'HC': 2, 'IL': 4, 'Max Data Rate Supported': 22, 'HQ Path': np.True_, 'Tangled Path': False, 'Cost': 0.8846153846153846}
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2000 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': np.True_, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2000 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': np.True_, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2000 / 2014
 main.py: Progress: 2001 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2001 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2001 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2002 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2002 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2002 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2003 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2003 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2003 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2004 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2004 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2004 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2005 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2005 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2005 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2006 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2006 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2006 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2007 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2007 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2007 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2008 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2008 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2008 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2009 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2009 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2009 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2010 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2010 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2010 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 node.py: Packet generation complete at node: Node0.
 main.py: Progress: 2011 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2011 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2011 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2012 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2012 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2012 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 main.py: Progress: 2013 / 2014
 Called Update: UpdateRouteCalls = 0, force = True
 !! UPDATING !!
-routeNo, updatedMCSIndex =  0 [0, 0, 0, 0]
+routeNo, updatedMCSIndex =  0 [0, 0]
 
-rf.py: Time: 2013 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [2, 3, 4, 3, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+rf.py: Time: 2013 Route details: {0: {'Route': [0, 4, 8], 'MCS_Index': [0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [5, 6, 5], 'InterferingLinks': 4, 'Target': (-1, -1)}}
 
-Total number of generated packets: 6574
-Total number of delivered packets: 6561 # Use all_stats.csv to check PDR
-Average number of packets genetated every second: 469.57142857142856
-Average number of packets delivered every second: 468.64285714285717
-Standard deviation of packets genetated every second: 133.0793073351989
-Standard deviation of packets delivered every second: 132.58938071184667
-Average number of packets genetated every millisecond: 0.4695714285714286
-Average number of packets delivered every millisecond: 0.46864285714285714
-Standard deviation of packets genetated every millisecond: 0.6147611283238061
-Standard deviation of packets delivered every millisecond: 0.5333341363726947
-Average delay: 3.3960298022675186
-Standard deviation of delay: 5.825974917993974
+Total number of generated packets: 3660
+Total number of delivered packets: 3660 # Use all_stats.csv to check PDR
+Average number of packets genetated every second: 261.42857142857144
+Average number of packets delivered every second: 261.42857142857144
+Standard deviation of packets genetated every second: 165.02714680825537
+Standard deviation of packets delivered every second: 165.02714680825537
+Average number of packets genetated every millisecond: 0.26142857142857145
+Average number of packets delivered every millisecond: 0.26142857142857145
+Standard deviation of packets genetated every millisecond: 0.439412873581769
+Standard deviation of packets delivered every millisecond: 0.439412873581769
+Average delay: 1.78276899999645
+Standard deviation of delay: 1.0742968354052247e-10
 Minimum delay: 1.7827689999248832
-Maximum delay: 77.20159054570831
-Total number of retransmissions: 3566
+Maximum delay: 1.782769000157714
+Total number of retransmissions: 0
 Node0
-Avg Received Power: 1.58e-13, Node2: [Avg:5.27e-13, Max:1.18e-12, Min:5.26e-13], Node4: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], Node6: [Avg:5.92e-14, Max:1.31e-13, Min:5.84e-14], 
-Avg INTF: 2.80e-13, Node2: [Avg:5.27e-13, Max:1.18e-12, Min:5.26e-13], Node4: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], Node6: [Avg:5.92e-14, Max:1.31e-13, Min:5.84e-14], 
-Self Tx power: RTS: (Avg: 0.0140, Min: 0.0077, Max: 0.0201), CTS: (Avg: 0.0094, Min: 0.0077, Max: 0.0140), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: 0.0063, Min: 0.0034, Max: 0.0123)
-CTS retry: 1723, ACK retry: 6, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 1729, # Pkts Retransmitted: 1729, # Receptions: 0, # Pkts Received: 0, # Forwards: 1822, # Pkts Forwarded: 1822
+Avg Received Power: 1.24e-13, Node4: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], 
+Avg INTF: 5.26e-13, Node4: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], 
+Self Tx power: RTS: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), CTS: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: 0.0034, Min: 0.0034, Max: 0.0034)
+CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 1830, # Pkts Forwarded: 1830
 
 Node1
-Avg Received Power: 1.12e-12, Node0: [Avg:2.35e-12, Max:5.60e-12, Min:2.10e-12], Node2: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node4: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node6: [Avg:8.57e-14, Max:1.89e-13, Min:8.41e-14], 
-Avg INTF: 1.31e-12, Node0: [Avg:2.35e-12, Max:5.60e-12, Min:2.10e-12], Node2: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node4: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node6: [Avg:8.57e-14, Max:1.89e-13, Min:8.41e-14], 
+Avg Received Power: 2.20e-12, Node0: [Avg:8.42e-12, Max:1.89e-11, Min:8.41e-12], Node4: [Avg:9.36e-13, Max:2.10e-12, Min:9.35e-13], 
+Avg INTF: 4.68e-12, Node0: [Avg:8.42e-12, Max:1.89e-11, Min:8.41e-12], Node4: [Avg:9.36e-13, Max:2.10e-12, Min:9.35e-13], 
 Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
 CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
 Node2
-Avg Received Power: 2.74e-13, Node0: [Avg:5.88e-13, Max:1.40e-12, Min:5.26e-13], Node4: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], Node6: [Avg:1.34e-13, Max:2.96e-13, Min:1.31e-13], 
-Avg INTF: 3.53e-13, Node4: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], Node6: [Avg:1.34e-13, Max:2.96e-13, Min:1.31e-13], 
-Self Tx power: RTS: (Avg: 0.0138, Min: 0.0077, Max: 0.0201), CTS: (Avg: 0.0093, Min: 0.0077, Max: 0.0140), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0062, Min: 0.0034, Max: 0.0131)
-CTS retry: 1802, ACK retry: 16, # Receiver Drops: 4, # Pkts Receiver Drops: 4, # Sent ACKs: 1822, # Pkts ACK sent for: 1822, # Retransmissions: 1818, # Pkts Retransmitted: 1818, # Receptions: 1822, # Pkts Received: 1822, # Forwards: 1775, # Pkts Forwarded: 1775
+Avg Received Power: 9.91e-13, Node0: [Avg:2.10e-12, Max:4.73e-12, Min:2.10e-12], Node4: [Avg:2.10e-12, Max:4.73e-12, Min:2.10e-12], 
+Avg INTF: 2.10e-12, Node0: [Avg:2.10e-12, Max:4.73e-12, Min:2.10e-12], Node4: [Avg:2.10e-12, Max:4.73e-12, Min:2.10e-12], 
+Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
+CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
 Node3
-Avg Received Power: 1.04e-12, Node0: [Avg:2.61e-13, Max:6.23e-13, Min:2.34e-13], Node2: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node4: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node6: [Avg:2.38e-13, Max:5.26e-13, Min:2.34e-13], 
-Avg INTF: 1.22e-12, Node0: [Avg:2.61e-13, Max:6.23e-13, Min:2.34e-13], Node2: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node4: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node6: [Avg:2.38e-13, Max:5.26e-13, Min:2.34e-13], 
+Avg Received Power: 2.20e-12, Node0: [Avg:9.36e-13, Max:2.10e-12, Min:9.35e-13], Node4: [Avg:8.42e-12, Max:1.89e-11, Min:8.41e-12], 
+Avg INTF: 4.68e-12, Node0: [Avg:9.36e-13, Max:2.10e-12, Min:9.35e-13], Node4: [Avg:8.42e-12, Max:1.89e-11, Min:8.41e-12], 
 Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
 CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
 Node4
-Avg Received Power: 2.50e-13, Node0: [Avg:1.47e-13, Max:3.50e-13, Min:1.31e-13], Node2: [Avg:5.27e-13, Max:1.18e-12, Min:5.26e-13], Node6: [Avg:5.36e-13, Max:1.18e-12, Min:5.26e-13], 
-Avg INTF: 3.11e-13, Node0: [Avg:1.47e-13, Max:3.50e-13, Min:1.31e-13], Node6: [Avg:5.36e-13, Max:1.18e-12, Min:5.26e-13], 
+Avg Received Power: 1.24e-13, Node0: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], 
+Avg INTF: nan, 
 Self Tx power: RTS: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), CTS: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0034, Min: 0.0034, Max: 0.0034)
-CTS retry: 11, ACK retry: 5, # Receiver Drops: 4, # Pkts Receiver Drops: 4, # Sent ACKs: 1775, # Pkts ACK sent for: 1775, # Retransmissions: 16, # Pkts Retransmitted: 16, # Receptions: 1775, # Pkts Received: 1775, # Forwards: 1632, # Pkts Forwarded: 1632
+CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 1830, # Pkts ACK sent for: 1830, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 1830, # Pkts Received: 1830, # Forwards: 1830, # Pkts Forwarded: 1830
 
 Node5
-Avg Received Power: 8.88e-13, Node0: [Avg:9.40e-14, Max:2.24e-13, Min:8.41e-14], Node2: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node4: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node6: [Avg:2.14e-12, Max:4.73e-12, Min:2.10e-12], 
-Avg INTF: 1.04e-12, Node0: [Avg:9.40e-14, Max:2.24e-13, Min:8.41e-14], Node2: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node4: [Avg:2.11e-12, Max:4.73e-12, Min:2.10e-12], Node6: [Avg:2.14e-12, Max:4.73e-12, Min:2.10e-12], 
+Avg Received Power: 2.06e-12, Node0: [Avg:3.37e-13, Max:7.57e-13, Min:3.37e-13], Node4: [Avg:8.42e-12, Max:1.89e-11, Min:8.41e-12], 
+Avg INTF: 4.38e-12, Node0: [Avg:3.37e-13, Max:7.57e-13, Min:3.37e-13], Node4: [Avg:8.42e-12, Max:1.89e-11, Min:8.41e-12], 
 Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
 CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
 Node6
-Avg Received Power: 1.53e-13, Node0: [Avg:6.42e-14, Max:1.56e-13, Min:5.84e-14], Node2: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], Node4: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], 
-Avg INTF: 1.01e-13, Node0: [Avg:6.42e-14, Max:1.56e-13, Min:5.84e-14], Node2: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], 
-Self Tx power: RTS: (Avg: 0.0078, Min: 0.0077, Max: 0.0098), CTS: (Avg: 0.0079, Min: 0.0077, Max: 0.0114), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0035, Min: 0.0034, Max: 0.0043)
-CTS retry: 3, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 1632, # Pkts ACK sent for: 1632, # Retransmissions: 3, # Pkts Retransmitted: 3, # Receptions: 1632, # Pkts Received: 1632, # Forwards: 1332, # Pkts Forwarded: 1332
+Avg Received Power: 5.50e-13, Node0: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node4: [Avg:2.10e-12, Max:4.73e-12, Min:2.10e-12], 
+Avg INTF: 1.17e-12, Node0: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node4: [Avg:2.10e-12, Max:4.73e-12, Min:2.10e-12], 
+Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
+CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
 Node7
-Avg Received Power: 4.47e-13, Node0: [Avg:4.80e-14, Max:1.14e-13, Min:4.29e-14], Node2: [Avg:8.43e-14, Max:1.89e-13, Min:8.41e-14], Node4: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node6: [Avg:2.14e-12, Max:4.73e-12, Min:2.10e-12], 
-Avg INTF: 5.22e-13, Node0: [Avg:4.80e-14, Max:1.14e-13, Min:4.29e-14], Node2: [Avg:8.43e-14, Max:1.89e-13, Min:8.41e-14], Node4: [Avg:2.34e-13, Max:5.26e-13, Min:2.34e-13], Node6: [Avg:2.14e-12, Max:4.73e-12, Min:2.10e-12], 
+Avg Received Power: 2.61e-13, Node0: [Avg:1.72e-13, Max:3.86e-13, Min:1.72e-13], Node4: [Avg:9.36e-13, Max:2.10e-12, Min:9.35e-13], 
+Avg INTF: 5.54e-13, Node0: [Avg:1.72e-13, Max:3.86e-13, Min:1.72e-13], Node4: [Avg:9.36e-13, Max:2.10e-12, Min:9.35e-13], 
 Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
 CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
 Node8
-Avg Received Power: 1.42e-13, Node0: [Avg:3.67e-14, Max:8.76e-14, Min:3.29e-14], Node2: [Avg:5.85e-14, Max:1.31e-13, Min:5.84e-14], Node4: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], Node6: [Avg:5.36e-13, Max:1.18e-12, Min:5.26e-13], 
-Avg INTF: 7.34e-14, Node0: [Avg:3.67e-14, Max:8.76e-14, Min:3.29e-14], Node2: [Avg:5.85e-14, Max:1.31e-13, Min:5.84e-14], Node4: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], 
+Avg Received Power: 1.55e-13, Node0: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], Node4: [Avg:5.26e-13, Max:1.18e-12, Min:5.26e-13], 
+Avg INTF: 1.32e-13, Node0: [Avg:1.32e-13, Max:2.96e-13, Min:1.31e-13], 
 Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 1332, # Pkts ACK sent for: 1332, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 1332, # Pkts Received: 1332, # Forwards: 0, # Pkts Forwarded: 0
+CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 1830, # Pkts ACK sent for: 1830, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 1830, # Pkts Received: 1830, # Forwards: 0, # Pkts Forwarded: 0
 
 Node9
-Avg Received Power: 5.65e-14, Node0: [Avg:9.40e-14, Max:2.24e-13, Min:8.41e-14], Node2: [Avg:7.27e-14, Max:1.63e-13, Min:7.25e-14], Node4: [Avg:5.13e-14, Max:1.15e-13, Min:5.13e-14], Node6: [Avg:3.51e-14, Max:7.76e-14, Min:3.45e-14], 
-Avg INTF: 6.59e-14, Node0: [Avg:9.40e-14, Max:2.24e-13, Min:8.41e-14], Node2: [Avg:7.27e-14, Max:1.63e-13, Min:7.25e-14], Node4: [Avg:5.13e-14, Max:1.15e-13, Min:5.13e-14], Node6: [Avg:3.51e-14, Max:7.76e-14, Min:3.45e-14], 
+Avg Received Power: 3.69e-14, Node0: [Avg:8.42e-14, Max:1.89e-13, Min:8.41e-14], Node4: [Avg:7.26e-14, Max:1.63e-13, Min:7.25e-14], 
+Avg INTF: 7.84e-14, Node0: [Avg:8.42e-14, Max:1.89e-13, Min:8.41e-14], Node4: [Avg:7.26e-14, Max:1.63e-13, Min:7.25e-14], 
 Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
 CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
 
