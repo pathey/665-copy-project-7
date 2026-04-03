@@ -1,6 +1,6 @@
 Config:
   ### Storage location
-  RESULTS_FOLDER: ./../Results/phase1_daisy_1000m_mcs_adaptive_2Mpbs/
+  RESULTS_FOLDER: ./../Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/
   NETWORK_GRAPHS:
     eval: ${RESULTS_FOLDER}+"NetworkGraphs/"
   PHEROMONE_GRAPHS:
@@ -14,7 +14,7 @@ Config:
   PRINT_LOG_TOPOLOGY_METRICS: true
   SNAPSHOT_CODE: true
   
-  ENABLE_MCS_SNR: false # To enable adaptive MCS functionality
+  ENABLE_MCS_SNR: true # To enable adaptive MCS functionality
   CHANNEL_AWARE_ROUTE_COMPUTATION: true
   ENABLE_PACKET_REINSERTION: false
   MOBILE_SCENARIO: false

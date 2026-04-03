@@ -1,0 +1,14 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2000.0-2001.0,183,91,0.4972677595628415,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2001.0-2002.0,183,100,0.546448087431694,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2002.0-2003.0,183,90,0.4918032786885246,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2003.0-2004.0,183,104,0.5683060109289617,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2004.0-2005.0,183,101,0.5519125683060109,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2005.0-2006.0,183,112,0.6120218579234973,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2006.0-2007.0,183,53,0.2896174863387978,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2007.0-2008.0,183,9,0.04918032786885246,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2008.0-2009.0,183,2,0.01092896174863388,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2009.0-2010.0,181,0,0.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2010.0-2011.0,0,0,0.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2011.0-2012.0,0,0,0.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv
+2012.0-2013.0,0,3,3.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1200m_mcs0_3Mbps/Flow_Node0-Node8.csv

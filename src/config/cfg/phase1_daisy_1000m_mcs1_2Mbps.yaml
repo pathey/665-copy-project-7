@@ -1,6 +1,6 @@
 Config:
   ### Storage location
-  RESULTS_FOLDER: ./../Results/phase1_daisy_1000m_mcs1_2Mpbs/
+  RESULTS_FOLDER: ./../Results/phase1_daisy_1000m_mcs1_2Mbps/
   NETWORK_GRAPHS:
     eval: ${RESULTS_FOLDER}+"NetworkGraphs/"
   PHEROMONE_GRAPHS:

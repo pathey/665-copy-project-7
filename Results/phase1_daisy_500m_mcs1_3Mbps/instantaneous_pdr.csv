@@ -1,0 +1,11 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2000.3-2001.3,183,227,1.2404371584699454,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2001.3-2002.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2002.3-2003.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2003.3-2004.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2004.3-2005.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2005.3-2006.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2006.3-2007.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2007.3-2008.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2008.3-2009.3,183,183,1.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2009.3-2010.3,131,132,1.0076335877862594,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs1_3Mbps/Flow_Node0-Node8.csv

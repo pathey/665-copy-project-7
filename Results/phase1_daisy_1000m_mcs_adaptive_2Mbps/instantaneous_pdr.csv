@@ -1,0 +1,9 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2000.1-2001.1,122,15,0.12295081967213115,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2001.1-2002.1,122,0,0.0,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2002.1-2003.1,122,10,0.08196721311475409,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2003.1-2004.1,122,35,0.28688524590163933,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2004.1-2005.1,122,38,0.3114754098360656,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2005.1-2006.1,122,22,0.18032786885245902,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2006.1-2007.1,122,51,0.4180327868852459,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
+2007.1-2008.1,122,19,0.1557377049180328,Flow_Node0-Node8,/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/Flow_Node0-Node8.csv
