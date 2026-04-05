@@ -443,7 +443,7 @@ def plot_delay_overlay(
             scatter_sample["Delay (in s)"],
             s=8,
             alpha=scatter_alpha,
-            label=f"{label} (raw)",
+            label="_nolegend_",
         )
 
         rolling = df["Delay (in s)"].rolling(window=max(1, window), min_periods=1).mean()
@@ -451,18 +451,26 @@ def plot_delay_overlay(
             df["Reception Time (s)"],
             rolling,
             linewidth=2.5,
-            label=f"{label} (avg)",
+            label=label,
         )
 
     plt.xlabel("Time (s)")
     plt.ylabel("Delay (s)")
     plt.title("Packet Delay over Time (Experiment Comparison)")
     plt.grid(True)
-    plt.legend()
+    handles, labels = plt.gca().get_legend_handles_labels() 
     plt.tight_layout()
 
     out_path = output_dir / "delay_over_time_comparison.png"
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
+
+    # Create separate legend figure
+    fig_legend = plt.figure(figsize=(10, 2))
+    fig_legend.legend(handles, labels, loc='center', ncol=4)
+
+    legend_path = output_dir / "delay_legend.png"
+    fig_legend.savefig(legend_path, dpi=300, bbox_inches="tight")
+    plt.close(fig_legend)
 
     if show:
         plt.show()
