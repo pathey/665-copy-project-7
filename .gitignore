@@ -6,6 +6,8 @@ src/nodeTrajectories/*
 mca_routing_bscap
 uv.lock
 
+src/config/generated
+
 Results/
 
 **/__pycache__
@@ -15,3 +17,4 @@ Results/
 !src/config/cfg/default.yaml
 !src/config/schemas/schema.yaml
 !src/nodeTrajectories/positions/NodePositions.txt
+
