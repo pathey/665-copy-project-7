@@ -1,16 +1,16 @@
 Rows with invalid delay (0 or inf):
-                             Pkt ID  ... Data Rate at Flow Src (in Mbps)
-21   2000360654507_Node0_Node8_Zero  ...                              11
-27   2000459021794_Node0_Node8_Zero  ...                              11
-29   2000491811581_Node0_Node8_Zero  ...                              11
-30   2000508205656_Node0_Node8_Zero  ...                              11
-31   2000524598939_Node0_Node8_Zero  ...                              33
-..                              ...  ...                             ...
-595  2009770570180_Node0_Node8_Zero  ...                              33
-596  2009786968446_Node0_Node8_Zero  ...                              33
-599  2009836147954_Node0_Node8_Zero  ...                              33
-600  2009852539195_Node0_Node8_Zero  ...                              33
-607  2009967291692_Node0_Node8_Zero  ...                              33
+                             Pkt ID            Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
+21   2000360654507_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
+27   2000459021794_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
+29   2000491811581_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
+30   2000508205656_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
+31   2000524598939_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+..                              ...              ...  ...                                   ...                              ...
+595  2009770570180_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+596  2009786968446_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+599  2009836147954_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               33
+600  2009852539195_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               33
+607  2009967291692_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               33
 
 [197 rows x 14 columns]
 Parent directory is not in 'WARx' format.
@@ -22,46 +22,46 @@ node 2 total drops: 152 drop_expiry 4 4 drop_q_mngmnt 0 0 drop_retry 148 240 dro
 node 4 total drops: 358 drop_expiry 235 239 drop_q_mngmnt 0 0 drop_retry 123 363 drop_overflow 0 0 drop_no_route 0 0
 node 6 total drops: 375 drop_expiry 307 546 drop_q_mngmnt 0 0 drop_retry 68 431 drop_overflow 0 0 drop_no_route 0 0
 node 8 total drops: 0 drop_expiry 0 546 drop_q_mngmnt 0 0 drop_retry 0 431 drop_overflow 0 0 drop_no_route 0 0
-                                                                                                     File Path Run No Packets Generated Packets Received      PDR  Avg Delay #Retransmissions #Forwards  Avg Route Length  %Route Uptime  %HQ Route Uptime Route Switches Packet Drop (Expiry) Packet Drop (Queue Management) Packet Drop (Retry) Packet Drop (Overflow) Packet Drop (No Route) Packet Reinserted (TCP)          Flow_ID
-/home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/Flow_Node0-Node8.csv      1               610              413 0.677049   2.669442             5989      1247               4.0            1.0               1.0              0                  546                              0                 431                      0                      0                       0 Flow_Node0-Node8
-                                                                                                          Mean                    610.0            413.0 0.677049   2.669442           5989.0    1247.0               4.0            1.0               1.0            0.0                                                                                                                                                               
-                                                                                                        Median                    610.0            413.0 0.677049   2.669442           5989.0    1247.0               4.0            1.0               1.0            0.0                                                                                                                                                               
-                                                                                                  95% CI Lower                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
-                                                                                                  95% CI Upper                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
-Instantaneous PDR data saved to /home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/instantaneous_pdr.csv
+                                                                                                      File Path Run No Packets Generated Packets Received      PDR  Avg Delay #Retransmissions #Forwards  Avg Route Length  %Route Uptime  %HQ Route Uptime Route Switches Packet Drop (Expiry) Packet Drop (Queue Management) Packet Drop (Retry) Packet Drop (Overflow) Packet Drop (No Route) Packet Reinserted (TCP)          Flow_ID
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/Flow_Node0-Node8.csv      1               610              413 0.677049   2.669442             5989      1247               4.0            1.0               1.0              0                  546                              0                 431                      0                      0                       0 Flow_Node0-Node8
+                                                                                                           Mean                    610.0            413.0 0.677049   2.669442           5989.0    1247.0               4.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                         Median                    610.0            413.0 0.677049   2.669442           5989.0    1247.0               4.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                   95% CI Lower                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+                                                                                                   95% CI Upper                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+Instantaneous PDR data saved to /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/instantaneous_pdr.csv
 
 === Flow-level Summary (All Metrics) ===
-                             Pkt ID  ...             Base Packet ID
-141  2002327924247_Node0_Node8_Zero  ...  2002327924247_Node0_Node8
-148  2002442680519_Node0_Node8_Zero  ...  2002442680519_Node0_Node8
-150  2002475462767_Node0_Node8_Zero  ...  2002475462767_Node0_Node8
-158  2002606601848_Node0_Node8_Zero  ...  2002606601848_Node0_Node8
-160  2002639385992_Node0_Node8_Zero  ...  2002639385992_Node0_Node8
-161  2002655783801_Node0_Node8_Zero  ...  2002655783801_Node0_Node8
-172  2002836108912_Node0_Node8_Zero  ...  2002836108912_Node0_Node8
-174  2002868893162_Node0_Node8_Zero  ...  2002868893162_Node0_Node8
-188  2003098396651_Node0_Node8_Zero  ...  2003098396651_Node0_Node8
-189  2003114791350_Node0_Node8_Zero  ...  2003114791350_Node0_Node8
-201  2003311526057_Node0_Node8_Zero  ...  2003311526057_Node0_Node8
-204  2003360710825_Node0_Node8_Zero  ...  2003360710825_Node0_Node8
-206  2003393498325_Node0_Node8_Zero  ...  2003393498325_Node0_Node8
-207  2003409893356_Node0_Node8_Zero  ...  2003409893356_Node0_Node8
-211  2003475471706_Node0_Node8_Zero  ...  2003475471706_Node0_Node8
-212  2003491868551_Node0_Node8_Zero  ...  2003491868551_Node0_Node8
-213  2003508263083_Node0_Node8_Zero  ...  2003508263083_Node0_Node8
-317  2005213128094_Node0_Node8_Zero  ...  2005213128094_Node0_Node8
-320  2005262310813_Node0_Node8_Zero  ...  2005262310813_Node0_Node8
-323  2005311489743_Node0_Node8_Zero  ...  2005311489743_Node0_Node8
-327  2005377059558_Node0_Node8_Zero  ...  2005377059558_Node0_Node8
-331  2005442629538_Node0_Node8_Zero  ...  2005442629538_Node0_Node8
-345  2005672133598_Node0_Node8_Zero  ...  2005672133598_Node0_Node8
-355  2005836066824_Node0_Node8_Zero  ...  2005836066824_Node0_Node8
-357  2005868859168_Node0_Node8_Zero  ...  2005868859168_Node0_Node8
-366  2006016406145_Node0_Node8_Zero  ...  2006016406145_Node0_Node8
-369  2006065592156_Node0_Node8_Zero  ...  2006065592156_Node0_Node8
-370  2006081982314_Node0_Node8_Zero  ...  2006081982314_Node0_Node8
-375  2006163939930_Node0_Node8_Zero  ...  2006163939930_Node0_Node8
-408  2006704925603_Node0_Node8_Zero  ...  2006704925603_Node0_Node8
+                             Pkt ID            Route  ...  Data Rate at Flow Src (in Mbps)             Base Packet ID
+141  2002327924247_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002327924247_Node0_Node8
+148  2002442680519_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002442680519_Node0_Node8
+150  2002475462767_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002475462767_Node0_Node8
+158  2002606601848_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002606601848_Node0_Node8
+160  2002639385992_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002639385992_Node0_Node8
+161  2002655783801_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002655783801_Node0_Node8
+172  2002836108912_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002836108912_Node0_Node8
+174  2002868893162_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2002868893162_Node0_Node8
+188  2003098396651_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003098396651_Node0_Node8
+189  2003114791350_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003114791350_Node0_Node8
+201  2003311526057_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003311526057_Node0_Node8
+204  2003360710825_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003360710825_Node0_Node8
+206  2003393498325_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003393498325_Node0_Node8
+207  2003409893356_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003409893356_Node0_Node8
+211  2003475471706_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003475471706_Node0_Node8
+212  2003491868551_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003491868551_Node0_Node8
+213  2003508263083_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2003508263083_Node0_Node8
+317  2005213128094_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005213128094_Node0_Node8
+320  2005262310813_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005262310813_Node0_Node8
+323  2005311489743_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005311489743_Node0_Node8
+327  2005377059558_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005377059558_Node0_Node8
+331  2005442629538_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005442629538_Node0_Node8
+345  2005672133598_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005672133598_Node0_Node8
+355  2005836066824_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005836066824_Node0_Node8
+357  2005868859168_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2005868859168_Node0_Node8
+366  2006016406145_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2006016406145_Node0_Node8
+369  2006065592156_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2006065592156_Node0_Node8
+370  2006081982314_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2006081982314_Node0_Node8
+375  2006163939930_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2006163939930_Node0_Node8
+408  2006704925603_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                               33  2006704925603_Node0_Node8
 
 [30 rows x 15 columns]
 
@@ -82,5 +82,5 @@ Flow Flow_Node0-Node8:
   TCP Reinsertions : 0
 Avg:  Packets generated: 610 Packets received: 413 PDR: 0.6770491803278689 Avg delay: 2.6694422300242127 Retransmissions: 5989 Packet forwards: 1247 Route length: 4.0 Route uptime: 1.0 HQ Route Uptime: 1.0 Route switches: 0.0 
 
-Plot saved to: /home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/instantaneous_pdr_plot.png
-Delay-over-time plot saved to: /home/peter/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/delay_over_time.png
+Plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/instantaneous_pdr_plot.png
+Delay-over-time plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps/delay_over_time.png

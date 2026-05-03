@@ -2,56 +2,25 @@
 """
 Compare experiment results with bar graphs and optional delay-over-time overlays.
 
-You can provide files directly, or let the script auto-discover them.
+You can provide inputs directly on the command line, auto-discover them, or use a YAML/JSON config file.
 
 Examples
 
-1) Direct summary CSV comparison
+1) Config file
+    python3 compare_bar_graphs.py --config comparison_config.yaml
+
+2) Direct summary CSV comparison
     python3 compare_bar_graphs.py stats/a.csv stats/b.csv stats/c.csv
 
-2) Auto-discover summary CSVs under a parent folder
-    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root
+3) Auto-discover summary CSVs under a parent folder
+    python3 compare_bar_graphs.py --auto-find-csvs ./Results --label-mode parent
 
-3) Auto-discover summary CSVs and use folder names as labels
-    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root --label-mode parent
-
-4) Auto-discover delay folders under a parent folder
-    python3 compare_bar_graphs.py --skip-bar-plots --auto-find-delay-dirs /path/to/results_root
-
-5) Do both automatically
-    python3 compare_bar_graphs.py \
-        --auto-find-csvs /path/to/results_root \
-        --auto-find-delay-dirs /path/to/results_root \
-        --label-mode parent
-
-6) Only plot selected metrics
-    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root \
-        --metrics PDR "Avg Delay" "#Retransmissions"
-
-7) Apply a filter to discovered paths
-    python3 compare_bar_graphs.py --auto-find-csvs /path/to/results_root \
-        --auto-find-delay-dirs /path/to/results_root \
-        --filter mcs0
-
-Discovery rules
-
-Summary CSV auto-discovery:
-- Searches recursively for:
-    all_stats.csv
-    all_stats_*.csv
-- Skips files inside the output directory
-
-Delay directory auto-discovery:
-- Searches recursively for Flow_Node*.csv
-- Uses the containing directory of those files as the experiment folder
-
-Notes
-- Bar-plot comparison uses per-flow rows when present.
-- Delay overlay combines all Flow_Node*.csv files in an experiment folder.
-- Delay overlay plots raw sampled points and a rolling average for each experiment.
+4) Auto-discover summary CSVs and delay folders
+    python3 compare_bar_graphs.py --auto-find-csvs ./Results --auto-find-delay-dirs ./Results --label-mode parent
 """
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -60,9 +29,42 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
+def load_config_file(config_path: Path) -> dict:
+    if not config_path.exists():
+        raise FileNotFoundError(f"Config file not found: {config_path}")
+
+    suffix = config_path.suffix.lower()
+
+    with open(config_path, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    if suffix == ".json":
+        return json.loads(text)
+
+    if suffix in (".yaml", ".yml"):
+        try:
+            import yaml
+        except ImportError as exc:
+            raise ImportError(
+                "YAML config files require PyYAML. Install it with:\n"
+                "    pip install pyyaml\n"
+                "Or use a .json config file instead."
+            ) from exc
+
+        loaded = yaml.safe_load(text)
+        return loaded or {}
+
+    raise ValueError("Config file must end in .yaml, .yml, or .json")
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Compare experiment CSV files with side-by-side bar graphs and optional delay overlays."
+    )
+
+    parser.add_argument(
+        "--config",
+        help="YAML or JSON config file containing files, labels, delay_dirs, delay_labels, and options"
     )
 
     # Manual summary CSV inputs
@@ -80,8 +82,8 @@ def parse_args():
     # Output and bar options
     parser.add_argument(
         "--output-dir",
-        default="comparison_plots",
-        help="Directory where outputs will be saved (default: comparison_plots)"
+        default=None,
+        help="Directory where outputs will be saved"
     )
     parser.add_argument(
         "--metrics",
@@ -91,16 +93,19 @@ def parse_args():
     parser.add_argument(
         "--include-run-no",
         action="store_true",
+        default=None,
         help='Include the "Run No" column if present'
     )
     parser.add_argument(
         "--show",
         action="store_true",
+        default=None,
         help="Show plots interactively in addition to saving them"
     )
     parser.add_argument(
         "--skip-bar-plots",
         action="store_true",
+        default=None,
         help="Skip summary bar graph generation"
     )
 
@@ -118,24 +123,25 @@ def parse_args():
     parser.add_argument(
         "--delay-window",
         type=int,
-        default=100,
-        help="Rolling-average window for delay overlay (default: 100)"
+        default=None,
+        help="Rolling-average window for delay overlay"
     )
     parser.add_argument(
         "--delay-nth",
         type=int,
-        default=5,
-        help="Plot every nth raw delay point in the overlay scatter (default: 5)"
+        default=None,
+        help="Plot every nth raw delay point in the overlay scatter"
     )
     parser.add_argument(
         "--delay-scatter-alpha",
         type=float,
-        default=0.2,
-        help="Scatter transparency for raw delay points (default: 0.2)"
+        default=None,
+        help="Scatter transparency for raw delay points"
     )
     parser.add_argument(
         "--delay-recursive",
         action="store_true",
+        default=None,
         help="Recursively search each delay directory for Flow_Node*.csv files"
     )
 
@@ -153,8 +159,8 @@ def parse_args():
     parser.add_argument(
         "--label-mode",
         choices=["stem", "parent", "path"],
-        default="stem",
-        help="How to auto-generate labels when labels are not supplied (default: stem)"
+        default=None,
+        help="How to auto-generate labels when labels are not supplied"
     )
     parser.add_argument(
         "--filter",
@@ -165,11 +171,64 @@ def parse_args():
     parser.add_argument(
         "--sort",
         choices=["name", "mtime"],
-        default="name",
-        help="Sort discovered items by name or modified time (default: name)"
+        default=None,
+        help="Sort discovered items by name or modified time"
     )
 
     return parser.parse_args()
+
+
+def config_get(config: dict, key: str, default=None):
+    return config[key] if key in config and config[key] is not None else default
+
+
+def merge_args_with_config(args, config: dict):
+    """
+    Command-line arguments override config values when explicitly provided.
+    Config values override built-in defaults.
+    """
+
+    defaults = {
+        "files": [],
+        "labels": None,
+        "output_dir": "comparison_plots",
+        "metrics": None,
+        "include_run_no": False,
+        "show": False,
+        "skip_bar_plots": False,
+        "delay_dirs": None,
+        "delay_labels": None,
+        "delay_window": 100,
+        "delay_nth": 5,
+        "delay_scatter_alpha": 0.2,
+        "delay_recursive": False,
+        "auto_find_csvs": None,
+        "auto_find_delay_dirs": None,
+        "label_mode": "stem",
+        "name_filter": None,
+        "sort": "name",
+    }
+
+    merged = argparse.Namespace()
+
+    # Positional files are special because argparse defaults to [].
+    merged.files = args.files if args.files else config_get(config, "files", defaults["files"])
+
+    for key, default in defaults.items():
+        if key == "files":
+            continue
+
+        arg_value = getattr(args, key)
+        config_value = config_get(config, key, default)
+
+        # For store_true arguments, argparse cannot tell whether False was explicit.
+        # Using default=None above means True only appears when supplied on CLI.
+        if arg_value is not None:
+            setattr(merged, key, arg_value)
+        else:
+            setattr(merged, key, config_value)
+
+    return merged
 
 
 def sanitize_filename(name: str) -> str:
@@ -272,12 +331,10 @@ def load_experiment_csv(path: Path) -> pd.Series:
     first_col = df.columns[0]
     first_col_as_str = df[first_col].astype(str)
 
-    # Prefer flow rows if present
     flow_mask = first_col_as_str.str.contains("Flow", case=False, na=False)
     if flow_mask.any():
         df = df[flow_mask]
     else:
-        # Otherwise remove common summary/stat rows
         bad_prefixes = (
             "Mean", "Median", "Std", "CI", "Min", "Max",
             "Confidence", "Variance", "95% CI Lower", "95% CI Upper"
@@ -458,15 +515,14 @@ def plot_delay_overlay(
     plt.ylabel("Delay (s)")
     plt.title("Packet Delay over Time (Experiment Comparison)")
     plt.grid(True)
-    handles, labels = plt.gca().get_legend_handles_labels() 
+    handles, legend_labels = plt.gca().get_legend_handles_labels()
     plt.tight_layout()
 
     out_path = output_dir / "delay_over_time_comparison.png"
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
 
-    # Create separate legend figure
     fig_legend = plt.figure(figsize=(10, 2))
-    fig_legend.legend(handles, labels, loc='center', ncol=4)
+    fig_legend.legend(handles, legend_labels, loc="center", ncol=4)
 
     legend_path = output_dir / "delay_legend.png"
     fig_legend.savefig(legend_path, dpi=300, bbox_inches="tight")
@@ -477,7 +533,7 @@ def plot_delay_overlay(
     else:
         plt.close()
 
-    return out_path
+    return out_path, legend_path
 
 
 def get_summary_inputs(args, output_dir: Path):
@@ -568,7 +624,7 @@ def run_delay_overlay_workflow(args, output_dir: Path):
     experiment_dirs, labels = get_delay_inputs(args)
 
     if not experiment_dirs:
-        return None
+        return None, None
 
     return plot_delay_overlay(
         experiment_dirs=experiment_dirs,
@@ -583,13 +639,19 @@ def run_delay_overlay_workflow(args, output_dir: Path):
 
 
 def main():
-    args = parse_args()
+    cli_args = parse_args()
+
+    config = {}
+    if cli_args.config:
+        config = load_config_file(Path(cli_args.config).expanduser())
+
+    args = merge_args_with_config(cli_args, config)
 
     output_dir = Path(args.output_dir).expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
     summary_csv, saved_plots = run_bar_plot_workflow(args, output_dir)
-    delay_plot = run_delay_overlay_workflow(args, output_dir)
+    delay_plot, legend_plot = run_delay_overlay_workflow(args, output_dir)
 
     print("Comparison complete.")
 
@@ -601,6 +663,7 @@ def main():
 
     if delay_plot is not None:
         print(f"Saved delay overlay plot: {delay_plot}")
+        print(f"Saved delay legend: {legend_plot}")
 
 
 if __name__ == "__main__":
