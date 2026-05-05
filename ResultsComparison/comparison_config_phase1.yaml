@@ -1,136 +1,186 @@
-# comparison_config.yaml
-# Run with:
-#   python3 ./ResultsComparison/compare_bar_graphs.py --config ./ResultsComparison/comparison_config.yaml
-
 output_dir: comparison_plots
-
-# Optional:
-# metrics:
-#   - PDR
-#   - Avg Delay
-#   - "#Retransmissions"
-
 include_run_no: false
 show: false
 skip_bar_plots: false
-
+graphs:
+- bar_plots
+- delay_overlay
+- energy_consumption
+graph_group_size: 9
 delay_window: 100
 delay_nth: 5
 delay_scatter_alpha: 0.2
 delay_recursive: false
-
 files:
-  - ./Results/phase1_daisy_500m_mcs0_1Mbps/all_stats_500m_mcs0_1Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs0_2Mbps/all_stats_500m_mcs0_2Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs0_3Mbps/all_stats_500m_mcs0_3Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs1_1Mbps/all_stats_500m_mcs1_1Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs1_2Mbps/all_stats_500m_mcs1_2Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs1_3Mbps/all_stats_500m_mcs1_3Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/all_stats_500m_mcs_adaptive_1Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/all_stats_500m_mcs_adaptive_2Mbps.csv
-  - ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/all_stats_500m_mcs_adaptive_3Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs0_1Mbps/all_stats_1000m_mcs0_1Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs0_2Mbps/all_stats_1000m_mcs0_2Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs0_3Mbps/all_stats_1000m_mcs0_3Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs1_1Mbps/all_stats_1000m_mcs1_1Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs1_2Mbps/all_stats_1000m_mcs1_2Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs1_3Mbps/all_stats_1000m_mcs1_3Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/all_stats_1000m_mcs_adaptive_1Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/all_stats_1000m_mcs_adaptive_2Mbps.csv
-  - ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/all_stats_1000m_mcs_adaptive_3Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs0_1Mbps/all_stats_1200m_mcs0_1Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs0_2Mbps/all_stats_1200m_mcs0_2Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs0_3Mbps/all_stats_1200m_mcs0_3Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs1_1Mbps/all_stats_1200m_mcs1_1Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs1_2Mbps/all_stats_1200m_mcs1_2Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs1_3Mbps/all_stats_1200m_mcs1_3Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/all_stats_1200m_mcs_adaptive_1Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/all_stats_1200m_mcs_adaptive_2Mbps.csv
-  - ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/all_stats_1200m_mcs_adaptive_3Mbps.csv
-
+- ./Results/phase1_daisy_500m_mcs0_1Mbps/all_stats_500m_mcs0_1Mbps.csv
+- ./Results/phase1_daisy_500m_mcs0_2Mbps/all_stats_500m_mcs0_2Mbps.csv
+- ./Results/phase1_daisy_500m_mcs0_3Mbps/all_stats_500m_mcs0_3Mbps.csv
+- ./Results/phase1_daisy_500m_mcs1_1Mbps/all_stats_500m_mcs1_1Mbps.csv
+- ./Results/phase1_daisy_500m_mcs1_2Mbps/all_stats_500m_mcs1_2Mbps.csv
+- ./Results/phase1_daisy_500m_mcs1_3Mbps/all_stats_500m_mcs1_3Mbps.csv
+- ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/all_stats_500m_mcs_adaptive_1Mbps.csv
+- ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/all_stats_500m_mcs_adaptive_2Mbps.csv
+- ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/all_stats_500m_mcs_adaptive_3Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs0_1Mbps/all_stats_1000m_mcs0_1Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs0_2Mbps/all_stats_1000m_mcs0_2Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs0_3Mbps/all_stats_1000m_mcs0_3Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs1_1Mbps/all_stats_1000m_mcs1_1Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs1_2Mbps/all_stats_1000m_mcs1_2Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs1_3Mbps/all_stats_1000m_mcs1_3Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/all_stats_1000m_mcs_adaptive_1Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/all_stats_1000m_mcs_adaptive_2Mbps.csv
+- ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/all_stats_1000m_mcs_adaptive_3Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs0_1Mbps/all_stats_1200m_mcs0_1Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs0_2Mbps/all_stats_1200m_mcs0_2Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs0_3Mbps/all_stats_1200m_mcs0_3Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs1_1Mbps/all_stats_1200m_mcs1_1Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs1_2Mbps/all_stats_1200m_mcs1_2Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs1_3Mbps/all_stats_1200m_mcs1_3Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/all_stats_1200m_mcs_adaptive_1Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/all_stats_1200m_mcs_adaptive_2Mbps.csv
+- ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/all_stats_1200m_mcs_adaptive_3Mbps.csv
 labels:
-  - 500m_mcs0_1Mbps
-  - 500m_mcs0_2Mbps
-  - 500m_mcs0_3Mbps
-  - 500m_mcs1_1Mbps
-  - 500m_mcs1_2Mbps
-  - 500m_mcs1_3Mbps
-  - 500m_mcs_adaptive_1Mbps
-  - 500m_mcs_adaptive_2Mbps
-  - 500m_mcs_adaptive_3Mbps
-  - 1000m_mcs0_1Mbps
-  - 1000m_mcs0_2Mbps
-  - 1000m_mcs0_3Mbps
-  - 1000m_mcs1_1Mbps
-  - 1000m_mcs1_2Mbps
-  - 1000m_mcs1_3Mbps
-  - 1000m_mcs_adaptive_1Mbps
-  - 1000m_mcs_adaptive_2Mbps
-  - 1000m_mcs_adaptive_3Mbps
-  - 1200m_mcs0_1Mbps
-  - 1200m_mcs0_2Mbps
-  - 1200m_mcs0_3Mbps
-  - 1200m_mcs1_1Mbps
-  - 1200m_mcs1_2Mbps
-  - 1200m_mcs1_3Mbps
-  - 1200m_mcs_adaptive_1Mbps
-  - 1200m_mcs_adaptive_2Mbps
-  - 1200m_mcs_adaptive_3Mbps
-
+- 500m_mcs0_1Mbps
+- 500m_mcs0_2Mbps
+- 500m_mcs0_3Mbps
+- 500m_mcs1_1Mbps
+- 500m_mcs1_2Mbps
+- 500m_mcs1_3Mbps
+- 500m_mcs_adaptive_1Mbps
+- 500m_mcs_adaptive_2Mbps
+- 500m_mcs_adaptive_3Mbps
+- 1000m_mcs0_1Mbps
+- 1000m_mcs0_2Mbps
+- 1000m_mcs0_3Mbps
+- 1000m_mcs1_1Mbps
+- 1000m_mcs1_2Mbps
+- 1000m_mcs1_3Mbps
+- 1000m_mcs_adaptive_1Mbps
+- 1000m_mcs_adaptive_2Mbps
+- 1000m_mcs_adaptive_3Mbps
+- 1200m_mcs0_1Mbps
+- 1200m_mcs0_2Mbps
+- 1200m_mcs0_3Mbps
+- 1200m_mcs1_1Mbps
+- 1200m_mcs1_2Mbps
+- 1200m_mcs1_3Mbps
+- 1200m_mcs_adaptive_1Mbps
+- 1200m_mcs_adaptive_2Mbps
+- 1200m_mcs_adaptive_3Mbps
 delay_dirs:
-  - ./Results/phase1_daisy_500m_mcs0_1Mbps/
-  - ./Results/phase1_daisy_500m_mcs0_2Mbps/
-  - ./Results/phase1_daisy_500m_mcs0_3Mbps/
-  - ./Results/phase1_daisy_500m_mcs1_1Mbps/
-  - ./Results/phase1_daisy_500m_mcs1_2Mbps/
-  - ./Results/phase1_daisy_500m_mcs1_3Mbps/
-  - ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/
-  - ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/
-  - ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/
-  - ./Results/phase1_daisy_1000m_mcs0_1Mbps/
-  - ./Results/phase1_daisy_1000m_mcs0_2Mbps/
-  - ./Results/phase1_daisy_1000m_mcs0_3Mbps/
-  - ./Results/phase1_daisy_1000m_mcs1_1Mbps/
-  - ./Results/phase1_daisy_1000m_mcs1_2Mbps/
-  - ./Results/phase1_daisy_1000m_mcs1_3Mbps/
-  - ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/
-  - ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/
-  - ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/
-  - ./Results/phase1_daisy_1200m_mcs0_1Mbps/
-  - ./Results/phase1_daisy_1200m_mcs0_2Mbps/
-  - ./Results/phase1_daisy_1200m_mcs0_3Mbps/
-  - ./Results/phase1_daisy_1200m_mcs1_1Mbps/
-  - ./Results/phase1_daisy_1200m_mcs1_2Mbps/
-  - ./Results/phase1_daisy_1200m_mcs1_3Mbps/
-  - ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/
-  - ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/
-  - ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/
-
+- ./Results/phase1_daisy_500m_mcs0_1Mbps/
+- ./Results/phase1_daisy_500m_mcs0_2Mbps/
+- ./Results/phase1_daisy_500m_mcs0_3Mbps/
+- ./Results/phase1_daisy_500m_mcs1_1Mbps/
+- ./Results/phase1_daisy_500m_mcs1_2Mbps/
+- ./Results/phase1_daisy_500m_mcs1_3Mbps/
+- ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/
+- ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/
+- ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/
+- ./Results/phase1_daisy_1000m_mcs0_1Mbps/
+- ./Results/phase1_daisy_1000m_mcs0_2Mbps/
+- ./Results/phase1_daisy_1000m_mcs0_3Mbps/
+- ./Results/phase1_daisy_1000m_mcs1_1Mbps/
+- ./Results/phase1_daisy_1000m_mcs1_2Mbps/
+- ./Results/phase1_daisy_1000m_mcs1_3Mbps/
+- ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/
+- ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/
+- ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/
+- ./Results/phase1_daisy_1200m_mcs0_1Mbps/
+- ./Results/phase1_daisy_1200m_mcs0_2Mbps/
+- ./Results/phase1_daisy_1200m_mcs0_3Mbps/
+- ./Results/phase1_daisy_1200m_mcs1_1Mbps/
+- ./Results/phase1_daisy_1200m_mcs1_2Mbps/
+- ./Results/phase1_daisy_1200m_mcs1_3Mbps/
+- ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/
+- ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/
+- ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/
 delay_labels:
-  - 500m_mcs0_1Mbps
-  - 500m_mcs0_2Mbps
-  - 500m_mcs0_3Mbps
-  - 500m_mcs1_1Mbps
-  - 500m_mcs1_2Mbps
-  - 500m_mcs1_3Mbps
-  - 500m_mcs_adaptive_1Mbps
-  - 500m_mcs_adaptive_2Mbps
-  - 500m_mcs_adaptive_3Mbps
-  - 1000m_mcs0_1Mbps
-  - 1000m_mcs0_2Mbps
-  - 1000m_mcs0_3Mbps
-  - 1000m_mcs1_1Mbps
-  - 1000m_mcs1_2Mbps
-  - 1000m_mcs1_3Mbps
-  - 1000m_mcs_adaptive_1Mbps
-  - 1000m_mcs_adaptive_2Mbps
-  - 1000m_mcs_adaptive_3Mbps
-  - 1200m_mcs0_1Mbps
-  - 1200m_mcs0_2Mbps
-  - 1200m_mcs0_3Mbps
-  - 1200m_mcs1_1Mbps
-  - 1200m_mcs1_2Mbps
-  - 1200m_mcs1_3Mbps
-  - 1200m_mcs_adaptive_1Mbps
-  - 1200m_mcs_adaptive_2Mbps
-  - 1200m_mcs_adaptive_3Mbps
+- 500m_mcs0_1Mbps
+- 500m_mcs0_2Mbps
+- 500m_mcs0_3Mbps
+- 500m_mcs1_1Mbps
+- 500m_mcs1_2Mbps
+- 500m_mcs1_3Mbps
+- 500m_mcs_adaptive_1Mbps
+- 500m_mcs_adaptive_2Mbps
+- 500m_mcs_adaptive_3Mbps
+- 1000m_mcs0_1Mbps
+- 1000m_mcs0_2Mbps
+- 1000m_mcs0_3Mbps
+- 1000m_mcs1_1Mbps
+- 1000m_mcs1_2Mbps
+- 1000m_mcs1_3Mbps
+- 1000m_mcs_adaptive_1Mbps
+- 1000m_mcs_adaptive_2Mbps
+- 1000m_mcs_adaptive_3Mbps
+- 1200m_mcs0_1Mbps
+- 1200m_mcs0_2Mbps
+- 1200m_mcs0_3Mbps
+- 1200m_mcs1_1Mbps
+- 1200m_mcs1_2Mbps
+- 1200m_mcs1_3Mbps
+- 1200m_mcs_adaptive_1Mbps
+- 1200m_mcs_adaptive_2Mbps
+- 1200m_mcs_adaptive_3Mbps
+energy_dirs:
+- ./Results/phase1_daisy_500m_mcs0_1Mbps/
+- ./Results/phase1_daisy_500m_mcs0_2Mbps/
+- ./Results/phase1_daisy_500m_mcs0_3Mbps/
+- ./Results/phase1_daisy_500m_mcs1_1Mbps/
+- ./Results/phase1_daisy_500m_mcs1_2Mbps/
+- ./Results/phase1_daisy_500m_mcs1_3Mbps/
+- ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/
+- ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/
+- ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/
+- ./Results/phase1_daisy_1000m_mcs0_1Mbps/
+- ./Results/phase1_daisy_1000m_mcs0_2Mbps/
+- ./Results/phase1_daisy_1000m_mcs0_3Mbps/
+- ./Results/phase1_daisy_1000m_mcs1_1Mbps/
+- ./Results/phase1_daisy_1000m_mcs1_2Mbps/
+- ./Results/phase1_daisy_1000m_mcs1_3Mbps/
+- ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/
+- ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/
+- ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/
+- ./Results/phase1_daisy_1200m_mcs0_1Mbps/
+- ./Results/phase1_daisy_1200m_mcs0_2Mbps/
+- ./Results/phase1_daisy_1200m_mcs0_3Mbps/
+- ./Results/phase1_daisy_1200m_mcs1_1Mbps/
+- ./Results/phase1_daisy_1200m_mcs1_2Mbps/
+- ./Results/phase1_daisy_1200m_mcs1_3Mbps/
+- ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/
+- ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/
+- ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/
+energy_labels:
+- 500m_mcs0_1Mbps
+- 500m_mcs0_2Mbps
+- 500m_mcs0_3Mbps
+- 500m_mcs1_1Mbps
+- 500m_mcs1_2Mbps
+- 500m_mcs1_3Mbps
+- 500m_mcs_adaptive_1Mbps
+- 500m_mcs_adaptive_2Mbps
+- 500m_mcs_adaptive_3Mbps
+- 1000m_mcs0_1Mbps
+- 1000m_mcs0_2Mbps
+- 1000m_mcs0_3Mbps
+- 1000m_mcs1_1Mbps
+- 1000m_mcs1_2Mbps
+- 1000m_mcs1_3Mbps
+- 1000m_mcs_adaptive_1Mbps
+- 1000m_mcs_adaptive_2Mbps
+- 1000m_mcs_adaptive_3Mbps
+- 1200m_mcs0_1Mbps
+- 1200m_mcs0_2Mbps
+- 1200m_mcs0_3Mbps
+- 1200m_mcs1_1Mbps
+- 1200m_mcs1_2Mbps
+- 1200m_mcs1_3Mbps
+- 1200m_mcs_adaptive_1Mbps
+- 1200m_mcs_adaptive_2Mbps
+- 1200m_mcs_adaptive_3Mbps
+energy_recursive: false
+energy_time_column: First Tx At (in s)
+energy_rate_column: Min. Data Rate Along Route (in Mbps)
+energy_rolling_window: 50
+energy_nth: 1

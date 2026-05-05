@@ -18,7 +18,7 @@ Config:
   CHANNEL_AWARE_ROUTE_COMPUTATION: true
   ENABLE_PACKET_REINSERTION: false
   MOBILE_SCENARIO: false
-  STATIC_TOPOLOGY_PATH: "./topologies/crossflow_17nodes___DISTANCE__m.txt"
+  STATIC_TOPOLOGY_PATH: "./topologies/daisy_9nodes___DISTANCE__m.txt"
 
   FORCED_ROUTES:
     eval: "[[0,8]]"
