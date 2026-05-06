@@ -991,9 +991,9 @@ def updateRouteMCS(routeIdx: Optional[int] = None, force: bool = False):
         # AT: Keep DEFAULT_DATA_MCS_INDEX; this is the minimum mcs index required for the data packet at each node
         updatedMCSIndex = [parameters.DEFAULT_DATA_MCS_INDEX for _ in range(len(parameters.Route_Details[routeNo]['Route'])-1)]  # Reset to default
         # Update MCS index for high power nodes in this route
-        # for i in range(len(updatedMCSIndex)):
-        #     each_node = parameters.NODE_REGISTRY[f"Node{parameters.Route_Details[routeNo]['Route'][i]}"]
-            # updatedMCSIndex[i] = each_node.operating_mcs
+        for i in range(len(updatedMCSIndex)):
+             each_node = parameters.NODE_REGISTRY[f"Node{parameters.Route_Details[routeNo]['Route'][i]}"]
+             updatedMCSIndex[i] = each_node.operating_mcs
         
         if routeNo in parameters.FORCED_ROUTE_MCS:
             route_node_mcs_map = parameters.FORCED_ROUTE_MCS[routeNo]

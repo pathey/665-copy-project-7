@@ -1,0 +1,14 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2000.6-2001.6,61,8,0.13114754098360656,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2001.6-2002.6,61,5,0.08196721311475409,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2002.6-2003.6,61,73,1.1967213114754098,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2003.6-2004.6,61,27,0.4426229508196721,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2004.6-2005.6,61,25,0.4098360655737705,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2005.6-2006.6,61,6,0.09836065573770492,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2006.6-2007.6,61,61,1.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2007.6-2008.6,61,61,1.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2008.6-2009.6,61,45,0.7377049180327869,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2009.6-2010.6,26,5,0.19230769230769232,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2010.6-2011.6,0,20,20.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2011.6-2012.6,0,33,33.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv
+2012.6-2013.6,0,8,8.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv

@@ -1,0 +1,12 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2001.2-2002.2,183,59,0.3224043715846995,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2002.2-2003.2,183,0,0.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2003.2-2004.2,170,0,0.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2004.2-2005.2,0,0,0.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2005.2-2006.2,178,0,0.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2006.2-2007.2,183,0,0.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2007.2-2008.2,183,0,0.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2008.2-2009.2,183,9,0.04918032786885246,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2009.2-2010.2,75,26,0.3466666666666667,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2010.2-2011.2,0,49,49.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv
+2011.2-2012.2,0,26,26.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_3Mbps_0.75decrement_threshold/Flow_Node0-Node8.csv

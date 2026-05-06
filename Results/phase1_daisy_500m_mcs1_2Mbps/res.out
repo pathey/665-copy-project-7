@@ -1,12 +1,12 @@
 Rows with invalid delay (0 or inf):
-                           Pkt ID            Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
-0  2000008195690_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
-1  2000016397037_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
-2  2000024593440_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
-3  2000032793116_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
-4  2000040987875_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
-5  2000049179987_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
-6  2000057379121_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+                           Pkt ID  ... Data Rate at Flow Src (in Mbps)
+0  2000008195690_Node0_Node8_Zero  ...                              22
+1  2000016397037_Node0_Node8_Zero  ...                              22
+2  2000024593440_Node0_Node8_Zero  ...                              22
+3  2000032793116_Node0_Node8_Zero  ...                              22
+4  2000040987875_Node0_Node8_Zero  ...                              22
+5  2000049179987_Node0_Node8_Zero  ...                              22
+6  2000057379121_Node0_Node8_Zero  ...                              22
 
 [7 rows x 14 columns]
 Parent directory is not in 'WARx' format.

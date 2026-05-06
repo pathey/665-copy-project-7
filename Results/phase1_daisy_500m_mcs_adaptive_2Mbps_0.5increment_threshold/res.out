@@ -1,0 +1,56 @@
+Rows with invalid delay (0 or inf):
+                              Pkt ID  ... Data Rate at Flow Src (in Mbps)
+0     2000008195690_Node0_Node8_Zero  ...                              33
+1     2000016397037_Node0_Node8_Zero  ...                              33
+2     2000024594458_Node0_Node8_Zero  ...                              33
+3     2000032793798_Node0_Node8_Zero  ...                              33
+4     2000040988557_Node0_Node8_Zero  ...                              33
+...                              ...  ...                             ...
+1210  2009959046216_Node0_Node8_Zero  ...                              11
+1211  2009967240403_Node0_Node8_Zero  ...                              11
+1212  2009975440067_Node0_Node8_Zero  ...                              11
+1213  2009983634448_Node0_Node8_Zero  ...                              11
+1214  2009991831761_Node0_Node8_Zero  ...                              11
+
+[316 rows x 14 columns]
+Parent directory is not in 'WARx' format.
+DEBUG Flow file=Flow_Node0-Node8.csv, Extracted src=0, dst=8
+DEBUG Route dict candidate=[0, 8]
+Unique nodes participated for this flow: [0, 2, 4, 6, 8]
+node 0 total drops: 579 drop_expiry 395 395 drop_q_mngmnt 0 0 drop_retry 184 184 drop_overflow 0 0 drop_no_route 0 0
+node 2 total drops: 118 drop_expiry 45 440 drop_q_mngmnt 0 0 drop_retry 73 257 drop_overflow 0 0 drop_no_route 0 0
+node 4 total drops: 887 drop_expiry 803 1243 drop_q_mngmnt 0 0 drop_retry 84 341 drop_overflow 0 0 drop_no_route 0 0
+node 6 total drops: 107 drop_expiry 64 1307 drop_q_mngmnt 0 0 drop_retry 43 384 drop_overflow 0 0 drop_no_route 0 0
+node 8 total drops: 0 drop_expiry 0 1307 drop_q_mngmnt 0 0 drop_retry 0 384 drop_overflow 0 0 drop_no_route 0 0
+                                                                                                                             File Path Run No Packets Generated Packets Received      PDR  Avg Delay #Retransmissions #Forwards  Avg Route Length  %Route Uptime  %HQ Route Uptime Route Switches Packet Drop (Expiry) Packet Drop (Queue Management) Packet Drop (Retry) Packet Drop (Overflow) Packet Drop (No Route) Packet Reinserted (TCP)          Flow_ID
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_2Mbps_0.5increment_threshold/Flow_Node0-Node8.csv      1              1220              900 0.737705     2.2129             7738      2749               4.0            1.0               1.0              0                 1307                              0                 384                      0                      0                       0 Flow_Node0-Node8
+                                                                                                                                  Mean                   1220.0            900.0 0.737705     2.2129           7738.0    2749.0               4.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                                Median                   1220.0            900.0 0.737705     2.2129           7738.0    2749.0               4.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                          95% CI Lower                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+                                                                                                                          95% CI Upper                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+Instantaneous PDR data saved to /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_2Mbps_0.5increment_threshold/instantaneous_pdr.csv
+
+=== Flow-level Summary (All Metrics) ===
+Empty DataFrame
+Columns: [Pkt ID, Route, Generation Time (in s), First Tx At (in s), Delay (in s), Times Packet Forwarded, Retransmissions, Packet Size (in bytes), Tx Power (in watt), Average Transmission Power in the route (in watt), Min. SINR Along Route, SINR at Flow Dest, Min. Data Rate Along Route (in Mbps), Data Rate at Flow Src (in Mbps), Base Packet ID]
+Index: []
+
+Flow Flow_Node0-Node8:
+  Packets Generated: 1220.00
+  Packets Received : 900.00
+  PDR              : 0.738
+  Avg Delay (s)    : 2.2129
+  Max Delay (s)    : 3.0056
+  95th %ile Delay(s): 2.9824
+  Retransmissions  : 7738.00
+  Forwards         : 2749.00
+  Drops (Expiry)   : 1307
+  Drops (Queue Mgmt): 0
+  Drops (Retry)    : 384
+  Drops (Overflow) : 0
+  Drops (No Route) : 0
+  TCP Reinsertions : 0
+Avg:  Packets generated: 1220 Packets received: 900 PDR: 0.7377049180327869 Avg delay: 2.2129002833333336 Retransmissions: 7738 Packet forwards: 2749 Route length: 4.0 Route uptime: 1.0 HQ Route Uptime: 1.0 Route switches: 0.0 
+
+Plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_2Mbps_0.5increment_threshold/instantaneous_pdr_plot.png
+Delay-over-time plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_2Mbps_0.5increment_threshold/delay_over_time.png

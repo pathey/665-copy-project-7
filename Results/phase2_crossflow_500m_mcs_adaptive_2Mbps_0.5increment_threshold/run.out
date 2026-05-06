@@ -21,21 +21,22 @@ node.py: Node2 created with coordinates 1000 2000 with routing power 0.007664
 node.py: Node3 created with coordinates 1500 2000 with routing power 0.007664
 node.py: Node4 created with coordinates 2000 2000 with routing power 0.007664
 node.py: Node5 created with coordinates 2500 2000 with routing power 0.007664
-node.py: Node6 created with coordinates 3500 2000 with routing power 0.007664
-node.py: Node7 created with coordinates 4000 2000 with routing power 0.007664
-node.py: Node8 created with coordinates 4500 2000 with routing power 0.007664
-node.py: Node9 created with coordinates 2000 0 with routing power 0.007664
-node.py: Node10 created with coordinates 2000 500 with routing power 0.007664
-node.py: Node11 created with coordinates 2000 1000 with routing power 0.007664
-node.py: Node12 created with coordinates 2000 1500 with routing power 0.007664
-node.py: Node13 created with coordinates 2000 2500 with routing power 0.007664
-node.py: Node14 created with coordinates 2000 3000 with routing power 0.007664
-node.py: Node15 created with coordinates 2000 3500 with routing power 0.007664
-node.py: Node16 created with coordinates 2000 4000 with routing power 0.007664
-node.py: Node17 created with coordinates 0 0 with routing power 0.007664
+node.py: Node6 created with coordinates 3000 2000 with routing power 0.007664
+node.py: Node7 created with coordinates 3500 2000 with routing power 0.007664
+node.py: Node8 created with coordinates 4000 2000 with routing power 0.007664
+node.py: Node9 created with coordinates 4500 2000 with routing power 0.007664
+node.py: Node10 created with coordinates 2000 0 with routing power 0.007664
+node.py: Node11 created with coordinates 2000 500 with routing power 0.007664
+node.py: Node12 created with coordinates 2000 1000 with routing power 0.007664
+node.py: Node13 created with coordinates 2000 1500 with routing power 0.007664
+node.py: Node14 created with coordinates 2000 2500 with routing power 0.007664
+node.py: Node15 created with coordinates 2000 3000 with routing power 0.007664
+node.py: Node16 created with coordinates 2000 3500 with routing power 0.007664
+node.py: Node17 created with coordinates 2000 4000 with routing power 0.007664
+node.py: Node18 created with coordinates 0 0 with routing power 0.007664
 SIM_TIME_MOBILITY =  2014
 MAX TRANSMISSION RANGE for all nodes - mobility.py =  1223.8180011750112
-DATA_RATE =  [2]  No._Nodes =  17  Map_Size =  4000 x 4000
+DATA_RATE =  [2]  No._Nodes =  18  Map_Size =  4000 x 4000
 MOBILITY PROCESS (^) and NETWORK UPDATE (rf.updateNetworkTopology(env,nodes) HAS BEEN STARTED 
 Multiple Targets located at  [[2000 4000]]
 main.py: Progress: 0 / 2014
@@ -2041,367 +2042,153 @@ main.py: Progress: 1999 / 2014
 time 2000 ( all targets found and t>1000s) and set up src_dst pairs = [([0, 8], (-1, -1))]
 Route initialization:  {0: {'Route': [0, 8], 'MCS_Index': [2], 'Priority': 1, 'ValidRoute': False, 'HQRoute': False, 'RouteNodeDensity': [None, None], 'InterferingLinks': 0, 'Target': (-1, -1)}}
 node.py: Inside packet generation function at node: Node0. Curr time: 2000.000000, Packet inter arrival time: 0.008199
+Called Update: UpdateRouteCalls = 0, force = False
+Called Update: UpdateRouteCalls = 1, force = False
+Called Update: UpdateRouteCalls = 2, force = False
+Called Update: UpdateRouteCalls = 3, force = False
+Called Update: UpdateRouteCalls = 4, force = False
+Called Update: UpdateRouteCalls = 5, force = False
+Called Update: UpdateRouteCalls = 6, force = False
+Called Update: UpdateRouteCalls = 7, force = False
+Called Update: UpdateRouteCalls = 8, force = False
+Called Update: UpdateRouteCalls = 9, force = False
+Called Update: UpdateRouteCalls = 10, force = False
+Called Update: UpdateRouteCalls = 11, force = False
+Called Update: UpdateRouteCalls = 12, force = False
+Called Update: UpdateRouteCalls = 13, force = False
+Called Update: UpdateRouteCalls = 14, force = False
+Called Update: UpdateRouteCalls = 15, force = False
+Called Update: UpdateRouteCalls = 16, force = False
+Called Update: UpdateRouteCalls = 17, force = False
+Called Update: UpdateRouteCalls = 18, force = False
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [2]
 Path | HC | IL | Max Data Rate Supported | HQ Path | Tangled Path | Cost
 ------------------------------
-[0, 1, 3, 5, 6, 8] | 5 | 10 | 11 | True | False | 0.8846153846153846
-[0, 2, 3, 5, 6, 8] | 5 | 10 | 11 | True | False | 0.8846153846153846
-[0, 2, 4, 5, 6, 8] | 5 | 10 | 11 | True | False | 0.8846153846153846
-[0, 2, 12, 5, 6, 8] | 5 | 10 | 11 | True | False | 0.8846153846153846
-[0, 2, 13, 5, 6, 8] | 5 | 10 | 11 | True | False | 0.8846153846153846
+[0, 2, 4, 6, 8] | 4 | 8 | 11 | True | False | 0.8846153846153846
+[0, 2, 4, 5, 7, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 2, 13, 5, 7, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 1, 3, 14, 6, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 2, 14, 5, 7, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 2, 14, 6, 8] | 4 | 8 | 11 | True | False | 0.8846153846153846
+[0, 1, 3, 13, 6, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 1, 3, 4, 6, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 1, 3, 5, 7, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 1, 3, 5, 6, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 2, 3, 5, 7, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 2, 3, 5, 6, 8] | 5 | 10 | 11 | True | False | 1.0795454545454546
+[0, 2, 13, 6, 8] | 4 | 8 | 11 | True | False | 0.8846153846153846
 Found Route:
- {'Path': [0, 1, 3, 5, 6, 8], 'HC': 5, 'IL': 10, 'Max Data Rate Supported': 11, 'HQ Path': np.True_, 'Tangled Path': False, 'Cost': 0.8846153846153846}
+ {'Path': [0, 2, 4, 6, 8], 'HC': 4, 'IL': 8, 'Max Data Rate Supported': 11, 'HQ Path': np.True_, 'Tangled Path': False, 'Cost': 0.8846153846153846}
+Called Update: UpdateRouteCalls = 0, force = True
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [2, 2, 2, 2]
 
-rf.py: Time: 2000 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': np.True_, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
+rf.py: Time: 2000 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [2, 2, 2, 2], 'Priority': 1, 'ValidRoute': True, 'HQRoute': np.True_, 'RouteNodeDensity': [1, 4, 6, 4, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
 main.py: Progress: 2000 / 2014
+Node.py: (Node0)@2000400000000.0: Updated MCS from 2 to 1, hist=deque([1.0], maxlen=5), packets_serviced=48, packets_received=48
+Called Update: UpdateRouteCalls = 0, force = False
+Called Update: UpdateRouteCalls = 1, force = False
+Node.py: (Node2)@2000400000000.0: Updated MCS from 2 to 1, hist=deque([1.0], maxlen=5), packets_serviced=47, packets_received=47
+Called Update: UpdateRouteCalls = 2, force = False
+Called Update: UpdateRouteCalls = 3, force = False
+Node.py: (Node4)@2000400000000.0: Updated MCS from 2 to 1, hist=deque([1.0], maxlen=5), packets_serviced=44, packets_received=44
+Called Update: UpdateRouteCalls = 4, force = False
+Called Update: UpdateRouteCalls = 5, force = False
+Node.py: (Node6)@2000400000000.0: Updated MCS from 2 to 1, hist=deque([1.0], maxlen=5), packets_serviced=41, packets_received=41
+Called Update: UpdateRouteCalls = 6, force = False
+Called Update: UpdateRouteCalls = 7, force = False
+Called Update: UpdateRouteCalls = 8, force = False
+Called Update: UpdateRouteCalls = 9, force = False
+Called Update: UpdateRouteCalls = 10, force = False
+Called Update: UpdateRouteCalls = 11, force = False
+Called Update: UpdateRouteCalls = 12, force = False
+Called Update: UpdateRouteCalls = 13, force = False
+Called Update: UpdateRouteCalls = 14, force = False
+Called Update: UpdateRouteCalls = 15, force = False
+Called Update: UpdateRouteCalls = 16, force = False
+Called Update: UpdateRouteCalls = 17, force = False
+Called Update: UpdateRouteCalls = 18, force = False
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [1, 1, 1, 1]
+Node.py: (Node0)@2000800000000.0: Updated MCS from 1 to 0, hist=deque([1.0, 0.7755102040816326], maxlen=5), packets_serviced=38, packets_received=49
+Called Update: UpdateRouteCalls = 0, force = False
+Called Update: UpdateRouteCalls = 1, force = False
+Node.py: (Node2)@2000800000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.38333333333333336], maxlen=5), packets_serviced=23, packets_received=60
+Called Update: UpdateRouteCalls = 2, force = False
+Called Update: UpdateRouteCalls = 3, force = False
+Node.py: (Node4)@2000800000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.3442622950819672], maxlen=5), packets_serviced=21, packets_received=61
+Called Update: UpdateRouteCalls = 4, force = False
+Called Update: UpdateRouteCalls = 5, force = False
+Node.py: (Node6)@2000800000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.2962962962962963], maxlen=5), packets_serviced=16, packets_received=54
+Called Update: UpdateRouteCalls = 6, force = False
+Called Update: UpdateRouteCalls = 7, force = False
+Called Update: UpdateRouteCalls = 8, force = False
+Called Update: UpdateRouteCalls = 9, force = False
+Called Update: UpdateRouteCalls = 10, force = False
+Called Update: UpdateRouteCalls = 11, force = False
+Called Update: UpdateRouteCalls = 12, force = False
+Called Update: UpdateRouteCalls = 13, force = False
+Called Update: UpdateRouteCalls = 14, force = False
+Called Update: UpdateRouteCalls = 15, force = False
+Called Update: UpdateRouteCalls = 16, force = False
+Called Update: UpdateRouteCalls = 17, force = False
+Called Update: UpdateRouteCalls = 18, force = False
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [0, 1, 1, 1]
 main.py: Progress: 2001 / 2014
+Called Update: UpdateRouteCalls = 0, force = True
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [0, 1, 1, 1]
 
-rf.py: Time: 2001 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 2, 2, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2002 / 2014
-
-rf.py: Time: 2002 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2003 / 2014
-
-rf.py: Time: 2003 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 2, 2, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-DUPE: 2000213128409_Node0_Node8_Zero, Node6 id 2000213128409_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003220310566.1692, pkt_dequeue_time=2003220310566.1692, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000155748709_Node0_Node8_Zero, Node5 id 2000155748709_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003260368616.0479, pkt_dequeue_time=2003260368616.0479, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000245916606_Node0_Node8_Zero, Node6 id 2000245916606_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003278007951.866, pkt_dequeue_time=2003278007951.866, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000254108751_Node0_Node8_Zero, Node6 id 2000254108751_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003280134823.866, pkt_dequeue_time=2003280134823.866, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000139352190_Node0_Node8_Zero, Node6 id 2000139352190_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003338938910.866, pkt_dequeue_time=2003338938910.866, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000114760135_Node0_Node8_Zero, Node6 id 2000114760135_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003386174364.9568, pkt_dequeue_time=2003386174364.9568, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000032795411_Node0_Node8_Zero, Node5 id 2000032795411_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003398948367.0144, pkt_dequeue_time=2003398948367.0144, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000065578585_Node0_Node8_Zero, Node5 id 2000065578585_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003400995239.0144, pkt_dequeue_time=2003400995239.0144, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000196733448_Node0_Node8_Zero, Node5 id 2000196733448_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003440636772.1052, pkt_dequeue_time=2003440636772.1052, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000352473171_Node0_Node8_Zero, Node6 id 2000352473171_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003489232667.7415, pkt_dequeue_time=2003489232667.7415, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000336083559_Node0_Node8_Zero, Node5 id 2000336083559_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003493046103.7415, pkt_dequeue_time=2003493046103.7415, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000098368292_Node0_Node8_Zero, Node6 id 2000098368292_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003514083707.5596, pkt_dequeue_time=2003514083707.5596, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000286895077_Node0_Node8_Zero, Node5 id 2000286895077_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003533186412.8323, pkt_dequeue_time=2003533186412.8323, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000122959497_Node0_Node8_Zero, Node6 id 2000122959497_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003554148230.6504, pkt_dequeue_time=2003554148230.6504, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000336083559_Node0_Node8_Zero, Node6 id 2000336083559_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003575075885.1958, pkt_dequeue_time=2003575075885.1958, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000360674228_Node0_Node8_Zero, Node5 id 2000360674228_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003577105963.2869, pkt_dequeue_time=2003577105963.2869, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000590184342_Node0_Node8_Zero, Node6 id 2000590184342_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003592938390.3174, pkt_dequeue_time=2003592938390.3174, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000647572462_Node0_Node8_Zero, Node6 id 2000647572462_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003654493282.499, pkt_dequeue_time=2003654493282.499, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000639376594_Node0_Node8_Zero, Node6 id 2000639376594_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003660336988.5903, pkt_dequeue_time=2003660336988.5903, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000696753456_Node0_Node8_Zero, Node6 id 2000696753456_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003749616367.895, pkt_dequeue_time=2003749616367.895, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000139352190_Node0_Node8_Zero, Node5 id 2000139352190_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003855613233.683, pkt_dequeue_time=2003855613233.683, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000795100299_Node0_Node8_Zero, Node6 id 2000795100299_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003863820585.0466, pkt_dequeue_time=2003863820585.0466, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000901645341_Node0_Node8_Zero, Node6 id 2000901645341_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003904154904.9558, pkt_dequeue_time=2003904154904.9558, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000327883510_Node0_Node8_Zero, Node5 id 2000327883510_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003907053787.774, pkt_dequeue_time=2003907053787.774, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000967209325_Node0_Node8_Zero, Node6 id 2000967209325_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003974575339.5015, pkt_dequeue_time=2003974575339.5015, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000950818248_Node0_Node8_Zero, Node6 id 2000950818248_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003980320994.0469, pkt_dequeue_time=2003980320994.0469, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000959010376_Node0_Node8_Zero, Node6 id 2000959010376_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2003984087866.0469, pkt_dequeue_time=2003984087866.0469, forwarded_or_dropped=1, reason_for_drop='Expiry'
-main.py: Progress: 2004 / 2014
-
-rf.py: Time: 2004 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 2, 2, 2, 2], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-DUPE: 2000918040244_Node0_Node8_Zero, Node6 id 2000918040244_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2004022767293.5923, pkt_dequeue_time=2004022767293.5923, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000893444110_Node0_Node8_Zero, Node6 id 2000893444110_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2004033997208.1377, pkt_dequeue_time=2004033997208.1377, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2001016394616_Node0_Node8_Zero, Node6 id 2001016394616_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2004044881862.683, pkt_dequeue_time=2004044881862.683, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000811488458_Node0_Node8_Zero, Node3 id 2000811488458_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2004083448962.0771, pkt_dequeue_time=2004083448962.0771, forwarded_or_dropped=1, reason_for_drop='Expiry'
-main.py: Progress: 2005 / 2014
-
-rf.py: Time: 2005 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 2, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2006 / 2014
-
-rf.py: Time: 2006 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2007 / 2014
-
-rf.py: Time: 2007 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2008 / 2014
-
-rf.py: Time: 2008 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2009 / 2014
-
-rf.py: Time: 2009 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-main.py: Progress: 2010 / 2014
-
-rf.py: Time: 2010 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 0, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-node.py: Packet generation complete at node: Node0.
-DUPE: 2000827879681_Node0_Node8_Zero, Node3 id 2000827879681_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010019629185.1882, pkt_dequeue_time=2010019629185.1882, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000778705310_Node0_Node8_Zero, Node3 id 2000778705310_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010030268839.7336, pkt_dequeue_time=2010030268839.7336, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000139352190_Node0_Node8_Zero, Node3 id 2000139352190_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010040968494.279, pkt_dequeue_time=2010040968494.279, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000754121615_Node0_Node8_Zero, Node3 id 2000754121615_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010051674148.8245, pkt_dequeue_time=2010051674148.8245, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000401657362_Node0_Node8_Zero, Node3 id 2000401657362_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010062513803.3699, pkt_dequeue_time=2010062513803.3699, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000590184342_Node0_Node8_Zero, Node3 id 2000590184342_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010073388457.9153, pkt_dequeue_time=2010073388457.9153, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000598384699_Node0_Node8_Zero, Node3 id 2000598384699_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010083495329.9153, pkt_dequeue_time=2010083495329.9153, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000762320834_Node0_Node8_Zero, Node3 id 2000762320834_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010094435984.4607, pkt_dequeue_time=2010094435984.4607, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000147550239_Node0_Node8_Zero, Node3 id 2000147550239_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010105395639.006, pkt_dequeue_time=2010105395639.006, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000180341314_Node0_Node8_Zero, Node3 id 2000180341314_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010107522511.006, pkt_dequeue_time=2010107522511.006, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000377065709_Node0_Node8_Zero, Node3 id 2000377065709_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010118489165.5515, pkt_dequeue_time=2010118489165.5515, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000098368292_Node0_Node8_Zero, Node3 id 2000098368292_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010129505820.097, pkt_dequeue_time=2010129505820.097, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000106568268_Node0_Node8_Zero, Node3 id 2000106568268_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010140512692.097, pkt_dequeue_time=2010140512692.097, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000131154809_Node0_Node8_Zero, Node3 id 2000131154809_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010151529346.6423, pkt_dequeue_time=2010151529346.6423, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000557394252_Node0_Node8_Zero, Node3 id 2000557394252_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010162546001.1877, pkt_dequeue_time=2010162546001.1877, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000483622110_Node0_Node8_Zero, Node3 id 2000483622110_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010173565655.7332, pkt_dequeue_time=2010173565655.7332, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000336083559_Node0_Node8_Zero, Node3 id 2000336083559_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010184602310.2786, pkt_dequeue_time=2010184602310.2786, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000565589323_Node0_Node8_Zero, Node3 id 2000565589323_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010195704964.824, pkt_dequeue_time=2010195704964.824, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000040988152_Node0_Node8_Zero, Node3 id 2000040988152_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010206857619.3694, pkt_dequeue_time=2010206857619.3694, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000442636968_Node0_Node8_Zero, Node3 id 2000442636968_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010218137273.9148, pkt_dequeue_time=2010218137273.9148, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000475422931_Node0_Node8_Zero, Node3 id 2000475422931_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010229498928.4602, pkt_dequeue_time=2010229498928.4602, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000426247958_Node0_Node8_Zero, Node3 id 2000426247958_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010241008583.0056, pkt_dequeue_time=2010241008583.0056, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000581983264_Node0_Node8_Zero, Node3 id 2000581983264_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010252871237.551, pkt_dequeue_time=2010252871237.551, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000319681924_Node0_Node8_Zero, Node3 id 2000319681924_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010264740892.0964, pkt_dequeue_time=2010264740892.0964, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000057378620_Node0_Node8_Zero, Node3 id 2000057378620_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010276749546.6418, pkt_dequeue_time=2010276749546.6418, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000434444491_Node0_Node8_Zero, Node3 id 2000434444491_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010288789201.1873, pkt_dequeue_time=2010288789201.1873, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000393461079_Node0_Node8_Zero, Node3 id 2000393461079_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010301352855.7327, pkt_dequeue_time=2010301352855.7327, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007336009911_Node0_Node8_Zero, Node5 id 2007336009911_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010343078268.1267, pkt_dequeue_time=2010343078268.1267, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007352404601_Node0_Node8_Zero, Node6 id 2007352404601_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010359681385.0361, pkt_dequeue_time=2010359681385.0361, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007352404601_Node0_Node8_Zero, Node5 id 2007352404601_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010374641548.1267, pkt_dequeue_time=2010374641548.1267, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007401575693_Node0_Node8_Zero, Node6 id 2007401575693_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010408125475.4907, pkt_dequeue_time=2010408125475.4907, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007417961296_Node0_Node8_Zero, Node6 id 2007417961296_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010420890714.8542, pkt_dequeue_time=2010420890714.8542, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007417961296_Node0_Node8_Zero, Node5 id 2007417961296_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010426399736.2178, pkt_dequeue_time=2010426399736.2178, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007368797772_Node0_Node8_Zero, Node3 id 2007368797772_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010442223486.3086, pkt_dequeue_time=2010442223486.3086, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007442549131_Node0_Node8_Zero, Node6 id 2007442549131_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010448991394.672, pkt_dequeue_time=2010448991394.672, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007401575693_Node0_Node8_Zero, Node3 id 2007401575693_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010452233104.3994, pkt_dequeue_time=2010452233104.3994, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007458946818_Node0_Node8_Zero, Node6 id 2007458946818_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010462761117.3992, pkt_dequeue_time=2010462761117.3992, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007458946818_Node0_Node8_Zero, Node5 id 2007458946818_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010465877412.3992, pkt_dequeue_time=2010465877412.3992, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007483536212_Node0_Node8_Zero, Node6 id 2007483536212_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010487628789.7632, pkt_dequeue_time=2010487628789.7632, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007483536212_Node0_Node8_Zero, Node5 id 2007483536212_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010490240299.2178, pkt_dequeue_time=2010490240299.2178, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007508130080_Node0_Node8_Zero, Node6 id 2007508130080_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010514297545.6729, pkt_dequeue_time=2010514297545.6729, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007532715218_Node0_Node8_Zero, Node6 id 2007532715218_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010539281309.5823, pkt_dequeue_time=2010539281309.5823, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007549112992_Node0_Node8_Zero, Node6 id 2007549112992_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010555882491.8552, pkt_dequeue_time=2010555882491.8552, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007590097037_Node0_Node8_Zero, Node3 id 2007590097037_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010596529903.5818, pkt_dequeue_time=2010596529903.5818, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007549112992_Node0_Node8_Zero, Node5 id 2007549112992_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010648156389.7627, pkt_dequeue_time=2010648156389.7627, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007631079893_Node0_Node8_Zero, Node3 id 2007631079893_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010659691766.1267, pkt_dequeue_time=2010659691766.1267, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007680262147_Node0_Node8_Zero, Node6 id 2007680262147_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010683614696.3083, pkt_dequeue_time=2010683614696.3083, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007704854816_Node0_Node8_Zero, Node5 id 2007704854816_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010707173767.2183, pkt_dequeue_time=2010707173767.2183, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007762228867_Node0_Node8_Zero, Node6 id 2007762228867_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010771939696.4912, pkt_dequeue_time=2010771939696.4912, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007786815081_Node0_Node8_Zero, Node6 id 2007786815081_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2010797106904.7642, pkt_dequeue_time=2010797106904.7642, forwarded_or_dropped=1, reason_for_drop='Expiry'
-main.py: Progress: 2011 / 2014
-
-rf.py: Time: 2011 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [2, 2, 2, 2, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-DUPE: 2008024539834_Node0_Node8_Zero, Node3 id 2008024539834_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011029348008.2754, pkt_dequeue_time=2011029348008.2754, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008106515220_Node0_Node8_Zero, Node3 id 2008106515220_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011153209348.0945, pkt_dequeue_time=2011153209348.0945, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008090114872_Node0_Node8_Zero, Node3 id 2008090114872_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011161315815.64, pkt_dequeue_time=2011161315815.64, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007909767845_Node0_Node8_Zero, Node3 id 2007909767845_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011176928882.9429, pkt_dequeue_time=2011176928882.9429, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008147506506_Node0_Node8_Zero, Node3 id 2008147506506_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011200909598.4883, pkt_dequeue_time=2011200909598.4883, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007885174702_Node0_Node8_Zero, Node3 id 2007885174702_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011212255725.0337, pkt_dequeue_time=2011212255725.0337, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007893369239_Node0_Node8_Zero, Node3 id 2007893369239_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011214842597.0337, pkt_dequeue_time=2011214842597.0337, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008131112578_Node0_Node8_Zero, Node3 id 2008131112578_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011225408432.67, pkt_dequeue_time=2011225408432.67, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007958960187_Node0_Node8_Zero, Node3 id 2007958960187_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011228268087.2153, pkt_dequeue_time=2011228268087.2153, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008213092873_Node0_Node8_Zero, Node3 id 2008213092873_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011239381140.3062, pkt_dequeue_time=2011239381140.3062, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007991745681_Node0_Node8_Zero, Node3 id 2007991745681_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011242280794.8516, pkt_dequeue_time=2011242280794.8516, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008221285542_Node0_Node8_Zero, Node3 id 2008221285542_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011248120103.9424, pkt_dequeue_time=2011248120103.9424, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008229477655_Node0_Node8_Zero, Node3 id 2008229477655_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011277435220.185, pkt_dequeue_time=2011277435220.185, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008172100058_Node0_Node8_Zero, Node3 id 2008172100058_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011280427874.7305, pkt_dequeue_time=2011280427874.7305, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008196692576_Node0_Node8_Zero, Node3 id 2008196692576_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011283447529.276, pkt_dequeue_time=2011283447529.276, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008270453406_Node0_Node8_Zero, Node3 id 2008270453406_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011288397986.8213, pkt_dequeue_time=2011288397986.8213, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008180301129_Node0_Node8_Zero, Node3 id 2008180301129_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011306271857.5483, pkt_dequeue_time=2011306271857.5483, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008081918246_Node0_Node8_Zero, Node3 id 2008081918246_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011309591512.0938, pkt_dequeue_time=2011309591512.0938, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008016343591_Node0_Node8_Zero, Node3 id 2008016343591_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011312931166.6392, pkt_dequeue_time=2011312931166.6392, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008295048790_Node0_Node8_Zero, Node3 id 2008295048790_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011327604287.8516, pkt_dequeue_time=2011327604287.8516, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007778621657_Node0_Node8_Zero, Node3 id 2007778621657_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011331243942.397, pkt_dequeue_time=2011331243942.397, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008327849468_Node0_Node8_Zero, Node3 id 2008327849468_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011334943596.9424, pkt_dequeue_time=2011334943596.9424, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008303250302_Node0_Node8_Zero, Node3 id 2008303250302_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011344473508.0332, pkt_dequeue_time=2011344473508.0332, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007786815081_Node0_Node8_Zero, Node3 id 2007786815081_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011355968551.5786, pkt_dequeue_time=2011355968551.5786, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008008141887_Node0_Node8_Zero, Node3 id 2008008141887_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011375273944.7603, pkt_dequeue_time=2011375273944.7603, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008237671275_Node0_Node8_Zero, Node3 id 2008237671275_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011379153599.3057, pkt_dequeue_time=2011379153599.3057, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007704854816_Node0_Node8_Zero, Node3 id 2007704854816_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011387052908.3965, pkt_dequeue_time=2011387052908.3965, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007999944996_Node0_Node8_Zero, Node3 id 2007999944996_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011391092562.942, pkt_dequeue_time=2011391092562.942, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008188497446_Node0_Node8_Zero, Node3 id 2008188497446_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011397049206.4873, pkt_dequeue_time=2011397049206.4873, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008368824028_Node0_Node8_Zero, Node3 id 2008368824028_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011401128861.0327, pkt_dequeue_time=2011401128861.0327, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007754034753_Node0_Node8_Zero, Node3 id 2007754034753_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011405275515.5781, pkt_dequeue_time=2011405275515.5781, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007745841248_Node0_Node8_Zero, Node3 id 2007745841248_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011409424170.1235, pkt_dequeue_time=2011409424170.1235, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008377017846_Node0_Node8_Zero, Node3 id 2008377017846_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011413703824.669, pkt_dequeue_time=2011413703824.669, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007762228867_Node0_Node8_Zero, Node3 id 2007762228867_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011417983479.2144, pkt_dequeue_time=2011417983479.2144, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008336046487_Node0_Node8_Zero, Node3 id 2008336046487_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011426722788.3052, pkt_dequeue_time=2011426722788.3052, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007696657142_Node0_Node8_Zero, Node3 id 2007696657142_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011431302442.8506, pkt_dequeue_time=2011431302442.8506, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008352437010_Node0_Node8_Zero, Node3 id 2008352437010_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011436042097.396, pkt_dequeue_time=2011436042097.396, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007524521880_Node0_Node8_Zero, Node3 id 2007524521880_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011440861751.9414, pkt_dequeue_time=2011440861751.9414, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008245865260_Node0_Node8_Zero, Node3 id 2008245865260_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011450898273.1536, pkt_dequeue_time=2011450898273.1536, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007811407694_Node0_Node8_Zero, Node3 id 2007811407694_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011461760582.2444, pkt_dequeue_time=2011461760582.2444, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007819608502_Node0_Node8_Zero, Node3 id 2007819608502_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011465807454.2444, pkt_dequeue_time=2011465807454.2444, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008065523622_Node0_Node8_Zero, Node3 id 2008065523622_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011471507108.7898, pkt_dequeue_time=2011471507108.7898, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007508130080_Node0_Node8_Zero, Node3 id 2007508130080_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011477339763.3352, pkt_dequeue_time=2011477339763.3352, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008311451269_Node0_Node8_Zero, Node3 id 2008311451269_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011486086289.8806, pkt_dequeue_time=2011486086289.8806, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007901567911_Node0_Node8_Zero, Node3 id 2007901567911_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011492125944.426, pkt_dequeue_time=2011492125944.426, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007917965890_Node0_Node8_Zero, Node3 id 2007917965890_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011494872816.426, pkt_dequeue_time=2011494872816.426, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007573704062_Node0_Node8_Zero, Node3 id 2007573704062_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011507132125.5168, pkt_dequeue_time=2011507132125.5168, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007581902003_Node0_Node8_Zero, Node3 id 2007581902003_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011509678997.5168, pkt_dequeue_time=2011509678997.5168, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008262257591_Node0_Node8_Zero, Node3 id 2008262257591_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011515918652.0623, pkt_dequeue_time=2011515918652.0623, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007844191200_Node0_Node8_Zero, Node3 id 2007844191200_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011522178306.6077, pkt_dequeue_time=2011522178306.6077, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007852390166_Node0_Node8_Zero, Node3 id 2007852390166_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011528457961.153, pkt_dequeue_time=2011528457961.153, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007860583721_Node0_Node8_Zero, Node3 id 2007860583721_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011533724833.153, pkt_dequeue_time=2011533724833.153, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007565510138_Node0_Node8_Zero, Node3 id 2007565510138_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011540024487.6985, pkt_dequeue_time=2011540024487.6985, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008360630660_Node0_Node8_Zero, Node3 id 2008360630660_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011546464142.244, pkt_dequeue_time=2011546464142.244, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2008254057390_Node0_Node8_Zero, Node3 id 2008254057390_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011559683451.3347, pkt_dequeue_time=2011559683451.3347, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007737642324_Node0_Node8_Zero, Node3 id 2007737642324_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011573222760.4255, pkt_dequeue_time=2011573222760.4255, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007417961296_Node0_Node8_Zero, Node3 id 2007417961296_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011587642069.5164, pkt_dequeue_time=2011587642069.5164, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007721245051_Node0_Node8_Zero, Node3 id 2007721245051_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011596423724.0618, pkt_dequeue_time=2011596423724.0618, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2007549112992_Node0_Node8_Zero, Node3 id 2007549112992_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011607003378.6072, pkt_dequeue_time=2011607003378.6072, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000311487897_Node0_Node8_Zero, Node3 id 2000311487897_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2011925906429.0305, pkt_dequeue_time=2011925906429.0305, forwarded_or_dropped=1, reason_for_drop='Expiry'
-main.py: Progress: 2012 / 2014
-
-rf.py: Time: 2012 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [1, 2, 2, 0, 2], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-DUPE: 2000737734925_Node0_Node8_Zero, Node3 id 2000737734925_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012018540125.1816, pkt_dequeue_time=2012018540125.1816, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2000344278698_Node0_Node8_Zero, Node3 id 2000344278698_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012102317102.3328, pkt_dequeue_time=2012102317102.3328, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009672041220_Node0_Node8_Zero, Node6 id 2009672041220_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012685629054.4165, pkt_dequeue_time=2012685629054.4165, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009696636519_Node0_Node8_Zero, Node6 id 2009696636519_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012734084485.0527, pkt_dequeue_time=2012734084485.0527, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009680240208_Node0_Node8_Zero, Node6 id 2009680240208_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012745663794.1436, pkt_dequeue_time=2012745663794.1436, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009721224911_Node0_Node8_Zero, Node6 id 2009721224911_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012751523448.689, pkt_dequeue_time=2012751523448.689, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009713028238_Node0_Node8_Zero, Node6 id 2009713028238_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012800061991.9614, pkt_dequeue_time=2012800061991.9614, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009647439936_Node0_Node8_Zero, Node6 id 2009647439936_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012819540955.5977, pkt_dequeue_time=2012819540955.5977, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009663842612_Node0_Node8_Zero, Node6 id 2009663842612_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012823167827.5977, pkt_dequeue_time=2012823167827.5977, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009803183423_Node0_Node8_Zero, Node6 id 2009803183423_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012868059844.3247, pkt_dequeue_time=2012868059844.3247, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009688437229_Node0_Node8_Zero, Node6 id 2009688437229_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012874979498.87, pkt_dequeue_time=2012874979498.87, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009745810178_Node0_Node8_Zero, Node6 id 2009745810178_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012881999153.4155, pkt_dequeue_time=2012881999153.4155, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009876965970_Node0_Node8_Zero, Node6 id 2009876965970_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012901325334.5063, pkt_dequeue_time=2012901325334.5063, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009754004496_Node0_Node8_Zero, Node6 id 2009754004496_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012909244989.0518, pkt_dequeue_time=2012909244989.0518, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009639242032_Node0_Node8_Zero, Node6 id 2009639242032_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012928791170.1426, pkt_dequeue_time=2012928791170.1426, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009909757916_Node0_Node8_Zero, Node6 id 2009909757916_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012937230824.688, pkt_dequeue_time=2012937230824.688, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009786793147_Node0_Node8_Zero, Node6 id 2009786793147_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012945990479.2334, pkt_dequeue_time=2012945990479.2334, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009737611546_Node0_Node8_Zero, Node6 id 2009737611546_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012955050133.7788, pkt_dequeue_time=2012955050133.7788, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009827773917_Node0_Node8_Zero, Node6 id 2009827773917_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012964989788.3242, pkt_dequeue_time=2012964989788.3242, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009844174170_Node0_Node8_Zero, Node6 id 2009844174170_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012975569442.8696, pkt_dequeue_time=2012975569442.8696, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009770398074_Node0_Node8_Zero, Node6 id 2009770398074_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012986289097.415, pkt_dequeue_time=2012986289097.415, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009958934443_Node0_Node8_Zero, Node6 id 2009958934443_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2012997328751.9604, pkt_dequeue_time=2012997328751.9604, forwarded_or_dropped=1, reason_for_drop='Expiry'
-main.py: Progress: 2013 / 2014
-
-rf.py: Time: 2013 Route details: {0: {'Route': [0, 1, 3, 5, 6, 8], 'MCS_Index': [1, 2, 0, 0, 0], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 1, 6, 5, 1, 1], 'InterferingLinks': 10, 'Target': (-1, -1)}}
-DUPE: 2009860575097_Node0_Node8_Zero, Node6 id 2009860575097_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013008368406.5059, pkt_dequeue_time=2013008368406.5059, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009893358606_Node0_Node8_Zero, Node6 id 2009893358606_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013019728061.0513, pkt_dequeue_time=2013019728061.0513, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009950741051_Node0_Node8_Zero, Node6 id 2009950741051_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013031147715.5967, pkt_dequeue_time=2013031147715.5967, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009926149654_Node0_Node8_Zero, Node6 id 2009926149654_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013042627370.142, pkt_dequeue_time=2013042627370.142, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009975323419_Node0_Node8_Zero, Node6 id 2009975323419_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013054167024.6875, pkt_dequeue_time=2013054167024.6875, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009999917910_Node0_Node8_Zero, Node6 id 2009999917910_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013065786679.233, pkt_dequeue_time=2013065786679.233, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009762196720_Node0_Node8_Zero, Node6 id 2009762196720_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013077526333.7783, pkt_dequeue_time=2013077526333.7783, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009868771065_Node0_Node8_Zero, Node6 id 2009868771065_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013089305988.3237, pkt_dequeue_time=2013089305988.3237, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009901558963_Node0_Node8_Zero, Node6 id 2009901558963_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013101305642.8691, pkt_dequeue_time=2013101305642.8691, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009704832619_Node0_Node8_Zero, Node6 id 2009704832619_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013113365297.4146, pkt_dequeue_time=2013113365297.4146, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009917952349_Node0_Node8_Zero, Node6 id 2009917952349_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013126304951.96, pkt_dequeue_time=2013126304951.96, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009942548956_Node0_Node8_Zero, Node6 id 2009942548956_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013139484606.5054, pkt_dequeue_time=2013139484606.5054, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009729416750_Node0_Node8_Zero, Node6 id 2009729416750_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013152744261.0508, pkt_dequeue_time=2013152744261.0508, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009835973204_Node0_Node8_Zero, Node6 id 2009835973204_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013166923915.5962, pkt_dequeue_time=2013166923915.5962, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009819581244_Node0_Node8_Zero, Node6 id 2009819581244_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013182683570.1416, pkt_dequeue_time=2013182683570.1416, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009934350103_Node0_Node8_Zero, Node6 id 2009934350103_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013199203224.687, pkt_dequeue_time=2013199203224.687, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009983520694_Node0_Node8_Zero, Node6 id 2009983520694_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013215962879.2324, pkt_dequeue_time=2013215962879.2324, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009852375200_Node0_Node8_Zero, Node6 id 2009852375200_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013233642533.7778, pkt_dequeue_time=2013233642533.7778, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009655641206_Node0_Node8_Zero, Node6 id 2009655641206_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013251448188.3232, pkt_dequeue_time=2013251448188.3232, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2010008119599_Node0_Node8_Zero, Node6 id 2010008119599_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013269867842.8687, pkt_dequeue_time=2013269867842.8687, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009794991646_Node0_Node8_Zero, Node6 id 2009794991646_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013288887497.414, pkt_dequeue_time=2013288887497.414, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009967129442_Node0_Node8_Zero, Node6 id 2009967129442_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013309367151.9595, pkt_dequeue_time=2013309367151.9595, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009778598752_Node0_Node8_Zero, Node6 id 2009778598752_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013330126806.505, pkt_dequeue_time=2013330126806.505, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009885158304_Node0_Node8_Zero, Node6 id 2009885158304_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013351026461.0503, pkt_dequeue_time=2013351026461.0503, forwarded_or_dropped=1, reason_for_drop='Expiry'
-DUPE: 2009991719346_Node0_Node8_Zero, Node6 id 2009991719346_Node0_Node8_Zero was a dupe; retransmit: 0, pkt_enqueue_time=2013372406115.5957, pkt_dequeue_time=2013372406115.5957, forwarded_or_dropped=1, reason_for_drop='Expiry'
-
-Total number of generated packets: 2110
-Total number of delivered packets: 2090 # Use all_stats.csv to check PDR
-Average number of packets genetated every second: 150.71428571428572
-Average number of packets delivered every second: 149.28571428571428
-Standard deviation of packets genetated every second: 67.88375418045656
-Standard deviation of packets delivered every second: 79.88601573619805
-Average number of packets genetated every millisecond: 0.15071428571428572
-Average number of packets delivered every millisecond: 0.1492857142857143
-Standard deviation of packets genetated every millisecond: 0.37758564375164866
-Standard deviation of packets delivered every millisecond: 0.365668942501553
-Average delay: 340.73600647107713
-Standard deviation of delay: 1559.7877243190212
-Minimum delay: 0.6417679998558015
-Maximum delay: 12107.010057454696
-Total number of retransmissions: 3138
-Node0
-Avg Received Power: 5.11e-13, Node1: [Avg:3.47e-12, Max:3.98e-11, Min:2.10e-12], Node3: [Avg:7.45e-13, Max:4.42e-12, Min:2.34e-13], Node5: [Avg:1.35e-13, Max:1.43e-12, Min:8.41e-14], Node6: [Avg:6.62e-14, Max:3.05e-13, Min:4.29e-14], 
-Avg INTF: 1.45e-12, Node1: [Avg:3.47e-12, Max:3.98e-11, Min:2.10e-12], Node3: [Avg:7.45e-13, Max:4.42e-12, Min:2.34e-13], Node5: [Avg:1.35e-13, Max:1.43e-12, Min:8.41e-14], Node6: [Avg:6.62e-14, Max:3.05e-13, Min:4.29e-14], 
-Self Tx power: RTS: (Avg: 0.0081, Min: 0.0077, Max: 0.0220), CTS: (Avg: 0.0079, Min: 0.0077, Max: 0.0145), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: 0.0070, Min: 0.0067, Max: 0.0191)
-CTS retry: 3, ACK retry: 98, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 101, # Pkts Retransmitted: 162, # Receptions: 0, # Pkts Received: 0, # Forwards: 1153, # Pkts Forwarded: 1211
-
-Node1
-Avg Received Power: 2.96e-13, Node0: [Avg:2.75e-12, Max:4.31e-12, Min:2.64e-12], Node3: [Avg:1.71e-12, Max:9.94e-12, Min:5.26e-13], Node5: [Avg:2.09e-13, Max:2.24e-12, Min:1.31e-13], Node6: [Avg:9.53e-14, Max:4.15e-13, Min:5.84e-14], 
-Avg INTF: 5.98e-13, Node3: [Avg:1.71e-12, Max:9.94e-12, Min:5.26e-13], Node5: [Avg:2.09e-13, Max:2.24e-12, Min:1.31e-13], Node6: [Avg:9.53e-14, Max:4.15e-13, Min:5.84e-14], 
-Self Tx power: RTS: (Avg: 0.0123, Min: 0.0077, Max: 0.1006), CTS: (Avg: 0.0105, Min: 0.0077, Max: 0.0201), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0097, Min: 0.0053, Max: 0.1006)
-CTS retry: 253, ACK retry: 750, # Receiver Drops: 13, # Pkts Receiver Drops: 13, # Sent ACKs: 1155, # Pkts ACK sent for: 1213, # Retransmissions: 1003, # Pkts Retransmitted: 1047, # Receptions: 1155, # Pkts Received: 1213, # Forwards: 85, # Pkts Forwarded: 242
-
-Node2
-Avg Received Power: 9.33e-13, Node0: [Avg:6.87e-13, Max:1.08e-12, Min:6.59e-13], Node1: [Avg:3.47e-12, Max:3.98e-11, Min:2.10e-12], Node3: [Avg:6.71e-12, Max:3.98e-11, Min:2.10e-12], Node5: [Avg:3.70e-13, Max:3.98e-12, Min:2.34e-13], Node6: [Avg:1.28e-13, Max:5.97e-13, Min:8.41e-14], 
-Avg INTF: 2.19e-12, Node0: [Avg:6.87e-13, Max:1.08e-12, Min:6.59e-13], Node1: [Avg:3.47e-12, Max:3.98e-11, Min:2.10e-12], Node3: [Avg:6.71e-12, Max:3.98e-11, Min:2.10e-12], Node5: [Avg:3.70e-13, Max:3.98e-12, Min:2.34e-13], Node6: [Avg:1.28e-13, Max:5.97e-13, Min:8.41e-14], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node3
-Avg Received Power: 2.22e-13, Node0: [Avg:3.05e-13, Max:4.79e-13, Min:2.93e-13], Node1: [Avg:8.71e-13, Max:9.94e-12, Min:5.26e-13], Node5: [Avg:8.38e-13, Max:8.95e-12, Min:5.26e-13], Node6: [Avg:2.07e-13, Max:9.33e-13, Min:1.31e-13], 
-Avg INTF: 4.92e-13, Node0: [Avg:3.05e-13, Max:4.79e-13, Min:2.93e-13], Node5: [Avg:8.38e-13, Max:8.95e-12, Min:5.26e-13], Node6: [Avg:2.07e-13, Max:9.33e-13, Min:1.31e-13], 
-Self Tx power: RTS: (Avg: 0.0226, Min: 0.0077, Max: 0.1006), CTS: (Avg: 0.0117, Min: 0.0077, Max: 0.0201), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0207, Min: 0.0053, Max: 0.1006)
-CTS retry: 199, ACK retry: 287, # Receiver Drops: 131, # Pkts Receiver Drops: 167, # Sent ACKs: 838, # Pkts ACK sent for: 995, # Retransmissions: 486, # Pkts Retransmitted: 682, # Receptions: 838, # Pkts Received: 995, # Forwards: 117, # Pkts Forwarded: 311
-
-Node4
-Avg Received Power: 7.97e-13, Node0: [Avg:1.72e-13, Max:2.69e-13, Min:1.65e-13], Node1: [Avg:3.86e-13, Max:4.42e-12, Min:2.34e-13], Node3: [Avg:6.71e-12, Max:3.98e-11, Min:2.10e-12], Node5: [Avg:3.33e-12, Max:3.58e-11, Min:2.10e-12], Node6: [Avg:3.56e-13, Max:1.66e-12, Min:2.34e-13], 
-Avg INTF: 1.87e-12, Node0: [Avg:1.72e-13, Max:2.69e-13, Min:1.65e-13], Node1: [Avg:3.86e-13, Max:4.42e-12, Min:2.34e-13], Node3: [Avg:6.71e-12, Max:3.98e-11, Min:2.10e-12], Node5: [Avg:3.33e-12, Max:3.58e-11, Min:2.10e-12], Node6: [Avg:3.56e-13, Max:1.66e-12, Min:2.34e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node5
-Avg Received Power: 1.91e-13, Node0: [Avg:1.09e-13, Max:1.72e-13, Min:1.05e-13], Node1: [Avg:2.18e-13, Max:2.48e-12, Min:1.31e-13], Node3: [Avg:1.71e-12, Max:9.94e-12, Min:5.26e-13], Node6: [Avg:8.06e-13, Max:3.73e-12, Min:5.26e-13], 
-Avg INTF: 3.66e-13, Node0: [Avg:1.09e-13, Max:1.72e-13, Min:1.05e-13], Node1: [Avg:2.18e-13, Max:2.48e-12, Min:1.31e-13], Node6: [Avg:8.06e-13, Max:3.73e-12, Min:5.26e-13], 
-Self Tx power: RTS: (Avg: 0.0106, Min: 0.0077, Max: 0.0906), CTS: (Avg: 0.0112, Min: 0.0077, Max: 0.0201), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0083, Min: 0.0053, Max: 0.0906)
-CTS retry: 158, ACK retry: 539, # Receiver Drops: 142, # Pkts Receiver Drops: 208, # Sent ACKs: 260, # Pkts ACK sent for: 474, # Retransmissions: 697, # Pkts Retransmitted: 736, # Receptions: 260, # Pkts Received: 454, # Forwards: 68, # Pkts Forwarded: 189
-
-Node6
-Avg Received Power: 1.11e-13, Node0: [Avg:5.55e-14, Max:8.79e-14, Min:5.38e-14], Node1: [Avg:8.88e-14, Max:1.10e-12, Min:5.84e-14], Node3: [Avg:4.27e-13, Max:2.48e-12, Min:1.31e-13], Node5: [Avg:8.36e-13, Max:8.95e-12, Min:5.26e-13], 
-Avg INTF: 1.57e-13, Node0: [Avg:5.55e-14, Max:8.79e-14, Min:5.38e-14], Node1: [Avg:8.88e-14, Max:1.10e-12, Min:5.84e-14], Node3: [Avg:4.27e-13, Max:2.48e-12, Min:1.31e-13], 
-Self Tx power: RTS: (Avg: 0.0110, Min: 0.0077, Max: 0.0378), CTS: (Avg: 0.0110, Min: 0.0077, Max: 0.0201), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: 0.0085, Min: 0.0053, Max: 0.0378)
-CTS retry: 80, ACK retry: 429, # Receiver Drops: 75, # Pkts Receiver Drops: 79, # Sent ACKs: 620, # Pkts ACK sent for: 742, # Retransmissions: 509, # Pkts Retransmitted: 511, # Receptions: 620, # Pkts Received: 741, # Forwards: 50, # Pkts Forwarded: 142
-
-Node7
-Avg Received Power: 3.15e-13, Node0: [Avg:4.29e-14, Max:6.73e-14, Min:4.12e-14], Node1: [Avg:7.08e-14, Max:8.11e-13, Min:4.29e-14], Node3: [Avg:2.68e-13, Max:1.59e-12, Min:8.41e-14], Node5: [Avg:3.70e-13, Max:3.98e-12, Min:2.34e-13], Node6: [Avg:3.21e-12, Max:1.49e-11, Min:2.10e-12], 
-Avg INTF: 7.40e-13, Node0: [Avg:4.29e-14, Max:6.73e-14, Min:4.12e-14], Node1: [Avg:7.08e-14, Max:8.11e-13, Min:4.29e-14], Node3: [Avg:2.68e-13, Max:1.59e-12, Min:8.41e-14], Node5: [Avg:3.70e-13, Max:3.98e-12, Min:2.34e-13], Node6: [Avg:3.21e-12, Max:1.49e-11, Min:2.10e-12], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node8
-Avg Received Power: 1.03e-13, Node0: [Avg:3.39e-14, Max:5.32e-14, Min:3.25e-14], Node1: [Avg:5.43e-14, Max:6.21e-13, Min:3.29e-14], Node3: [Avg:1.87e-13, Max:1.10e-12, Min:5.84e-14], Node5: [Avg:2.08e-13, Max:2.24e-12, Min:1.31e-13], Node6: [Avg:8.01e-13, Max:3.73e-12, Min:5.26e-13], 
-Avg INTF: 1.15e-13, Node0: [Avg:3.39e-14, Max:5.32e-14, Min:3.25e-14], Node1: [Avg:5.43e-14, Max:6.21e-13, Min:3.29e-14], Node3: [Avg:1.87e-13, Max:1.10e-12, Min:5.84e-14], Node5: [Avg:2.08e-13, Max:2.24e-12, Min:1.31e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: 0.0077, Min: 0.0077, Max: 0.0077), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 96, # Pkts Receiver Drops: 99, # Sent ACKs: 524, # Pkts ACK sent for: 616, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 524, # Pkts Received: 616, # Forwards: 0, # Pkts Forwarded: 0
-
-Node9
-Avg Received Power: 7.53e-14, Node0: [Avg:8.58e-14, Max:1.35e-13, Min:8.24e-14], Node1: [Avg:1.39e-13, Max:1.59e-12, Min:8.41e-14], Node3: [Avg:3.94e-13, Max:2.34e-12, Min:1.24e-13], Node5: [Avg:1.96e-13, Max:2.11e-12, Min:1.24e-13], Node6: [Avg:1.28e-13, Max:5.97e-13, Min:8.41e-14], 
-Avg INTF: 1.77e-13, Node0: [Avg:8.58e-14, Max:1.35e-13, Min:8.24e-14], Node1: [Avg:1.39e-13, Max:1.59e-12, Min:8.41e-14], Node3: [Avg:3.94e-13, Max:2.34e-12, Min:1.24e-13], Node5: [Avg:1.96e-13, Max:2.11e-12, Min:1.24e-13], Node6: [Avg:1.28e-13, Max:5.97e-13, Min:8.41e-14], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node10
-Avg Received Power: 1.17e-13, Node0: [Avg:1.10e-13, Max:1.72e-13, Min:1.05e-13], Node1: [Avg:1.93e-13, Max:2.21e-12, Min:1.17e-13], Node3: [Avg:6.71e-13, Max:3.98e-12, Min:2.10e-13], Node5: [Avg:3.33e-13, Max:3.58e-12, Min:2.10e-13], Node6: [Avg:1.78e-13, Max:8.29e-13, Min:1.17e-13], 
-Avg INTF: 2.74e-13, Node0: [Avg:1.10e-13, Max:1.72e-13, Min:1.05e-13], Node1: [Avg:1.93e-13, Max:2.21e-12, Min:1.17e-13], Node3: [Avg:6.71e-13, Max:3.98e-12, Min:2.10e-13], Node5: [Avg:3.33e-13, Max:3.58e-12, Min:2.10e-13], Node6: [Avg:1.78e-13, Max:8.29e-13, Min:1.17e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node11
-Avg Received Power: 2.04e-13, Node0: [Avg:1.37e-13, Max:2.15e-13, Min:1.32e-13], Node1: [Avg:2.67e-13, Max:3.06e-12, Min:1.62e-13], Node3: [Avg:1.34e-12, Max:7.95e-12, Min:4.21e-13], Node5: [Avg:6.66e-13, Max:7.16e-12, Min:4.21e-13], Node6: [Avg:2.47e-13, Max:1.15e-12, Min:1.62e-13], 
-Avg INTF: 4.80e-13, Node0: [Avg:1.37e-13, Max:2.15e-13, Min:1.32e-13], Node1: [Avg:2.67e-13, Max:3.06e-12, Min:1.62e-13], Node3: [Avg:1.34e-12, Max:7.95e-12, Min:4.21e-13], Node5: [Avg:6.66e-13, Max:7.16e-12, Min:4.21e-13], Node6: [Avg:2.47e-13, Max:1.15e-12, Min:1.62e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node12
-Avg Received Power: 4.34e-13, Node0: [Avg:1.62e-13, Max:2.54e-13, Min:1.55e-13], Node1: [Avg:3.47e-13, Max:3.98e-12, Min:2.10e-13], Node3: [Avg:3.35e-12, Max:1.99e-11, Min:1.05e-12], Node5: [Avg:1.66e-12, Max:1.79e-11, Min:1.05e-12], Node6: [Avg:3.21e-13, Max:1.49e-12, Min:2.10e-13], 
-Avg INTF: 1.02e-12, Node0: [Avg:1.62e-13, Max:2.54e-13, Min:1.55e-13], Node1: [Avg:3.47e-13, Max:3.98e-12, Min:2.10e-13], Node3: [Avg:3.35e-12, Max:1.99e-11, Min:1.05e-12], Node5: [Avg:1.66e-12, Max:1.79e-11, Min:1.05e-12], Node6: [Avg:3.21e-13, Max:1.49e-12, Min:2.10e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node13
-Avg Received Power: 4.34e-13, Node0: [Avg:1.62e-13, Max:2.54e-13, Min:1.55e-13], Node1: [Avg:3.47e-13, Max:3.98e-12, Min:2.10e-13], Node3: [Avg:3.35e-12, Max:1.99e-11, Min:1.05e-12], Node5: [Avg:1.66e-12, Max:1.79e-11, Min:1.05e-12], Node6: [Avg:3.21e-13, Max:1.49e-12, Min:2.10e-13], 
-Avg INTF: 1.02e-12, Node0: [Avg:1.62e-13, Max:2.54e-13, Min:1.55e-13], Node1: [Avg:3.47e-13, Max:3.98e-12, Min:2.10e-13], Node3: [Avg:3.35e-12, Max:1.99e-11, Min:1.05e-12], Node5: [Avg:1.66e-12, Max:1.79e-11, Min:1.05e-12], Node6: [Avg:3.21e-13, Max:1.49e-12, Min:2.10e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node14
-Avg Received Power: 2.04e-13, Node0: [Avg:1.37e-13, Max:2.15e-13, Min:1.32e-13], Node1: [Avg:2.67e-13, Max:3.06e-12, Min:1.62e-13], Node3: [Avg:1.34e-12, Max:7.95e-12, Min:4.21e-13], Node5: [Avg:6.66e-13, Max:7.16e-12, Min:4.21e-13], Node6: [Avg:2.47e-13, Max:1.15e-12, Min:1.62e-13], 
-Avg INTF: 4.80e-13, Node0: [Avg:1.37e-13, Max:2.15e-13, Min:1.32e-13], Node1: [Avg:2.67e-13, Max:3.06e-12, Min:1.62e-13], Node3: [Avg:1.34e-12, Max:7.95e-12, Min:4.21e-13], Node5: [Avg:6.66e-13, Max:7.16e-12, Min:4.21e-13], Node6: [Avg:2.47e-13, Max:1.15e-12, Min:1.62e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node15
-Avg Received Power: 1.17e-13, Node0: [Avg:1.10e-13, Max:1.72e-13, Min:1.05e-13], Node1: [Avg:1.93e-13, Max:2.21e-12, Min:1.17e-13], Node3: [Avg:6.71e-13, Max:3.98e-12, Min:2.10e-13], Node5: [Avg:3.33e-13, Max:3.58e-12, Min:2.10e-13], Node6: [Avg:1.78e-13, Max:8.29e-13, Min:1.17e-13], 
-Avg INTF: 2.74e-13, Node0: [Avg:1.10e-13, Max:1.72e-13, Min:1.05e-13], Node1: [Avg:1.93e-13, Max:2.21e-12, Min:1.17e-13], Node3: [Avg:6.71e-13, Max:3.98e-12, Min:2.10e-13], Node5: [Avg:3.33e-13, Max:3.58e-12, Min:2.10e-13], Node6: [Avg:1.78e-13, Max:8.29e-13, Min:1.17e-13], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node16
-Avg Received Power: 7.53e-14, Node0: [Avg:8.58e-14, Max:1.35e-13, Min:8.24e-14], Node1: [Avg:1.39e-13, Max:1.59e-12, Min:8.41e-14], Node3: [Avg:3.94e-13, Max:2.34e-12, Min:1.24e-13], Node5: [Avg:1.96e-13, Max:2.11e-12, Min:1.24e-13], Node6: [Avg:1.28e-13, Max:5.97e-13, Min:8.41e-14], 
-Avg INTF: 1.77e-13, Node0: [Avg:8.58e-14, Max:1.35e-13, Min:8.24e-14], Node1: [Avg:1.39e-13, Max:1.59e-12, Min:8.41e-14], Node3: [Avg:3.94e-13, Max:2.34e-12, Min:1.24e-13], Node5: [Avg:1.96e-13, Max:2.11e-12, Min:1.24e-13], Node6: [Avg:1.28e-13, Max:5.97e-13, Min:8.41e-14], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
-Node17
-Avg Received Power: 6.48e-14, Node0: [Avg:1.72e-13, Max:2.69e-13, Min:1.65e-13], Node1: [Avg:2.04e-13, Max:2.34e-12, Min:1.24e-13], Node3: [Avg:2.68e-13, Max:1.59e-12, Min:8.41e-14], Node5: [Avg:8.12e-14, Max:8.73e-13, Min:5.13e-14], Node6: [Avg:4.93e-14, Max:2.30e-13, Min:3.24e-14], 
-Avg INTF: 1.52e-13, Node0: [Avg:1.72e-13, Max:2.69e-13, Min:1.65e-13], Node1: [Avg:2.04e-13, Max:2.34e-12, Min:1.24e-13], Node3: [Avg:2.68e-13, Max:1.59e-12, Min:8.41e-14], Node5: [Avg:8.12e-14, Max:8.73e-13, Min:5.13e-14], Node6: [Avg:4.93e-14, Max:2.30e-13, Min:3.24e-14], 
-Self Tx power: RTS: (Avg: nan, Min: inf, Max: -inf), CTS: (Avg: nan, Min: inf, Max: -inf), ACK: (Avg: nan, Min: inf, Max: -inf), Data: (Avg: nan, Min: inf, Max: -inf)
-CTS retry: 0, ACK retry: 0, # Receiver Drops: 0, # Pkts Receiver Drops: 0, # Sent ACKs: 0, # Pkts ACK sent for: 0, # Retransmissions: 0, # Pkts Retransmitted: 0, # Receptions: 0, # Pkts Received: 0, # Forwards: 0, # Pkts Forwarded: 0
-
+rf.py: Time: 2001 Route details: {0: {'Route': [0, 2, 4, 6, 8], 'MCS_Index': [0, 1, 1, 1], 'Priority': 1, 'ValidRoute': True, 'HQRoute': True, 'RouteNodeDensity': [1, 4, 6, 4, 2], 'InterferingLinks': 8, 'Target': (-1, -1)}}
+Node.py: (Node0)@2001200000000.0: Updated MCS from 0 to 0, hist=deque([1.0, 0.7755102040816326, 0.04081632653061224], maxlen=5), packets_serviced=2, packets_received=49
+Called Update: UpdateRouteCalls = 0, force = False
+Called Update: UpdateRouteCalls = 1, force = False
+Node.py: (Node2)@2001200000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.38333333333333336, 0.2826086956521739], maxlen=5), packets_serviced=13, packets_received=46
+Called Update: UpdateRouteCalls = 2, force = False
+Called Update: UpdateRouteCalls = 3, force = False
+Node.py: (Node4)@2001200000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.3442622950819672, 0.4166666666666667], maxlen=5), packets_serviced=15, packets_received=36
+Called Update: UpdateRouteCalls = 4, force = False
+Called Update: UpdateRouteCalls = 5, force = False
+Node.py: (Node6)@2001200000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.2962962962962963, 0.08247422680412371], maxlen=5), packets_serviced=8, packets_received=97
+Called Update: UpdateRouteCalls = 6, force = False
+Called Update: UpdateRouteCalls = 7, force = False
+Called Update: UpdateRouteCalls = 8, force = False
+Called Update: UpdateRouteCalls = 9, force = False
+Called Update: UpdateRouteCalls = 10, force = False
+Called Update: UpdateRouteCalls = 11, force = False
+Called Update: UpdateRouteCalls = 12, force = False
+Called Update: UpdateRouteCalls = 13, force = False
+Called Update: UpdateRouteCalls = 14, force = False
+Called Update: UpdateRouteCalls = 15, force = False
+Called Update: UpdateRouteCalls = 16, force = False
+Called Update: UpdateRouteCalls = 17, force = False
+Called Update: UpdateRouteCalls = 18, force = False
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [0, 1, 1, 1]
+Node.py: (Node0)@2001600000000.0: Updated MCS from 0 to 0, hist=deque([1.0, 0.7755102040816326, 0.04081632653061224, 0.2857142857142857], maxlen=5), packets_serviced=14, packets_received=49
+Called Update: UpdateRouteCalls = 0, force = False
+Called Update: UpdateRouteCalls = 1, force = False
+Node.py: (Node2)@2001600000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.38333333333333336, 0.2826086956521739, 0.1276595744680851], maxlen=5), packets_serviced=6, packets_received=47
+Called Update: UpdateRouteCalls = 2, force = False
+Called Update: UpdateRouteCalls = 3, force = False
+Node.py: (Node4)@2001600000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.3442622950819672, 0.4166666666666667, 0.11627906976744186], maxlen=5), packets_serviced=5, packets_received=43
+Called Update: UpdateRouteCalls = 4, force = False
+Called Update: UpdateRouteCalls = 5, force = False
+Node.py: (Node6)@2001600000000.0: Updated MCS from 1 to 1, hist=deque([1.0, 0.2962962962962963, 0.08247422680412371, 0.2222222222222222], maxlen=5), packets_serviced=12, packets_received=54
+Called Update: UpdateRouteCalls = 6, force = False
+Called Update: UpdateRouteCalls = 7, force = False
+Called Update: UpdateRouteCalls = 8, force = False
+Called Update: UpdateRouteCalls = 9, force = False
+Called Update: UpdateRouteCalls = 10, force = False
+Called Update: UpdateRouteCalls = 11, force = False
+Called Update: UpdateRouteCalls = 12, force = False
+Called Update: UpdateRouteCalls = 13, force = False
+Called Update: UpdateRouteCalls = 14, force = False
+Called Update: UpdateRouteCalls = 15, force = False
+Called Update: UpdateRouteCalls = 16, force = False
+Called Update: UpdateRouteCalls = 17, force = False
+Called Update: UpdateRouteCalls = 18, force = False
+!! UPDATING !!
+routeNo, updatedMCSIndex =  0 [0, 1, 1, 1]

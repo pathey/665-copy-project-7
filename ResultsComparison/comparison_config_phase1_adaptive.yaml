@@ -22,15 +22,15 @@ energy_rolling_window: 50
 energy_nth: 1
 output_dir: comparison_plots_phase1_adaptive
 files:
-- ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/all_stats_500m_mcs_adaptive_1Mbps.csv
-- ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/all_stats_500m_mcs_adaptive_2Mbps.csv
-- ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/all_stats_500m_mcs_adaptive_3Mbps.csv
-- ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/all_stats_1000m_mcs_adaptive_1Mbps.csv
-- ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/all_stats_1000m_mcs_adaptive_2Mbps.csv
-- ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/all_stats_1000m_mcs_adaptive_3Mbps.csv
-- ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/all_stats_1200m_mcs_adaptive_1Mbps.csv
-- ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/all_stats_1200m_mcs_adaptive_2Mbps.csv
-- ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/all_stats_1200m_mcs_adaptive_3Mbps.csv
+- ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps/all_stats.csv
+- ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps/all_stats.csv
+- ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps/all_stats.csv
+- ./Results/phase1_daisy_1000m_mcs_adaptive_1Mbps/all_stats.csv
+- ./Results/phase1_daisy_1000m_mcs_adaptive_2Mbps/all_stats.csv
+- ./Results/phase1_daisy_1000m_mcs_adaptive_3Mbps/all_stats.csv
+- ./Results/phase1_daisy_1200m_mcs_adaptive_1Mbps/all_stats.csv
+- ./Results/phase1_daisy_1200m_mcs_adaptive_2Mbps/all_stats.csv
+- ./Results/phase1_daisy_1200m_mcs_adaptive_3Mbps/all_stats.csv
 - ./Results/phase1_daisy_500m_mcs_adaptive_1Mbps_0.5increment_threshold/all_stats.csv
 - ./Results/phase1_daisy_500m_mcs_adaptive_2Mbps_0.5increment_threshold/all_stats.csv
 - ./Results/phase1_daisy_500m_mcs_adaptive_3Mbps_0.5increment_threshold/all_stats.csv
