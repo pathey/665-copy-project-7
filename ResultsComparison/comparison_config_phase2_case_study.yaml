@@ -1,0 +1,73 @@
+output_dir: comparison_plots_phase2_case_study
+include_run_no: false
+show: false
+skip_bar_plots: false
+graphs:
+- bar_plots
+- delay_overlay
+- energy_consumption
+graph_group_size: 9
+delay_window: 100
+delay_nth: 5
+delay_scatter_alpha: 0.2
+delay_recursive: false
+files:
+- ./Results/phase2_crossflow_1000m_mcs0_2Mbps/all_stats.csv
+- ./Results/phase2_crossflow_1000m_mcs1_2Mbps/all_stats.csv
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps/all_stats.csv
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.5increment_threshold/all_stats.csv
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.9increment_threshold/all_stats.csv
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.75decrement_threshold/all_stats.csv
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.95decrement_threshold/all_stats.csv
+
+labels:
+- 1000m_2Mbps_mcs0
+- 1000m_2Mbps_mcs1
+- 1000m_2Mbps_mcs_adaptive_base_threshold
+- 1000m_2Mbps_0.5inc_dec0.85
+- 1000m_2Mbps_0.9inc_dec0.85
+- 1000m_2Mbps_0.7inc_dec0.75
+- 1000m_2Mbps_0.7inc_dec0.95
+
+delay_dirs:
+- ./Results/phase2_crossflow_1000m_mcs0_2Mbps/
+- ./Results/phase2_crossflow_1000m_mcs1_2Mbps/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.5increment_threshold/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.9increment_threshold/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.75decrement_threshold/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.95decrement_threshold/
+
+delay_labels:
+- 1000m_2Mbps_mcs0
+- 1000m_2Mbps_mcs1
+- 1000m_2Mbps_mcs_adaptive_base_threshold
+- 1000m_2Mbps_0.5inc_dec0.85
+- 1000m_2Mbps_0.9inc_dec0.85
+- 1000m_2Mbps_0.7inc_dec0.75
+- 1000m_2Mbps_0.7inc_dec0.95
+
+energy_dirs:
+- ./Results/phase2_crossflow_1000m_mcs0_2Mbps/
+- ./Results/phase2_crossflow_1000m_mcs1_2Mbps/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.5increment_threshold/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.9increment_threshold/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.75decrement_threshold/
+- ./Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.95decrement_threshold/
+
+
+energy_labels:
+- 1000m_2Mbps_mcs0
+- 1000m_2Mbps_mcs1
+- 1000m_2Mbps_mcs_adaptive_base_threshold
+- 1000m_2Mbps_0.5inc_dec0.85
+- 1000m_2Mbps_0.9inc_dec0.85
+- 1000m_2Mbps_0.7inc_dec0.75
+- 1000m_2Mbps_0.7inc_dec0.95
+
+energy_recursive: false
+energy_time_column: First Tx At (in s)
+energy_rate_column: Min. Data Rate Along Route (in Mbps)
+energy_rolling_window: 50
+energy_nth: 1
