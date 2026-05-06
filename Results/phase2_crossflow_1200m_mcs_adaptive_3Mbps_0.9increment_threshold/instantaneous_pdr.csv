@@ -1,0 +1,11 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2000.7-2001.7,183,270,1.4754098360655739,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2001.7-2002.7,183,186,1.0163934426229508,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2002.7-2003.7,183,187,1.0218579234972678,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2003.7-2004.7,183,183,1.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2004.7-2005.7,183,182,0.994535519125683,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2005.7-2006.7,183,185,1.010928961748634,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2006.7-2007.7,183,180,0.9836065573770492,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2007.7-2008.7,183,184,1.005464480874317,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2008.7-2009.7,183,185,1.010928961748634,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv
+2009.7-2010.7,62,65,1.0483870967741935,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs_adaptive_3Mbps_0.9increment_threshold/Flow_Node0-Node8.csv

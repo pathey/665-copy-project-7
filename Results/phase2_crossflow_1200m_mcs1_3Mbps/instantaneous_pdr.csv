@@ -1,0 +1,12 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2000.8-2001.8,183,239,1.3060109289617485,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2001.8-2002.8,183,157,0.8579234972677595,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2002.8-2003.8,183,152,0.8306010928961749,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2003.8-2004.8,183,155,0.8469945355191257,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2004.8-2005.8,183,168,0.9180327868852459,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2005.8-2006.8,183,174,0.9508196721311475,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2006.8-2007.8,183,148,0.8087431693989071,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2007.8-2008.8,183,167,0.912568306010929,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2008.8-2009.8,183,170,0.9289617486338798,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2009.8-2010.8,31,146,4.709677419354839,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
+2010.8-2011.8,0,104,104.0,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1200m_mcs1_3Mbps/Flow_Node0-Node8.csv
