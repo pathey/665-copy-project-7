@@ -1,16 +1,16 @@
 Rows with invalid delay (0 or inf):
-                              Pkt ID  ... Data Rate at Flow Src (in Mbps)
-172   2000945315722_Node0_Node8_Zero  ...                              11
-191   2001049147103_Node0_Node8_Zero  ...                              11
-202   2001109246714_Node0_Node8_Zero  ...                              11
-204   2001120180388_Node0_Node8_Zero  ...                              11
-470   2002573818626_Node0_Node8_Zero  ...                              11
-...                              ...  ...                             ...
-1825  2009978133389_Node0_Node8_Zero  ...                              11
-1826  2009983597708_Node0_Node8_Zero  ...                              11
-1827  2009989064035_Node0_Node8_Zero  ...                              11
-1828  2009994531854_Node0_Node8_Zero  ...                              11
-1829  2010000001016_Node0_Node8_Zero  ...                              11
+                              Pkt ID                        Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
+172   2000945315722_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+191   2001049147103_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+202   2001109246714_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+204   2001120180388_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+470   2002573818626_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+...                              ...                          ...  ...                                   ...                              ...
+1825  2009978133389_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+1826  2009983597708_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+1827  2009989064035_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+1828  2009994531854_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
+1829  2010000001016_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               11
 
 [1188 rows x 14 columns]
 Parent directory is not in 'WARx' format.

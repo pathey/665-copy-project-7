@@ -1,16 +1,16 @@
 Rows with invalid delay (0 or inf):
-                             Pkt ID  ... Data Rate at Flow Src (in Mbps)
-0    2000016392412_Node0_Node8_Zero  ...                              33
-1    2000032790479_Node0_Node8_Zero  ...                              33
-2    2000049186541_Node0_Node8_Zero  ...                              33
-3    2000065578020_Node0_Node8_Zero  ...                              33
-4    2000081976387_Node0_Node8_Zero  ...                              33
-..                              ...  ...                             ...
-604  2009917953546_Node0_Node8_Zero  ...                              22
-605  2009934348501_Node0_Node8_Zero  ...                              22
-607  2009967134589_Node0_Node8_Zero  ...                              22
-609  2009999926508_Node0_Node8_Zero  ...                              22
-610  2010016317578_Node0_Node8_Zero  ...                              22
+                             Pkt ID                        Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
+0    2000016392412_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+1    2000032790479_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+2    2000049186541_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+3    2000065578020_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+4    2000081976387_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+..                              ...                          ...  ...                                   ...                              ...
+604  2009917953546_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               22
+605  2009934348501_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               22
+607  2009967134589_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               22
+609  2009999926508_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               22
+610  2010016317578_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               22
 
 [234 rows x 14 columns]
 Parent directory is not in 'WARx' format.
@@ -35,13 +35,13 @@ node 8 total drops: 0 drop_expiry 0 715 drop_q_mngmnt 0 0 drop_retry 0 652 drop_
 Instantaneous PDR data saved to /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/instantaneous_pdr.csv
 
 === Flow-level Summary (All Metrics) ===
-                            Pkt ID  ...             Base Packet ID
-68  2001131153175_Node0_Node8_Zero  ...  2001131153175_Node0_Node8
-73  2001213124082_Node0_Node8_Zero  ...  2001213124082_Node0_Node8
-74  2001229521042_Node0_Node8_Zero  ...  2001229521042_Node0_Node8
-79  2001311489663_Node0_Node8_Zero  ...  2001311489663_Node0_Node8
-81  2001344274690_Node0_Node8_Zero  ...  2001344274690_Node0_Node8
-94  2001557362614_Node0_Node8_Zero  ...  2001557362614_Node0_Node8
+                            Pkt ID                        Route  ...  Data Rate at Flow Src (in Mbps)             Base Packet ID
+68  2001131153175_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                               22  2001131153175_Node0_Node8
+73  2001213124082_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                               22  2001213124082_Node0_Node8
+74  2001229521042_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                               22  2001229521042_Node0_Node8
+79  2001311489663_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                               22  2001311489663_Node0_Node8
+81  2001344274690_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                               22  2001344274690_Node0_Node8
+94  2001557362614_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                               11  2001557362614_Node0_Node8
 
 [6 rows x 15 columns]
 

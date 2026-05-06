@@ -1,6 +1,6 @@
 File Path,Run No,Packets Generated,Packets Received,PDR,Avg Delay,#Retransmissions,#Forwards,Avg Route Length,%Route Uptime,%HQ Route Uptime,Route Switches,Packet Drop (Expiry),Packet Drop (Queue Management),Packet Drop (Retry),Packet Drop (Overflow),Packet Drop (No Route),Packet Reinserted (TCP),Flow_ID
-/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv,1,610,106,0.1737704918032787,2.6167746132075473,5796,706,8.0,1.0,1.0,0,812,0,414,0,0,0,Flow_Node0-Node8
-Mean,,610.0,106.0,0.1737704918032787,2.6167746132075473,5796.0,706.0,8.0,1.0,1.0,0.0,,,,,,,
-Median,,610.0,106.0,0.1737704918032787,2.6167746132075473,5796.0,706.0,8.0,1.0,1.0,0.0,,,,,,,
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_1000m_mcs_adaptive_1Mbps_0.95decrement_threshold/Flow_Node0-Node8.csv,1,611,121,0.19803600654664485,1.5869424214876033,9826,108,8.0,1.0,1.0,0,835,0,985,0,0,0,Flow_Node0-Node8
+Mean,,611.0,121.0,0.19803600654664485,1.5869424214876033,9826.0,108.0,8.0,1.0,1.0,0.0,,,,,,,
+Median,,611.0,121.0,0.19803600654664485,1.5869424214876033,9826.0,108.0,8.0,1.0,1.0,0.0,,,,,,,
 95% CI Lower,,,,,,,,,,,,,,,,,,
 95% CI Upper,,,,,,,,,,,,,,,,,,
