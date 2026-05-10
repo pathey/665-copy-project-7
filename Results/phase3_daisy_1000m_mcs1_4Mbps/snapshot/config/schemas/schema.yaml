@@ -1,0 +1,630 @@
+__effects__: "config/cfg/*.yaml"
+
+Config:
+  ### Storage location
+  RESULTS_FOLDER:
+    type: string
+    type-hint: str
+    description: Stores logs and stats
+    default: "./../Results/"
+    ask_user: "Enter the folder to store results. Recommended: './../Results/[DATE]/[EXPERIMENT_NAME]/[RUN_NAME]/' (REMEMBER TO INCLUDE THE '/' AT THE END)"
+  NETWORK_GRAPHS:
+    type: string
+    type-hint: str
+    description: Stores topology graphs
+    default: {eval: '${RESULTS_FOLDER} + "NetworkGraphs/"'}
+  PHEROMONE_GRAPHS:
+    type: string
+    type-hint: str
+    description: Stores pheromone graphs
+    default: {eval: '${RESULTS_FOLDER} + "PheromoneGraphs/"'}
+  TRAJECTORY_FOLDER:
+    type: string
+    type-hint: str
+    description: Stores node trajectories
+    default: {eval: '${RESULTS_FOLDER} + "nodeTrajectories/"'}
+  DISTANCE_TRANSMISSON_POWER_FOLDER:
+    type: string
+    type-hint: str
+    description: "ANDRES: new storage locations for the distance-transmission power graph"
+    default: {eval: '${RESULTS_FOLDER} + "DynamicTransmissionPower/"'}
+  PRINT_LOGS:
+    type: boolean
+    type-hint: bool
+    description: Print verbose logs during the simulation.
+    default: false
+    ask_user: "Do you want to print verbose logs? (You might want to reduce simulation time) (yes/1/true)"
+  PRINT_LOG_TOPOLOGY_METRICS:
+    type: boolean
+    type-hint: bool
+    description: Log network topology details (NNC,AND,G,Nbs) into log_runX.out()
+    default: true
+  SNAPSHOT_CODE:
+    type: boolean
+    type-hint: bool
+    description: Create a spanshot of the code in a RESULTS_FOLDER+"snapshot"
+    default: true
+  
+  ### Configuration flags
+  ENABLE_MCS_SNR:
+    type: boolean
+    type-hint: bool
+    description: Use adaptive MCS based on SNR
+    default: false
+  CHANNEL_AWARE_ROUTE_COMPUTATION:
+    type: boolean
+    type-hint: bool
+    description: Create link between a node pair based on current interference & GPS locations at both nodes. If false, only GPS locations are used to decide if a link exist between a node pair. Does not consider current interfence level. This is useful in presence of external interference.
+    default: true
+  ENABLE_PACKET_REINSERTION:
+    type: boolean
+    type-hint: bool
+    description: If true, reinsert packets at source (as done in TCP)
+    default: false
+  MOBILE_SCENARIO:
+    type: boolean
+    type-hint: bool
+    description: Disable to create static network topology
+    default: false
+    ask_user: "Do you want a mobile scenario? Otherwise, a static scenario will be used? (yes/1/true)"
+  STATIC_TOPOLOGY_PATH:
+    type: string
+    type-hint: str
+    description: Path to static topology file or folder. If using positions, path should be to file containing positions. If using time, path should be to a folder with Node{i}.txt, with "pos_x, pos_y" in each line for position at time corresponding to line number.
+    default: {eval: '${TRAJECTORY_FOLDER}+"positions/NodePositions.txt"'}
+    ask_user: "What is the path to the topology which you want to use?"
+    ask_user_when:
+      MOBILE_SCENARIO: false
+  FORCED_ROUTES:
+    type: array
+    type-hint: list[list[int]]
+    description: Uses specified Routes instead of Target to Base Stations
+    default: {eval: "[]"}
+    ask_user: "What routes do you want to force? Enter a list of pairs, e.g. [[1,4],[6,7]]"
+    ask_user_when:
+      MOBILE_SCENARIO: false
+  FORCED_ROUTE_MCS:
+    type: object
+    type-hint: dict[int, dict[int, int]]
+    description: Route Number -> (Node ID -> MCS)
+    default: {eval: "{}"}
+    ask_user: "What MCS do you want to force? {RouteNumber:{NodeID:MCS}}"
+    ask_user_when:
+      MOBILE_SCENARIO: false
+  EXT_INTERFERENCE:
+    type: object
+    type-hint: dict[int, float]
+    description: Node id -> External Interferece experienced by that node
+    default: {eval: "{}"}
+  ENABLE_Q_MNGMNT:
+    type: boolean
+    type-hint: bool
+    description: If true, it will discard packets based on their survivability score, and rearrange them based on their survivability score and priority.
+    default: true
+  USE_FLOW_PRIORITY:
+    type: boolean
+    type-hint: bool
+    description: If false, each flow has the same priroity. Else, flow priority = route index number, assigned at the start of the simulation.
+    default: false
+  STRICT_ROUTE_SELECTION:
+    type: boolean
+    type-hint: bool
+    description: If true, routes with same cost are sorted by length, and IDs before being selected. Else, routes with same cost are selected randomly.
+    default: true
+  QUEUE_MANAGEMENT_PLUS:
+    type: boolean
+    type-hint: bool
+    description: Enable code from Marcus regarding improvements on queue management
+    default: false
+  CSMA_CA_BACKOFF:
+    type: boolean
+    type-hint: bool
+    description: Enable code from Marcus regarding reduced backoff in certain conditions
+    default: false
+  PRIORITY_BASED_ROUTING:
+    type: boolean
+    type-hint: bool
+    description: Enable code from Marcus regarding route reservation and reshuffling route update based on priority
+    default: false
+  ENABLE_POWER_CONTROL:
+    type: boolean
+    type-hint: bool
+    description: Ability to enable the power control scheme. Each node transmits the packets at the power necessary for the maximum distance link on the route (either next hop or previous hop)
+    default: false
+  ENABLE_CONGESTION_DETECTION:
+    type: boolean
+    type-hint: bool
+    description: "ANDRES: Ability to enable the modification of MCS and power depending on the congestion (NOT FINISHED YET)"
+    default: false
+  CONGESTION_BASED_MCS:
+    type: boolean
+    type-hint: bool
+    description: "AT: Automatically detect congestion and increase or decrease MCS as necessary"
+    default: false
+  ROUTES_WITH_CONGESTION_BASED_MCS:
+    type: array
+    type-hint: list[int]
+    description: Index of routes of whose nodes will do congestion detection
+    default: {eval: '[]'}
+  CONGESTION_BASED_MCS_INCREMENT_THRESHOLD:
+    type: number
+    type-hint: float
+    description: Threshold to increment MCS idx when using congestion based MCS
+    default: 0.7
+  CONGESTION_BASED_MCS_DECREMENT_THRESHOLD:
+    type: number
+    type-hint: float
+    description: Threshold to decrement MCS idx when using congestion based MCS
+    default: 0.85
+  CONGESTION_BASED_MCS_INCREMENT_STEP:
+    type: number
+    type-hint: int
+    description: Steps to increment MCS idx by when incrementing using congestion based MCS
+    default: 1
+  CONGESTION_BASED_MCS_DECREMENT_STEP:
+    type: number
+    type-hint: int
+    description: Steps to decrement MCS idx by when decrementing using congestion based MCS
+    default: 1
+  ENABLE_INDIVIDUAL_PKT_SINR:
+    type: boolean
+    type-hint: bool
+    description: Calculate SINR value for each individual packet in a combined packet, instead of the whole packet
+    default: true
+
+  ### Flow related parameters
+  MAX_MAC_PAYLOAD_LENGTH:
+    type: number
+    type-hint: int
+    description: "Sh: Max payload (MSDU) is 2304 bytes. +8 bytes for encryption using WEP. In MSDU, actual data from Application is 2048 bytes, 256 bytes for upper layer headers.\n Check two links: 1. Chris_Hyde's reply on Aug 5, 2005: https://www.cwnp.com/forums/posts?postNum=307311, 2. Table 3-1 at https://www.oreilly.com/library/view/80211ac-a-survival/9781449357702/ch03.html"
+    default: {eval: 2312*8}
+  BASE_PAYLOAD_LENGTH:
+    type: number
+    type-hint: int
+    description: Base payload length for a single packet. Used for computing the NAV duration.
+    default: {eval: "${MAX_MAC_PAYLOAD_LENGTH}"}
+  USE_PACKET_AGGREGATION:
+    type: boolean
+    type-hint: bool
+    description: Aggregate multiple packets into one based on MCS Index
+    default: false
+  PACKET_LOSS_RATE:
+    type: number
+    type-hint: float
+    description: Use 0.01 if 1% of packets are corrupted
+    default: 0.00
+  PAYLOAD_DATA_RATE:
+    type: array
+    type-hint: list[float]
+    description: in Mbps
+    default: {eval: "[1.5, 1.5, 1.5]"}
+    ask_user: "What data rate do you want to use? Enter an array with a number (in Mbps) for each flow."
+  TARGET_PKT_GENERATION_RATE:
+    type: array
+    type-hint: list[float]
+    description: "Sh: 61 pkts/s @ 2 kB pkt size = 1 Mbps data rate (for payload)"
+    default: {eval: "[round(61 * i) for i in ${PAYLOAD_DATA_RATE}]"}
+  PACKET_INTER_ARRIVAL_TIME:
+    type: array
+    type-hint: list[float]
+    description: "MC: Time in ns"
+    default: {eval: "[1e9 * (1.0/i) for i in ${TARGET_PKT_GENERATION_RATE}]"}
+  PACKET_TTL:
+    type: number
+    type-hint: float
+    description: "Sh: in ns. Use simpy.core.Infinity for non time sensitive flows."
+    default: {eval: "3*1e9"}
+
+
+  ### SIMULATION PARAMETERS
+  MOBILITY_MODEL:
+    type: string
+    type-hint: str
+    default: "TCPIPE_BSCAP_"
+    description: '"TCPIPE_BSCAP_" for TC-PIPE model, "BSCAP_" for BSCAP model.'
+  AREA_X:
+    type: number
+    type-hint: float
+    description: in meters. Depends on the coordinates fed from files stored in node trajectories folder
+    default: 8000
+    ask_user: "What is the size of the area you want to use? The area will be a square NxN meters.\nBSCAP will attempt to spread the nodes throughout this area; choose number of nodes and area accordingly"
+    ask_user_when:
+      MOBILE_SCENARIO: true
+  AREA_Y:
+    type: number
+    type-hint: float
+    description: in meters. Depends on the coordinates fed from files stored in node trajectories folder
+    default: {eval: "${AREA_X}"}
+  NUMBER_OF_BS:
+    type: number
+    type-hint: int
+    enum: [0, 1, 2, 4]
+    description: Number of Base Stations; Set routes using FORCED_ROUTES if 0 BS.
+    default: 4
+    ask_user: "How many base stations should be on the map?"
+    ask_user_when:
+      MOBILE_SCENARIO: true
+  NUMBER_OF_NODES:
+    type: number
+    type-hint: int
+    description: Number of all nodes (regular + BS)
+    default: {eval: "${NUMBER_OF_BS} + 50"}
+    ask_user: "How many nodes (regular + BS) should be on the map?"
+    ask_user_when:
+      MOBILE_SCENARIO: true
+  MAX_QUEUE_SIZE:
+    type: number
+    type-hint: int
+    description: Max packets a node can store in its MAC queue. Use any value <= 0 for infinite buffer queue.
+    default: 2000
+  NODE_SPEED:
+    type: number
+    type-hint: float
+    enum: [20, 40, 50]
+    description: Speed of nodes in m/s.
+    default: 20
+    ask_user: "Enter the speed of nodes in m/s from: (20, 40, 50)"
+    ask_user_when:
+      MOBILE_SCENARIO: true
+  LLT_SAMPLE_FILE:
+    type: string
+    type-hint: str
+    description: .dat file with LLT samples for GM mobility model at a given transmission range (km) and node speed (m/s)
+    default: {eval: '"GM_RelavantSamples1.2km" + str(${NODE_SPEED}) + "m-s.dat"'}
+  PKT_GENERATION_START_SEC:
+    type: number
+    type-hint: float
+    description: In seconds. Wait until setup is complete.
+    default: 2000
+    ask_user: "When should packet generation start? In seconds."
+  PKT_GENERATION_END_SEC:
+    type: number
+    type-hint: float
+    description: In seconds. Generate packets until this time.
+    default: 2100
+    ask_user: "When should packet generation end? In seconds."
+  PKT_GENERATION_START_TIME:
+    type: number
+    type-hint: float
+    description: in ns. Wait until setup is complete.
+    default: {eval: "${PKT_GENERATION_START_SEC} * 1e9"}
+  PKT_GENERATION_END_TIME:
+    type: number
+    type-hint: float
+    description: in ns. Generate packets until this time.
+    default: {eval: "${PKT_GENERATION_END_SEC} * 1e9"}
+  SIM_TIME:
+    type: number
+    type-hint: float
+    description: "Sh: Simulation run time, in ns. Run for a little longer time (here, TTL + 1 s) to allow queued packets to reach destination node before terminating simulation."
+    default: {eval: "${PKT_GENERATION_END_TIME} + (${PACKET_TTL} if (${PACKET_TTL} != simpy.core.Infinity) else 0) + 1e9"}
+  
+  # Sh: Packet Status Codes
+  PKT_FORWARDED_SUCCESSFULLY:
+    type: number
+    type-hint: int
+    default: 0
+  PKT_DROPPED:
+    type: number
+    type-hint: int
+    default: 1
+  DROP_REASON_OVERFLOW:
+    type: string
+    type-hint: str
+    default: 'Overflow'
+  DROP_REASON_EXPIRY:
+    type: string
+    type-hint: str
+    default: 'Expiry'
+  DROP_REASON_Q_MNGMNT:
+    type: string
+    type-hint: str
+    default: 'QueueManagement'
+  DROP_REASON_RETRYLIMIT:
+    type: string
+    type-hint: str
+    default: 'RetryLimit'
+  DROP_REASON_NO_ROUTE:
+    type: string
+    type-hint: str
+    default: 'NoRoute'
+  WAITING_FOR_TX:
+    type: string
+    type-hint: str
+    default: "Still in Queue"
+  MCS_SNR_TABLE:
+    type: object
+    type-hint: dict[int, MCSTableEntry]
+    description: "Example MCS SINR Table used by us"
+    default: 
+      eval: |
+        {
+          0:{'Modulation':'BPSK','Coding':1/2,'MinSNR(dB)':2,'MinSNR':1.5849,'DataRate':11},
+          1:{'Modulation':'QPSK','Coding':1/2,'MinSNR(dB)':5,'MinSNR':3.1623,'DataRate':22},
+          2:{'Modulation':'QPSK','Coding':3/4,'MinSNR(dB)':9,'MinSNR':7.9433,'DataRate':33},
+          3:{'Modulation':'16-QAM','Coding':1/2,'MinSNR(dB)':11,'MinSNR':12.5893,'DataRate':44}
+        }
+  DEFAULT_DATA_MCS_INDEX:
+    type: number
+    type-hint: int
+    default: 0
+    ask_user: "What MCS should data packets use by default?"
+  MAX_DATA_MCS_INDEX:
+    type: number
+    type-hint: int
+    default: {eval: "min(1, len(${MCS_SNR_TABLE})-1)"}
+  CONTROL_MCS_INDEX:
+    type: number
+    type-hint: int
+    default: 0
+  CHANNEL_MHz:
+    type: number
+    type-hint: float
+    default: 40
+
+  ### RADIO PARAMETERS
+  FREQUENCY:
+    type: number
+    type-hint: float
+    description: "2.4 * 1e9 -> 2.4 GHz"
+    default: {eval: "2.4 * 1e9"}
+  WAVELENGTH:
+    type: number
+    type-hint: float
+    default: {eval: "c/${FREQUENCY}"}
+  RADIO_SWITCHING_TIME:
+    type: number
+    type-hint: float
+    description: nanoseconds
+    default: 100
+  STEP_SIZE:
+    type: number
+    type-hint: float
+    description: To reduce computation time. Higher value reduces resolution which can result in losing track of packets
+    default: 10
+  RADIO_SENSITIVITY:
+    type: number
+    type-hint: float
+    description: "power under which signal is not sensed. = -102 dBm # Sh: rx sensitivity must be lower than noise floor."
+    default: 6.31e-14
+  NOISE_FLOOR:
+    type: number
+    type-hint: float
+    description: "20 MHz BW @ 300 K Temp = -101 dBm. See https://en.wikipedia.org/wiki/Johnson%E2%80%93Nyquist_noise#:~:text=.-,Noise%20power%20in%20decibels,-%5Bedit%5D"
+    default: 7.94e-14
+
+  MIN_MIN_REQUIRED_SINR:
+    type: number
+    type-hint: float
+    description: "Sh: Min of min required SINR in the MCS-SNR table (at MCS0)"
+    default: {eval: "${MCS_SNR_TABLE}[${DEFAULT_DATA_MCS_INDEX}]['MinSNR']"}
+  MAX_MIN_REQUIRED_SINR:
+    type: number
+    type-hint: float
+    description: "Sh: Max of min required SINR in the MCS-SNR table (at MCS7)"
+    default: {eval: "${MCS_SNR_TABLE}[len(${MCS_SNR_TABLE})-1]['MinSNR']"}
+
+  ### MAC PARAMETERS
+  SLOT_DURATION:
+    type: number
+    type-hint: float
+    description: 20000 -> 20 microseconds, 802.11g 2.4 GHz
+    default: 20000
+  SIFS_DURATION:
+    type: number
+    type-hint: float
+    description: 10000 -> 10 microseconds, 802.11g 2.4 GHz
+    default: 10000
+  DIFS_DURATION:
+    type: number
+    type-hint: float
+    default: {eval: "${SIFS_DURATION} + (2 * ${SLOT_DURATION})"}
+  RTS_LENGTH:
+    type: number
+    type-hint: int
+    description: "AT: Added 4 bytes for intf_power"
+    default: {eval: "20*8 + 4*8"}
+  CTS_LENGTH:
+    type: number
+    type-hint: int
+    description: "AT: Added 4 bytes for intf_power"
+    default: {eval: "14*8 + 4*8"}
+  MAC_HEADER_LENGTH:
+    type: number
+    type-hint: int
+    description: "Sh: 1 byte for MCS index"
+    default: {eval: "30*8 + 1*8"}
+  PHY_HEADER_LENGTH:
+    type: number
+    type-hint: int
+    default: 128
+  ACK_LENGTH:
+    type: number
+    type-hint: int
+    description: "Sh: Same as MAC header length except for the added fields in MAC header. AT: Added 1 byte for to acknowledge each packet in a combined packet"
+    default: {eval: "30*8 + 1*8"}
+  RTS_THRESHOLD:
+    type: number
+    type-hint: int
+    description: "Sh: Use RTS-CTS if data payload size is bigger than the threshold"
+    default: {eval: "255*8"}
+  USE_RTS_CTS:
+    type: boolean
+    type-hint: bool
+    description: "Sh: TODO: Implementaion"
+    default: {eval: "${MAX_MAC_PAYLOAD_LENGTH} > ${RTS_THRESHOLD}"}
+  CW_MIN:
+    type: number
+    type-hint: int
+    default: 16
+  CW_MAX:
+    type: number
+    type-hint: int
+    default: 1024
+  MAX_RETRY_LIMIT:
+    type: number
+    type-hint: int
+    description: Packet retry limit
+    default: 7
+
+  ### Sh: Misc. variables & functions
+  LOCATION_UPDATE_INTERVAL:
+    type: number
+    type-hint: float
+    description: in ns, like 1 * 1e9
+    default: {eval: "1 * 1e9"}
+  QUEUE_UPDATE_INTERVAL:
+    type: number
+    type-hint: float
+    description: in ns, like 0.2 * 1e9
+    default: {eval: "0.2 * 1e9"}
+  TCP_ENABLED:
+    type: boolean
+    type-hint: bool
+    description: Switch between UDP (when false) and TCP (when true)
+    default: False
+  
+  # Route quality thresholds, weights, and queue management related variables
+  DELTA:
+    type: number
+    type-hint: float
+    description: "In second. To prevent packet getting stuck at intermediate nodes due to link break"
+    default: 1.0e+9
+  TH1:
+    type: number
+    type-hint: float
+    description: "Used in the estimated-time-to-destination metric"
+    default: 1.5
+  TH2:
+    type: number
+    type-hint: float
+    description: "Used in the estimated-time-to-destination metric"
+    default: 1.1
+  ALPHA:
+    type: number
+    type-hint: float
+    description: "To normalize interfering link metric"
+    default: 0.3
+  W1:
+    type: number
+    type-hint: float
+    description: "Weights: normalized hop count and interfering links"
+    default: 0.5
+  W2:
+    type: number
+    type-hint: float
+    description: "Weights: normalized hop count and interfering links"
+    default: 0.5
+  HC_THRESHOLD:
+    type: number
+    type-hint: int
+    description: "Used to limit the maximum route length to find in the network. Increasing this value will increase computation time"
+    default: 2
+  SUR_THRESHOLD:
+    type: number
+    type-hint: float
+    description: "Packets with survivability score less than this are discarded from the queue"
+    default: 0.7
+  FIRST_N_PKTS:
+    type: number
+    type-hint: int
+    description: "Consider these many packets starting from head of the line to discard based on their survivability score"
+    default: 50
+
+  # TRAJECTORY_FOLDER 
+  NODE_LOCATION_WAYPOINT_LOG_FLAG:
+    type: boolean
+    type-hint: bool
+    default: true
+
+  ### MOBILITY PARAMETERS
+  MOBILITY:
+    TC_PIPE_mobility_ON:
+      type: boolean
+      type-hint: bool
+      default: {eval: '${MOBILITY_MODEL} == "TCPIPE_BSCAP_"'}
+      description: "1. BSCAP model set TC_PIPE_mobility_ON = False \n2. TC-PIPE model set TC_PIPE_mobility_ON = True"
+
+    NODE_FAILURE_PERCENTAGE:
+      type: number
+      type-hint: float
+      default: 0
+      description: percent of nodes that fail in between 1000 and 3000s
+    
+    MAX_INITIAL_ENERGY:
+      type: number
+      type-hint: float
+      default: 360.0
+      description: Maximum initial energy for a node
+
+    NUM_FAILURES:
+      type: number
+      type-hint: int
+      default: {eval: "int((${NUMBER_OF_NODES} - 1) * (${MOBILITY.NODE_FAILURE_PERCENTAGE} / 100))"}
+      description: Percentage of UAVs that fail between 1000s and 3000s
+    NUM_ACTIVE:
+      type: number
+      type-hint: int
+      default: {eval: "(${NUMBER_OF_NODES} - 1) - ${MOBILITY.NUM_FAILURES}"}
+
+    # Energy thresholds
+    ENERGY_NODE_FAILURE_VALUE:
+      type: number
+      type-hint: float
+      default: 0
+    ENERGY_THRESHOLD:
+      type: number
+      type-hint: float
+      default: {eval: "${MOBILITY.ENERGY_NODE_FAILURE_VALUE} + 10"}
+    ENERGY_RECHARGE_LEVEL:
+      type: number
+      type-hint: float
+      default: {eval: "${MOBILITY.ENERGY_NODE_FAILURE_VALUE} - 10"}
+      description: Recharge after depletion
+
+    # Energy depletion settings
+    MAX_ENERGY_DEPLETION_RATE:
+      type: number
+      type-hint: float
+      default: 0.1
+    ENERGY_DEPLETION_RATE:
+      type: array
+      type-hint: np.typing.NDArray[np.number]
+      default: {eval: "np.full(${NUMBER_OF_NODES} - ${NUMBER_OF_BS}, ${MOBILITY.MAX_ENERGY_DEPLETION_RATE})"}
+      description: uniform node energy depletion rate
+
+    ### TARGETS, BASE STATIONS, ROUTING COST
+    ROUTING_COST_TYPE:
+      type: number
+      type-hint: int
+      default: 1
+      enum: [1, 2, 3]
+      description: "1: Cost Formula based, 2: Hop count based, 3: Closest BS from Target by euclidean distance"
+      ask_user: "Enter the routing cost type: 1: Cost Formula, 2: Least Hops, 3: Closest BS from Target by distance"
+      ask_user_when:
+        MOBILE_SCENARIO: true
+    
+    TARGET_LOCATION:
+      type: array
+      type-hint: list[list[int]]
+      default: {eval: "[]"}
+      description: Array of target locations of form [[x1, y1], [x2, y2], ...]
+      ask_user: "Enter the target locations as an array of target locations of form [[x1, y1], [x2, y2], ...]:"
+      ask_user_when:
+        MOBILE_SCENARIO: true
+    
+    # 0 - left, 1 - right, 2 - bottom, 3 - top
+    # "regular": [[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2, ${AREA_Y}]],
+    # "adjacent": [[${AREA_X}/2, 0.0], [0.0, ${AREA_Y}/2]],
+    # "corner": [[0.0, 0.0], [0.0, ${AREA_Y}], [${AREA_X}, 0.0], [${AREA_X}, ${AREA_Y}]],
+    # "arrow": [[${AREA_X}/2, 0.0], [0.0, 0.0], [0.0, ${AREA_Y}/2], [${AREA_X}, ${AREA_Y}]],
+    # "L": [[0.0, ${AREA_Y}], [0.0, ${AREA_Y}/2], [0.0, 0.0], [${AREA_X}/2, 0.0]]
+    BS_SCHEME:
+      type: array
+      type-hint: list[tuple[float, float]]
+      description: Base station configuration
+      default: 
+        eval: "[[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2, ${AREA_Y}]]"
+      ask_user: "Enter the position(s) of the base station(s) as an array of target locations of form [[x1, y1], [x2, y2], ...]:"
+      ask_user_when:
+        MOBILE_SCENARIO: true

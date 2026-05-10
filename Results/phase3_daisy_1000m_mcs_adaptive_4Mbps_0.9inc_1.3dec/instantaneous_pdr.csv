@@ -1,0 +1,5 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2001.1-2002.1,244,31,0.12704918032786885,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.9inc_1.3dec/Flow_Node0-Node8.csv
+2002.1-2003.1,244,22,0.09016393442622951,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.9inc_1.3dec/Flow_Node0-Node8.csv
+2003.1-2004.1,244,17,0.06967213114754098,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.9inc_1.3dec/Flow_Node0-Node8.csv
+2004.1-2005.1,244,6,0.02459016393442623,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.9inc_1.3dec/Flow_Node0-Node8.csv

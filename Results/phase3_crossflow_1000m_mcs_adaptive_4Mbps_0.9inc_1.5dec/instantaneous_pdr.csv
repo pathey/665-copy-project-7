@@ -1,0 +1,6 @@
+Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
+2001.4-2002.4,244,23,0.0942622950819672,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_4Mbps_0.9inc_1.5dec/Flow_Node0-Node8.csv
+2002.4-2003.4,244,41,0.1680327868852459,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_4Mbps_0.9inc_1.5dec/Flow_Node0-Node8.csv
+2003.4-2004.4,244,38,0.1557377049180328,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_4Mbps_0.9inc_1.5dec/Flow_Node0-Node8.csv
+2004.4-2005.4,244,5,0.020491803278688523,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_4Mbps_0.9inc_1.5dec/Flow_Node0-Node8.csv
+2005.4-2006.4,244,1,0.004098360655737705,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_4Mbps_0.9inc_1.5dec/Flow_Node0-Node8.csv

@@ -1,0 +1,2724 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Config": {
+      "type": "object",
+      "properties": {
+        "RESULTS_FOLDER": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str",
+              "ask_user": "Enter the folder to store results. Recommended: './../Results/[DATE]/[EXPERIMENT_NAME]/[RUN_NAME]/' (REMEMBER TO INCLUDE THE '/' AT THE END)"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Stores logs and stats",
+          "default": "./../Results/"
+        },
+        "NETWORK_GRAPHS": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Stores topology graphs",
+          "default": {
+            "eval": "${RESULTS_FOLDER} + \"NetworkGraphs/\""
+          }
+        },
+        "PHEROMONE_GRAPHS": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Stores pheromone graphs",
+          "default": {
+            "eval": "${RESULTS_FOLDER} + \"PheromoneGraphs/\""
+          }
+        },
+        "TRAJECTORY_FOLDER": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Stores node trajectories",
+          "default": {
+            "eval": "${RESULTS_FOLDER} + \"nodeTrajectories/\""
+          }
+        },
+        "DISTANCE_TRANSMISSON_POWER_FOLDER": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "ANDRES: new storage locations for the distance-transmission power graph",
+          "default": {
+            "eval": "${RESULTS_FOLDER} + \"DynamicTransmissionPower/\""
+          }
+        },
+        "PRINT_LOGS": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool",
+              "ask_user": "Do you want to print verbose logs? (You might want to reduce simulation time) (yes/1/true)"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Print verbose logs during the simulation.",
+          "default": false
+        },
+        "PRINT_LOG_TOPOLOGY_METRICS": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Log network topology details (NNC,AND,G,Nbs) into log_runX.out()",
+          "default": true
+        },
+        "SNAPSHOT_CODE": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Create a spanshot of the code in a RESULTS_FOLDER+\"snapshot\"",
+          "default": true
+        },
+        "ENABLE_MCS_SNR": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Use adaptive MCS based on SNR",
+          "default": false
+        },
+        "CHANNEL_AWARE_ROUTE_COMPUTATION": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Create link between a node pair based on current interference & GPS locations at both nodes. If false, only GPS locations are used to decide if a link exist between a node pair. Does not consider current interfence level. This is useful in presence of external interference.",
+          "default": true
+        },
+        "ENABLE_PACKET_REINSERTION": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "If true, reinsert packets at source (as done in TCP)",
+          "default": false
+        },
+        "MOBILE_SCENARIO": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool",
+              "ask_user": "Do you want a mobile scenario? Otherwise, a static scenario will be used? (yes/1/true)"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Disable to create static network topology",
+          "default": false
+        },
+        "STATIC_TOPOLOGY_PATH": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str",
+              "ask_user": "What is the path to the topology which you want to use?",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": false
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Path to static topology file or folder. If using positions, path should be to file containing positions. If using time, path should be to a folder with Node{i}.txt, with \"pos_x, pos_y\" in each line for position at time corresponding to line number.",
+          "default": {
+            "eval": "${TRAJECTORY_FOLDER}+\"positions/NodePositions.txt\""
+          }
+        },
+        "FORCED_ROUTES": {
+          "anyOf": [
+            {
+              "type": "array",
+              "type-hint": "list[list[int]]",
+              "ask_user": "What routes do you want to force? Enter a list of pairs, e.g. [[1,4],[6,7]]",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": false
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Uses specified Routes instead of Target to Base Stations",
+          "default": {
+            "eval": "[]"
+          }
+        },
+        "FORCED_ROUTE_MCS": {
+          "anyOf": [
+            {
+              "type": "object",
+              "type-hint": "dict[int, dict[int, int]]",
+              "ask_user": "What MCS do you want to force? {RouteNumber:{NodeID:MCS}}",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": false
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Route Number -> (Node ID -> MCS)",
+          "default": {
+            "eval": "{}"
+          }
+        },
+        "EXT_INTERFERENCE": {
+          "anyOf": [
+            {
+              "type": "object",
+              "type-hint": "dict[int, float]"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Node id -> External Interferece experienced by that node",
+          "default": {
+            "eval": "{}"
+          }
+        },
+        "ENABLE_Q_MNGMNT": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "If true, it will discard packets based on their survivability score, and rearrange them based on their survivability score and priority.",
+          "default": true
+        },
+        "USE_FLOW_PRIORITY": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "If false, each flow has the same priroity. Else, flow priority = route index number, assigned at the start of the simulation.",
+          "default": false
+        },
+        "STRICT_ROUTE_SELECTION": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "If true, routes with same cost are sorted by length, and IDs before being selected. Else, routes with same cost are selected randomly.",
+          "default": true
+        },
+        "QUEUE_MANAGEMENT_PLUS": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Enable code from Marcus regarding improvements on queue management",
+          "default": false
+        },
+        "CSMA_CA_BACKOFF": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Enable code from Marcus regarding reduced backoff in certain conditions",
+          "default": false
+        },
+        "PRIORITY_BASED_ROUTING": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Enable code from Marcus regarding route reservation and reshuffling route update based on priority",
+          "default": false
+        },
+        "ENABLE_POWER_CONTROL": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Ability to enable the power control scheme. Each node transmits the packets at the power necessary for the maximum distance link on the route (either next hop or previous hop)",
+          "default": false
+        },
+        "ENABLE_CONGESTION_DETECTION": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "ANDRES: Ability to enable the modification of MCS and power depending on the congestion (NOT FINISHED YET)",
+          "default": false
+        },
+        "CONGESTION_BASED_MCS": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "AT: Automatically detect congestion and increase or decrease MCS as necessary",
+          "default": false
+        },
+        "ROUTES_WITH_CONGESTION_BASED_MCS": {
+          "anyOf": [
+            {
+              "type": "array",
+              "type-hint": "list[int]"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Index of routes of whose nodes will do congestion detection",
+          "default": {
+            "eval": "[]"
+          }
+        },
+        "CONGESTION_BASED_MCS_INCREMENT_THRESHOLD": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Threshold to increment MCS idx when using congestion based MCS",
+          "default": 0.7
+        },
+        "CONGESTION_BASED_MCS_DECREMENT_THRESHOLD": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Threshold to decrement MCS idx when using congestion based MCS",
+          "default": 0.85
+        },
+        "CONGESTION_BASED_MCS_INCREMENT_STEP": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Steps to increment MCS idx by when incrementing using congestion based MCS",
+          "default": 1
+        },
+        "CONGESTION_BASED_MCS_DECREMENT_STEP": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Steps to decrement MCS idx by when decrementing using congestion based MCS",
+          "default": 1
+        },
+        "ENABLE_INDIVIDUAL_PKT_SINR": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Calculate SINR value for each individual packet in a combined packet, instead of the whole packet",
+          "default": true
+        },
+        "MAX_MAC_PAYLOAD_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: Max payload (MSDU) is 2304 bytes. +8 bytes for encryption using WEP. In MSDU, actual data from Application is 2048 bytes, 256 bytes for upper layer headers.\n Check two links: 1. Chris_Hyde's reply on Aug 5, 2005: https://www.cwnp.com/forums/posts?postNum=307311, 2. Table 3-1 at https://www.oreilly.com/library/view/80211ac-a-survival/9781449357702/ch03.html",
+          "default": {
+            "eval": "2312*8"
+          }
+        },
+        "BASE_PAYLOAD_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Base payload length for a single packet. Used for computing the NAV duration.",
+          "default": {
+            "eval": "${MAX_MAC_PAYLOAD_LENGTH}"
+          }
+        },
+        "USE_PACKET_AGGREGATION": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Aggregate multiple packets into one based on MCS Index",
+          "default": false
+        },
+        "PACKET_LOSS_RATE": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Use 0.01 if 1% of packets are corrupted",
+          "default": 0.0
+        },
+        "PAYLOAD_DATA_RATE": {
+          "anyOf": [
+            {
+              "type": "array",
+              "type-hint": "list[float]",
+              "ask_user": "What data rate do you want to use? Enter an array with a number (in Mbps) for each flow."
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in Mbps",
+          "default": {
+            "eval": "[1.5, 1.5, 1.5]"
+          }
+        },
+        "TARGET_PKT_GENERATION_RATE": {
+          "anyOf": [
+            {
+              "type": "array",
+              "type-hint": "list[float]"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: 61 pkts/s @ 2 kB pkt size = 1 Mbps data rate (for payload)",
+          "default": {
+            "eval": "[round(61 * i) for i in ${PAYLOAD_DATA_RATE}]"
+          }
+        },
+        "PACKET_INTER_ARRIVAL_TIME": {
+          "anyOf": [
+            {
+              "type": "array",
+              "type-hint": "list[float]"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "MC: Time in ns",
+          "default": {
+            "eval": "[1e9 * (1.0/i) for i in ${TARGET_PKT_GENERATION_RATE}]"
+          }
+        },
+        "PACKET_TTL": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: in ns. Use simpy.core.Infinity for non time sensitive flows.",
+          "default": {
+            "eval": "3*1e9"
+          }
+        },
+        "MOBILITY_MODEL": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "\"TCPIPE_BSCAP_\" for TC-PIPE model, \"BSCAP_\" for BSCAP model.",
+          "default": "TCPIPE_BSCAP_"
+        },
+        "AREA_X": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float",
+              "ask_user": "What is the size of the area you want to use? The area will be a square NxN meters.\nBSCAP will attempt to spread the nodes throughout this area; choose number of nodes and area accordingly",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": true
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in meters. Depends on the coordinates fed from files stored in node trajectories folder",
+          "default": 8000
+        },
+        "AREA_Y": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in meters. Depends on the coordinates fed from files stored in node trajectories folder",
+          "default": {
+            "eval": "${AREA_X}"
+          }
+        },
+        "NUMBER_OF_BS": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int",
+              "enum": [
+                0,
+                1,
+                2,
+                4
+              ],
+              "ask_user": "How many base stations should be on the map?",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": true
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Number of Base Stations; Set routes using FORCED_ROUTES if 0 BS.",
+          "default": 4
+        },
+        "NUMBER_OF_NODES": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int",
+              "ask_user": "How many nodes (regular + BS) should be on the map?",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": true
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Number of all nodes (regular + BS)",
+          "default": {
+            "eval": "${NUMBER_OF_BS} + 50"
+          }
+        },
+        "MAX_QUEUE_SIZE": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Max packets a node can store in its MAC queue. Use any value <= 0 for infinite buffer queue.",
+          "default": 2000
+        },
+        "NODE_SPEED": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float",
+              "enum": [
+                20,
+                40,
+                50
+              ],
+              "ask_user": "Enter the speed of nodes in m/s from: (20, 40, 50)",
+              "ask_user_when": {
+                "MOBILE_SCENARIO": true
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Speed of nodes in m/s.",
+          "default": 20
+        },
+        "LLT_SAMPLE_FILE": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": ".dat file with LLT samples for GM mobility model at a given transmission range (km) and node speed (m/s)",
+          "default": {
+            "eval": "\"GM_RelavantSamples1.2km\" + str(${NODE_SPEED}) + \"m-s.dat\""
+          }
+        },
+        "PKT_GENERATION_START_SEC": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float",
+              "ask_user": "When should packet generation start? In seconds."
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "In seconds. Wait until setup is complete.",
+          "default": 2000
+        },
+        "PKT_GENERATION_END_SEC": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float",
+              "ask_user": "When should packet generation end? In seconds."
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "In seconds. Generate packets until this time.",
+          "default": 2100
+        },
+        "PKT_GENERATION_START_TIME": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in ns. Wait until setup is complete.",
+          "default": {
+            "eval": "${PKT_GENERATION_START_SEC} * 1e9"
+          }
+        },
+        "PKT_GENERATION_END_TIME": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in ns. Generate packets until this time.",
+          "default": {
+            "eval": "${PKT_GENERATION_END_SEC} * 1e9"
+          }
+        },
+        "SIM_TIME": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: Simulation run time, in ns. Run for a little longer time (here, TTL + 1 s) to allow queued packets to reach destination node before terminating simulation.",
+          "default": {
+            "eval": "${PKT_GENERATION_END_TIME} + (${PACKET_TTL} if (${PACKET_TTL} != simpy.core.Infinity) else 0) + 1e9"
+          }
+        },
+        "PKT_FORWARDED_SUCCESSFULLY": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 0
+        },
+        "PKT_DROPPED": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 1
+        },
+        "DROP_REASON_OVERFLOW": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": "Overflow"
+        },
+        "DROP_REASON_EXPIRY": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": "Expiry"
+        },
+        "DROP_REASON_Q_MNGMNT": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": "QueueManagement"
+        },
+        "DROP_REASON_RETRYLIMIT": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": "RetryLimit"
+        },
+        "DROP_REASON_NO_ROUTE": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": "NoRoute"
+        },
+        "WAITING_FOR_TX": {
+          "anyOf": [
+            {
+              "type": "string",
+              "type-hint": "str"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": "Still in Queue"
+        },
+        "MCS_SNR_TABLE": {
+          "anyOf": [
+            {
+              "type": "object",
+              "type-hint": "dict[int, MCSTableEntry]"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Example MCS SINR Table used by us",
+          "default": {
+            "eval": "{\n  0:{'Modulation':'BPSK','Coding':1/2,'MinSNR(dB)':2,'MinSNR':1.5849,'DataRate':11},\n  1:{'Modulation':'QPSK','Coding':1/2,'MinSNR(dB)':5,'MinSNR':3.1623,'DataRate':22},\n  2:{'Modulation':'QPSK','Coding':3/4,'MinSNR(dB)':9,'MinSNR':7.9433,'DataRate':33},\n  3:{'Modulation':'16-QAM','Coding':1/2,'MinSNR(dB)':11,'MinSNR':12.5893,'DataRate':44}\n}\n"
+          }
+        },
+        "DEFAULT_DATA_MCS_INDEX": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int",
+              "ask_user": "What MCS should data packets use by default?"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 0
+        },
+        "MAX_DATA_MCS_INDEX": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": {
+            "eval": "min(1, len(${MCS_SNR_TABLE})-1)"
+          }
+        },
+        "CONTROL_MCS_INDEX": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 0
+        },
+        "CHANNEL_MHz": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 40
+        },
+        "FREQUENCY": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "2.4 * 1e9 -> 2.4 GHz",
+          "default": {
+            "eval": "2.4 * 1e9"
+          }
+        },
+        "WAVELENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": {
+            "eval": "c/${FREQUENCY}"
+          }
+        },
+        "RADIO_SWITCHING_TIME": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "nanoseconds",
+          "default": 100
+        },
+        "STEP_SIZE": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "To reduce computation time. Higher value reduces resolution which can result in losing track of packets",
+          "default": 10
+        },
+        "RADIO_SENSITIVITY": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "power under which signal is not sensed. = -102 dBm # Sh: rx sensitivity must be lower than noise floor.",
+          "default": 6.31e-14
+        },
+        "NOISE_FLOOR": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "20 MHz BW @ 300 K Temp = -101 dBm. See https://en.wikipedia.org/wiki/Johnson%E2%80%93Nyquist_noise#:~:text=.-,Noise%20power%20in%20decibels,-%5Bedit%5D",
+          "default": 7.94e-14
+        },
+        "MIN_MIN_REQUIRED_SINR": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: Min of min required SINR in the MCS-SNR table (at MCS0)",
+          "default": {
+            "eval": "${MCS_SNR_TABLE}[${DEFAULT_DATA_MCS_INDEX}]['MinSNR']"
+          }
+        },
+        "MAX_MIN_REQUIRED_SINR": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: Max of min required SINR in the MCS-SNR table (at MCS7)",
+          "default": {
+            "eval": "${MCS_SNR_TABLE}[len(${MCS_SNR_TABLE})-1]['MinSNR']"
+          }
+        },
+        "SLOT_DURATION": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "20000 -> 20 microseconds, 802.11g 2.4 GHz",
+          "default": 20000
+        },
+        "SIFS_DURATION": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "10000 -> 10 microseconds, 802.11g 2.4 GHz",
+          "default": 10000
+        },
+        "DIFS_DURATION": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": {
+            "eval": "${SIFS_DURATION} + (2 * ${SLOT_DURATION})"
+          }
+        },
+        "RTS_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "AT: Added 4 bytes for intf_power",
+          "default": {
+            "eval": "20*8 + 4*8"
+          }
+        },
+        "CTS_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "AT: Added 4 bytes for intf_power",
+          "default": {
+            "eval": "14*8 + 4*8"
+          }
+        },
+        "MAC_HEADER_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: 1 byte for MCS index",
+          "default": {
+            "eval": "30*8 + 1*8"
+          }
+        },
+        "PHY_HEADER_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 128
+        },
+        "ACK_LENGTH": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: Same as MAC header length except for the added fields in MAC header. AT: Added 1 byte for to acknowledge each packet in a combined packet",
+          "default": {
+            "eval": "30*8 + 1*8"
+          }
+        },
+        "RTS_THRESHOLD": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: Use RTS-CTS if data payload size is bigger than the threshold",
+          "default": {
+            "eval": "255*8"
+          }
+        },
+        "USE_RTS_CTS": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Sh: TODO: Implementaion",
+          "default": {
+            "eval": "${MAX_MAC_PAYLOAD_LENGTH} > ${RTS_THRESHOLD}"
+          }
+        },
+        "CW_MIN": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 16
+        },
+        "CW_MAX": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": 1024
+        },
+        "MAX_RETRY_LIMIT": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Packet retry limit",
+          "default": 7
+        },
+        "LOCATION_UPDATE_INTERVAL": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in ns, like 1 * 1e9",
+          "default": {
+            "eval": "1 * 1e9"
+          }
+        },
+        "QUEUE_UPDATE_INTERVAL": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "in ns, like 0.2 * 1e9",
+          "default": {
+            "eval": "0.2 * 1e9"
+          }
+        },
+        "TCP_ENABLED": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Switch between UDP (when false) and TCP (when true)",
+          "default": false
+        },
+        "DELTA": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "In second. To prevent packet getting stuck at intermediate nodes due to link break",
+          "default": 1000000000.0
+        },
+        "TH1": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Used in the estimated-time-to-destination metric",
+          "default": 1.5
+        },
+        "TH2": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Used in the estimated-time-to-destination metric",
+          "default": 1.1
+        },
+        "ALPHA": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "To normalize interfering link metric",
+          "default": 0.3
+        },
+        "W1": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Weights: normalized hop count and interfering links",
+          "default": 0.5
+        },
+        "W2": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Weights: normalized hop count and interfering links",
+          "default": 0.5
+        },
+        "HC_THRESHOLD": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Used to limit the maximum route length to find in the network. Increasing this value will increase computation time",
+          "default": 2
+        },
+        "SUR_THRESHOLD": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "float"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Packets with survivability score less than this are discarded from the queue",
+          "default": 0.7
+        },
+        "FIRST_N_PKTS": {
+          "anyOf": [
+            {
+              "type": "number",
+              "type-hint": "int"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Consider these many packets starting from head of the line to discard based on their survivability score",
+          "default": 50
+        },
+        "NODE_LOCATION_WAYPOINT_LOG_FLAG": {
+          "anyOf": [
+            {
+              "type": "boolean",
+              "type-hint": "bool"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "title": "eval"
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "default": true
+        },
+        "MOBILITY": {
+          "type": "object",
+          "properties": {
+            "TC_PIPE_mobility_ON": {
+              "anyOf": [
+                {
+                  "type": "boolean",
+                  "type-hint": "bool"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "1. BSCAP model set TC_PIPE_mobility_ON = False \n2. TC-PIPE model set TC_PIPE_mobility_ON = True",
+              "default": {
+                "eval": "${MOBILITY_MODEL} == \"TCPIPE_BSCAP_\""
+              }
+            },
+            "NODE_FAILURE_PERCENTAGE": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "float"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "percent of nodes that fail in between 1000 and 3000s",
+              "default": 0
+            },
+            "MAX_INITIAL_ENERGY": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "float"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Maximum initial energy for a node",
+              "default": 360.0
+            },
+            "NUM_FAILURES": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "int"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Percentage of UAVs that fail between 1000s and 3000s",
+              "default": {
+                "eval": "int((${NUMBER_OF_NODES} - 1) * (${MOBILITY.NODE_FAILURE_PERCENTAGE} / 100))"
+              }
+            },
+            "NUM_ACTIVE": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "int"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "default": {
+                "eval": "(${NUMBER_OF_NODES} - 1) - ${MOBILITY.NUM_FAILURES}"
+              }
+            },
+            "ENERGY_NODE_FAILURE_VALUE": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "float"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "default": 0
+            },
+            "ENERGY_THRESHOLD": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "float"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "default": {
+                "eval": "${MOBILITY.ENERGY_NODE_FAILURE_VALUE} + 10"
+              }
+            },
+            "ENERGY_RECHARGE_LEVEL": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "float"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Recharge after depletion",
+              "default": {
+                "eval": "${MOBILITY.ENERGY_NODE_FAILURE_VALUE} - 10"
+              }
+            },
+            "MAX_ENERGY_DEPLETION_RATE": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "float"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "default": 0.1
+            },
+            "ENERGY_DEPLETION_RATE": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "type-hint": "np.typing.NDArray[np.number]"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "uniform node energy depletion rate",
+              "default": {
+                "eval": "np.full(${NUMBER_OF_NODES} - ${NUMBER_OF_BS}, ${MOBILITY.MAX_ENERGY_DEPLETION_RATE})"
+              }
+            },
+            "ROUTING_COST_TYPE": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "type-hint": "int",
+                  "enum": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "ask_user": "Enter the routing cost type: 1: Cost Formula, 2: Least Hops, 3: Closest BS from Target by distance",
+                  "ask_user_when": {
+                    "MOBILE_SCENARIO": true
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "1: Cost Formula based, 2: Hop count based, 3: Closest BS from Target by euclidean distance",
+              "default": 1
+            },
+            "TARGET_LOCATION": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "type-hint": "list[list[int]]",
+                  "ask_user": "Enter the target locations as an array of target locations of form [[x1, y1], [x2, y2], ...]:",
+                  "ask_user_when": {
+                    "MOBILE_SCENARIO": true
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Array of target locations of form [[x1, y1], [x2, y2], ...]",
+              "default": {
+                "eval": "[]"
+              }
+            },
+            "BS_SCHEME": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "type-hint": "list[tuple[float, float]]",
+                  "ask_user": "Enter the position(s) of the base station(s) as an array of target locations of form [[x1, y1], [x2, y2], ...]:",
+                  "ask_user_when": {
+                    "MOBILE_SCENARIO": true
+                  }
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "eval": {
+                      "type": "string",
+                      "title": "eval"
+                    }
+                  },
+                  "required": [
+                    "eval"
+                  ],
+                  "additionalProperties": false
+                }
+              ],
+              "description": "Base station configuration",
+              "default": {
+                "eval": "[[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2, ${AREA_Y}]]"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "Config"
+  ]
+}

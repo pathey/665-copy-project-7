@@ -1,0 +1,6 @@
+File Path,Run No,Packets Generated,Packets Received,PDR,Avg Delay,#Retransmissions,#Forwards,Avg Route Length,%Route Uptime,%HQ Route Uptime,Route Switches,Packet Drop (Expiry),Packet Drop (Queue Management),Packet Drop (Retry),Packet Drop (Overflow),Packet Drop (No Route),Packet Reinserted (TCP),Flow_ID
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_2Mbps_1.1inc_1.3dec/Flow_Node0-Node8.csv,1,12200,84,0.006885245901639345,1.7922801785714286,45666,252,8.0,1.0,1.0,0,21303,0,398,0,0,0,Flow_Node0-Node8
+Mean,,12200.0,84.0,0.006885245901639345,1.7922801785714286,45666.0,252.0,8.0,1.0,1.0,0.0,,,,,,,
+Median,,12200.0,84.0,0.006885245901639345,1.7922801785714286,45666.0,252.0,8.0,1.0,1.0,0.0,,,,,,,
+95% CI Lower,,,,,,,,,,,,,,,,,,
+95% CI Upper,,,,,,,,,,,,,,,,,,

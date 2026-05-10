@@ -1,6 +1,2 @@
 Time_Window,Generated_Packets,Received_Packets,Instantaneous_PDR,Flow_ID,File_Path
-2000.3-2001.3,183,83,0.453551912568306,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_500m_mcs_adaptive_3Mbps_0.5increment_threshold/Flow_Node0-Node8.csv
-2001.3-2002.3,183,32,0.17486338797814208,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_500m_mcs_adaptive_3Mbps_0.5increment_threshold/Flow_Node0-Node8.csv
-2002.3-2003.3,154,19,0.12337662337662338,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_500m_mcs_adaptive_3Mbps_0.5increment_threshold/Flow_Node0-Node8.csv
-2003.3-2004.3,183,56,0.30601092896174864,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_500m_mcs_adaptive_3Mbps_0.5increment_threshold/Flow_Node0-Node8.csv
-2004.3-2005.3,183,20,0.1092896174863388,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_500m_mcs_adaptive_3Mbps_0.5increment_threshold/Flow_Node0-Node8.csv
+2000.3-2001.3,5,39,7.8,Flow_Node0-Node8,/home/pathey/Workspace/665/665-copy-project-7/Results/phase2_crossflow_500m_mcs_adaptive_3Mbps_0.5increment_threshold/Flow_Node0-Node8.csv

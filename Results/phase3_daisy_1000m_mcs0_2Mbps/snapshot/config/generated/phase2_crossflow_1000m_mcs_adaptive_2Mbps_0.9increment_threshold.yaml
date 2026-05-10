@@ -1,0 +1,232 @@
+Config:
+  ### Storage location
+  RESULTS_FOLDER: ./../Results/phase2_crossflow_1000m_mcs_adaptive_2Mbps_0.9increment_threshold/
+  NETWORK_GRAPHS:
+    eval: ${RESULTS_FOLDER}+"NetworkGraphs/"
+  PHEROMONE_GRAPHS:
+    eval: ${RESULTS_FOLDER}+"PheromoneGraphs/"
+  TRAJECTORY_FOLDER: ./nodeTrajectories/
+  DISTANCE_TRANSMISSON_POWER_FOLDER:
+    eval: ${RESULTS_FOLDER}+"DynamicTransmissionPower/"
+  
+  ### Configuration flags
+  PRINT_LOGS: false
+  PRINT_LOG_TOPOLOGY_METRICS: true
+  SNAPSHOT_CODE: true
+  
+  ENABLE_MCS_SNR: false # To enable adaptive MCS functionality
+  CHANNEL_AWARE_ROUTE_COMPUTATION: true
+  ENABLE_PACKET_REINSERTION: false
+  MOBILE_SCENARIO: false
+  STATIC_TOPOLOGY_PATH: "./topologies/crossflow_17nodes_1000m.txt"
+
+  FORCED_ROUTES:
+    eval: "[[0,8]]"
+  FORCED_ROUTE_MCS:
+    eval: "{}"
+  EXT_INTERFERENCE:
+    eval: "{}"
+  ENABLE_Q_MNGMNT: false
+  USE_FLOW_PRIORITY: false
+  STRICT_ROUTE_SELECTION: true
+  QUEUE_MANAGEMENT_PLUS: false
+  CSMA_CA_BACKOFF: false
+  PRIORITY_BASED_ROUTING: false
+  ENABLE_POWER_CONTROL: false
+  ENABLE_CONGESTION_DETECTION: false
+  CONGESTION_BASED_MCS: true
+  ROUTES_WITH_CONGESTION_BASED_MCS: # Leave as [] for all routes
+    eval: '[]'
+  CONGESTION_BASED_MCS_INCREMENT_THRESHOLD: 0.9
+  CONGESTION_BASED_MCS_DECREMENT_THRESHOLD: 0.85
+  CONGESTION_BASED_MCS_INCREMENT_STEP: 1
+  CONGESTION_BASED_MCS_DECREMENT_STEP: 1
+
+  TCP_ENABLED: false
+  ENABLE_INDIVIDUAL_PKT_SINR: true
+
+  ### Flow related parameters
+  MAX_MAC_PAYLOAD_LENGTH:
+    eval: '2312*8'
+  
+  BASE_PAYLOAD_LENGTH: 
+    eval: '${MAX_MAC_PAYLOAD_LENGTH}'
+  
+  USE_PACKET_AGGREGATION: true
+  
+  PACKET_LOSS_RATE: 0
+  PAYLOAD_DATA_RATE: # Flow data rate, [in Mbps]. The size of the array should be >= number of flows.
+    eval: '[2]'
+  
+  TARGET_PKT_GENERATION_RATE: 
+    eval: '[round(61 * i) for i in ${PAYLOAD_DATA_RATE}]'
+  
+  PACKET_INTER_ARRIVAL_TIME: 
+    eval: '[1e9 * (1.0/i) for i in ${TARGET_PKT_GENERATION_RATE}]'
+  
+  PACKET_TTL:
+    eval: '3*1e9'
+  
+  ### SIMULATION PARAMETERS
+  MOBILITY_MODEL: 'TCPIPE_BSCAP_'
+  AREA_X: 4000 # For a daisy chain, AREA_X value should be selected as No. of Nodes * Maximum Link Length (distance between adjacent nodes).
+                # If using mobile case, BSCAP will attempt to spread the nodes throughout this area; choose number of nodes and area accordingly
+  AREA_Y:
+    eval: '${AREA_X}'
+  
+  NUMBER_OF_BS: 1 # base station
+  NUMBER_OF_NODES: 9
+  
+  MAX_QUEUE_SIZE:
+    eval: '(max(${PAYLOAD_DATA_RATE}) * 1000000 * ${PACKET_TTL} * (len(${FORCED_ROUTES}) if ${FORCED_ROUTES} else len(${MOBILITY.TARGET_LOCATION})))/(${BASE_PAYLOAD_LENGTH} * 8 * 1000)'
+  
+  NODE_SPEED: 40 # For static case NODE_SPEED will be 0. Select for mobile cases from allowed values.
+  LLT_SAMPLE_FILE: # Not being used now
+    eval: '"GM_RelavantSamples1.2km" + str(${NODE_SPEED}) + "m-s.dat"'
+  
+  PKT_GENERATION_START_SEC: 2000 # Choose based on the time mobility model takes to stabilize
+  PKT_GENERATION_END_SEC:
+    eval: '${PKT_GENERATION_START_SEC} + 10' # For mobile nodes, use 500s
+  PKT_GENERATION_START_TIME:
+    eval: '${PKT_GENERATION_START_SEC} * 1e9'
+  
+  PKT_GENERATION_END_TIME: 
+    eval: '${PKT_GENERATION_END_SEC} * 1e9'
+  
+  SIM_TIME: 
+    eval: '${PKT_GENERATION_END_TIME} + (${PACKET_TTL} if (${PACKET_TTL} != simpy.core.Infinity) else 0) + 1e9'
+  
+  # Sh: Packet Status Codes
+  PKT_FORWARDED_SUCCESSFULLY: 0
+  PKT_DROPPED: 1
+  DROP_REASON_OVERFLOW: 'Overflow'
+  DROP_REASON_EXPIRY: 'Expiry'
+  DROP_REASON_Q_MNGMNT: 'QueueManagement'
+  DROP_REASON_RETRYLIMIT: 'RetryLimit'
+  DROP_REASON_NO_ROUTE: 'NoRoute'
+  WAITING_FOR_TX: 'Still in Queue'
+
+  ### MCS PARAMETERS
+  MCS_SNR_TABLE: # Example MCS SINR Table used by us
+    eval: |
+      {
+        0:{'Modulation':'BPSK','Coding':1/2,'MinSNR(dB)':2,'MinSNR':1.5849,'DataRate':11},
+        1:{'Modulation':'QPSK','Coding':1/2,'MinSNR(dB)':5,'MinSNR':3.1623,'DataRate':22},
+        2:{'Modulation':'QPSK','Coding':3/4,'MinSNR(dB)':9,'MinSNR':7.9433,'DataRate':33},
+        3:{'Modulation':'16-QAM','Coding':1/2,'MinSNR(dB)':11,'MinSNR':12.5893,'DataRate':44}
+      }
+  
+  DEFAULT_DATA_MCS_INDEX: 2 # Select an MCS value from 0, 1, or 2
+  MAX_DATA_MCS_INDEX:
+    eval: min(1, len(${MCS_SNR_TABLE})-1) # Set 1st parameter in min
+  CONTROL_MCS_INDEX: 0 # Will be sent at power calculated using DEFAULT_DATA_MCS_INDEX at this MCS index
+
+  MIN_MIN_REQUIRED_SINR: 
+    eval: '${MCS_SNR_TABLE}[${CONTROL_MCS_INDEX}]["MinSNR"]'
+  
+  MAX_MIN_REQUIRED_SINR: 
+    eval: '${MCS_SNR_TABLE}[len(${MCS_SNR_TABLE})-1]["MinSNR"]'
+  
+  ### RADIO PARAMETERS
+  FREQUENCY:
+    eval: '2.4 * 1e9'
+  
+  WAVELENGTH: 
+    eval: 'c/${FREQUENCY}'
+  
+  RADIO_SWITCHING_TIME: 100
+  STEP_SIZE: 10
+  RADIO_SENSITIVITY: # Corresponds to SINR at CONTROL_MCS_INDEX (2 dB in above table)
+    eval: '${NOISE_FLOOR} * 1.6'
+  NOISE_FLOOR: 
+    eval: '31.6e-14 * 1'
+  
+  ### MAC PARAMETERS
+  SLOT_DURATION: 20000 # 20000 represents 20 microseconds which is 20000 nanoseconds
+  SIFS_DURATION: 10000
+  DIFS_DURATION: 
+    eval: '${SIFS_DURATION} + (2 * ${SLOT_DURATION})'
+  
+  RTS_LENGTH: 
+    eval: '20*8 + 4*8'
+  
+  CTS_LENGTH: 
+    eval: '14*8 + 4*8'
+  
+  MAC_HEADER_LENGTH: 
+    eval: '30*8 + 1*8'
+  
+  PHY_HEADER_LENGTH: 128
+  ACK_LENGTH: 
+    eval: '30*8 + 1*8'
+  
+  RTS_THRESHOLD: 
+    eval: '255*8'
+  
+  USE_RTS_CTS: 
+    eval: '${MAX_MAC_PAYLOAD_LENGTH} > ${RTS_THRESHOLD}'
+  
+  CW_MIN: 16
+  CW_MAX: 1024
+  MAX_RETRY_LIMIT: 7
+
+  ### Sh: Misc. variables & functions
+  LOCATION_UPDATE_INTERVAL: 
+    eval: '1 * 1e9'
+  
+  QUEUE_UPDATE_INTERVAL: 
+    eval: '0.2 * 1e9'
+  
+  # Route quality thresholds, weights, and queue management related variables
+  DELTA: 1000000000
+  TH1: 1.5
+  TH2: 1.1
+  ALPHA: 0.3
+  W1: 0.5
+  W2: 0.5
+  HC_THRESHOLD: 2
+  SUR_THRESHOLD: 0.7
+  FIRST_N_PKTS: 50
+
+  # TRAJECTORY_FOLDER
+  NODE_LOCATION_WAYPOINT_LOG_FLAG: true
+
+  ### MOBILITY PARAMETERS
+  MOBILITY:
+    TC_PIPE_mobility_ON: 
+      eval: '${MOBILITY_MODEL} == "TCPIPE_BSCAP_"'
+    
+    NODE_FAILURE_PERCENTAGE: 0
+    MAX_INITIAL_ENERGY: 360
+    NUM_FAILURES: 
+      eval: 'int((${NUMBER_OF_NODES} - 1) * (${MOBILITY.NODE_FAILURE_PERCENTAGE} / 100))'
+    
+    NUM_ACTIVE: 
+      eval: '(${NUMBER_OF_NODES} - 1) - ${MOBILITY.NUM_FAILURES}'
+    
+    # Energy thresholds
+    ENERGY_NODE_FAILURE_VALUE: 0
+    ENERGY_THRESHOLD: 
+      eval: '${MOBILITY.ENERGY_NODE_FAILURE_VALUE} + 10'
+    
+    ENERGY_RECHARGE_LEVEL: 
+      eval: '${MOBILITY.ENERGY_NODE_FAILURE_VALUE} - 10'
+    
+    # Energy depletion settings
+    MAX_ENERGY_DEPLETION_RATE: 0.1
+    ENERGY_DEPLETION_RATE: 
+      eval: 'np.full(${NUMBER_OF_NODES} - ${NUMBER_OF_BS}, ${MOBILITY.MAX_ENERGY_DEPLETION_RATE})'
+    
+    ### TARGETS, BASE STATIONS, ROUTING COST
+    ROUTING_COST_TYPE: 1
+    TARGET_LOCATION: 
+      eval: '[[2000, 4000]]'
+    
+    # 0 - left, 1 - right, 2 - bottom, 3 - top
+    # "regular": [[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2, ${AREA_Y}]],
+    # "adjacent": [[${AREA_X}/2, 0.0], [0.0, ${AREA_Y}/2]],
+    # "corner": [[0.0, 0.0], [0.0, ${AREA_Y}], [${AREA_X}, 0.0], [${AREA_X}, ${AREA_Y}]],
+    # "arrow": [[${AREA_X}/2, 0.0], [0.0, 0.0], [0.0, ${AREA_Y}/2], [${AREA_X}, ${AREA_Y}]],
+    # "L": [[0.0, ${AREA_Y}], [0.0, ${AREA_Y}/2], [0.0, 0.0], [${AREA_X}/2, 0.0]]
+    BS_SCHEME:
+      eval: "[[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2, ${AREA_Y}]]"
