@@ -1,0 +1,60 @@
+Rows with invalid delay (0 or inf):
+                               Pkt ID                        Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
+0      2000005463450_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+1      2000010932556_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+2      2000016399477_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+3      2000021868395_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+4      2000027333597_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+...                               ...                          ...  ...                                   ...                              ...
+18294  2099972418583_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               33
+18296  2099983349664_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               33
+18297  2099988810536_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               33
+18299  2099999735976_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               33
+18300  2100005199863_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    11                               33
+
+[18163 rows x 14 columns]
+Parent directory is not in 'WARx' format.
+DEBUG Flow file=Flow_Node0-Node8.csv, Extracted src=0, dst=8
+DEBUG Route dict candidate=[0, 8]
+Unique nodes participated for this flow: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+node 0 total drops: 16 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 16 16 drop_overflow 0 0 drop_no_route 0 0
+node 1 total drops: 17545 drop_expiry 17528 17528 drop_q_mngmnt 0 0 drop_retry 17 33 drop_overflow 0 0 drop_no_route 0 0
+node 2 total drops: 859 drop_expiry 836 18364 drop_q_mngmnt 0 0 drop_retry 23 56 drop_overflow 0 0 drop_no_route 0 0
+node 3 total drops: 975 drop_expiry 952 19316 drop_q_mngmnt 0 0 drop_retry 23 79 drop_overflow 0 0 drop_no_route 0 0
+node 4 total drops: 471 drop_expiry 443 19759 drop_q_mngmnt 0 0 drop_retry 28 107 drop_overflow 0 0 drop_no_route 0 0
+node 5 total drops: 196 drop_expiry 174 19933 drop_q_mngmnt 0 0 drop_retry 22 129 drop_overflow 0 0 drop_no_route 0 0
+node 6 total drops: 199 drop_expiry 118 20051 drop_q_mngmnt 0 0 drop_retry 81 210 drop_overflow 0 0 drop_no_route 0 0
+node 7 total drops: 105 drop_expiry 85 20136 drop_q_mngmnt 0 0 drop_retry 20 230 drop_overflow 0 0 drop_no_route 0 0
+node 8 total drops: 0 drop_expiry 0 20136 drop_q_mngmnt 0 0 drop_retry 0 230 drop_overflow 0 0 drop_no_route 0 0
+                                                                                                                         File Path Run No Packets Generated Packets Received      PDR  Avg Delay #Retransmissions #Forwards  Avg Route Length  %Route Uptime  %HQ Route Uptime Route Switches Packet Drop (Expiry) Packet Drop (Queue Management) Packet Drop (Retry) Packet Drop (Overflow) Packet Drop (No Route) Packet Reinserted (TCP)          Flow_ID
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_3Mbps_0.9inc_1.5dec/Flow_Node0-Node8.csv      1             18301              138 0.007541   1.983143             9776     19570               8.0            1.0               1.0              0                20136                              0                 230                      0                      0                       0 Flow_Node0-Node8
+                                                                                                                              Mean                  18301.0            138.0 0.007541   1.983143           9776.0   19570.0               8.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                            Median                  18301.0            138.0 0.007541   1.983143           9776.0   19570.0               8.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                      95% CI Lower                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+                                                                                                                      95% CI Upper                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+Instantaneous PDR data saved to /home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_3Mbps_0.9inc_1.5dec/instantaneous_pdr.csv
+
+=== Flow-level Summary (All Metrics) ===
+Empty DataFrame
+Columns: [Pkt ID, Route, Generation Time (in s), First Tx At (in s), Delay (in s), Times Packet Forwarded, Retransmissions, Packet Size (in bytes), Tx Power (in watt), Average Transmission Power in the route (in watt), Min. SINR Along Route, SINR at Flow Dest, Min. Data Rate Along Route (in Mbps), Data Rate at Flow Src (in Mbps), Base Packet ID]
+Index: []
+
+Flow Flow_Node0-Node8:
+  Packets Generated: 18301.00
+  Packets Received : 138.00
+  PDR              : 0.008
+  Avg Delay (s)    : 1.9831
+  Max Delay (s)    : 3.2907
+  95th %ile Delay(s): 3.0278
+  Retransmissions  : 9776.00
+  Forwards         : 19570.00
+  Drops (Expiry)   : 20136
+  Drops (Queue Mgmt): 0
+  Drops (Retry)    : 230
+  Drops (Overflow) : 0
+  Drops (No Route) : 0
+  TCP Reinsertions : 0
+Avg:  Packets generated: 18301 Packets received: 138 PDR: 0.007540571553467023 Avg delay: 1.9831434130434782 Retransmissions: 9776 Packet forwards: 19570 Route length: 8.0 Route uptime: 1.0 HQ Route Uptime: 1.0 Route switches: 0.0 
+
+Plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_3Mbps_0.9inc_1.5dec/instantaneous_pdr_plot.png
+Delay-over-time plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase3_crossflow_1000m_mcs_adaptive_3Mbps_0.9inc_1.5dec/delay_over_time.png

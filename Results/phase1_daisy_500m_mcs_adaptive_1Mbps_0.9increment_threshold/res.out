@@ -1,31 +1,41 @@
 Rows with invalid delay (0 or inf):
-                             Pkt ID            Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
-0    2000016392412_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
-1    2000032790479_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
-2    2000049186541_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
-3    2000065578020_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
-4    2000081976387_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
-..                              ...              ...  ...                                   ...                              ...
-541  2008885195533_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               22
-569  2009344221235_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
-571  2009377005118_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
-583  2009573736893_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
-586  2009622927542_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    11                               11
+                            Pkt ID            Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
+0   2000016392412_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+1   2000032790479_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+2   2000049186541_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+3   2000065578020_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+4   2000081976387_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+5   2000098372243_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+6   2000114761081_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+7   2000131155721_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+8   2000147550398_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    33                               33
+32  2000541003207_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+33  2000557391699_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+34  2000573782049_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+35  2000590174739_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+36  2000606566219_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+37  2000622963032_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+38  2000639358645_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+39  2000655755925_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+40  2000672149713_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+41  2000688539719_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+42  2000704929437_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
+43  2000721320139_Node0_Node8_Zero  [0, 2, 4, 6, 8]  ...                                    22                               22
 
-[86 rows x 14 columns]
+[21 rows x 14 columns]
 Parent directory is not in 'WARx' format.
 DEBUG Flow file=Flow_Node0-Node8.csv, Extracted src=0, dst=8
 DEBUG Route dict candidate=[0, 8]
 Unique nodes participated for this flow: [0, 2, 4, 6, 8]
-node 0 total drops: 339 drop_expiry 53 53 drop_q_mngmnt 0 0 drop_retry 286 286 drop_overflow 0 0 drop_no_route 0 0
-node 2 total drops: 27 drop_expiry 1 54 drop_q_mngmnt 0 0 drop_retry 26 312 drop_overflow 0 0 drop_no_route 0 0
-node 4 total drops: 228 drop_expiry 104 158 drop_q_mngmnt 0 0 drop_retry 124 436 drop_overflow 0 0 drop_no_route 0 0
-node 6 total drops: 104 drop_expiry 8 166 drop_q_mngmnt 0 0 drop_retry 96 532 drop_overflow 0 0 drop_no_route 0 0
-node 8 total drops: 0 drop_expiry 0 166 drop_q_mngmnt 0 0 drop_retry 0 532 drop_overflow 0 0 drop_no_route 0 0
+node 0 total drops: 2 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 2 2 drop_overflow 0 0 drop_no_route 0 0
+node 2 total drops: 6 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 6 8 drop_overflow 0 0 drop_no_route 0 0
+node 4 total drops: 5 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 5 13 drop_overflow 0 0 drop_no_route 0 0
+node 6 total drops: 7 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 7 20 drop_overflow 0 0 drop_no_route 0 0
+node 8 total drops: 0 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 0 20 drop_overflow 0 0 drop_no_route 0 0
                                                                                                                              File Path Run No Packets Generated Packets Received      PDR  Avg Delay #Retransmissions #Forwards  Avg Route Length  %Route Uptime  %HQ Route Uptime Route Switches Packet Drop (Expiry) Packet Drop (Queue Management) Packet Drop (Retry) Packet Drop (Overflow) Packet Drop (No Route) Packet Reinserted (TCP)          Flow_ID
-/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps_0.9increment_threshold/Flow_Node0-Node8.csv      1               611              525 0.859247   0.789698             4897      1609               4.0            1.0               1.0              0                  166                              0                 532                      0                      0                       0 Flow_Node0-Node8
-                                                                                                                                  Mean                    611.0            525.0 0.859247   0.789698           4897.0    1609.0               4.0            1.0               1.0            0.0                                                                                                                                                               
-                                                                                                                                Median                    611.0            525.0 0.859247   0.789698           4897.0    1609.0               4.0            1.0               1.0            0.0                                                                                                                                                               
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps_0.9increment_threshold/Flow_Node0-Node8.csv      1                45               23 0.511111   0.074256              339        77               4.0            1.0               1.0              0                    0                              0                  20                      0                      0                       0 Flow_Node0-Node8
+                                                                                                                                  Mean                     45.0             23.0 0.511111   0.074256            339.0      77.0               4.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                                Median                     45.0             23.0 0.511111   0.074256            339.0      77.0               4.0            1.0               1.0            0.0                                                                                                                                                               
                                                                                                                           95% CI Lower                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
                                                                                                                           95% CI Upper                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
 Instantaneous PDR data saved to /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps_0.9increment_threshold/instantaneous_pdr.csv
@@ -36,21 +46,21 @@ Columns: [Pkt ID, Route, Generation Time (in s), First Tx At (in s), Delay (in s
 Index: []
 
 Flow Flow_Node0-Node8:
-  Packets Generated: 611.00
-  Packets Received : 525.00
-  PDR              : 0.859
-  Avg Delay (s)    : 0.7897
-  Max Delay (s)    : 4.2060
-  95th %ile Delay(s): 1.8521
-  Retransmissions  : 4897.00
-  Forwards         : 1609.00
-  Drops (Expiry)   : 166
+  Packets Generated: 45.00
+  Packets Received : 23.00
+  PDR              : 0.511
+  Avg Delay (s)    : 0.0743
+  Max Delay (s)    : 0.2640
+  95th %ile Delay(s): 0.2218
+  Retransmissions  : 339.00
+  Forwards         : 77.00
+  Drops (Expiry)   : 0
   Drops (Queue Mgmt): 0
-  Drops (Retry)    : 532
+  Drops (Retry)    : 20
   Drops (Overflow) : 0
   Drops (No Route) : 0
   TCP Reinsertions : 0
-Avg:  Packets generated: 611 Packets received: 525 PDR: 0.8592471358428805 Avg delay: 0.789698019047619 Retransmissions: 4897 Packet forwards: 1609 Route length: 4.0 Route uptime: 1.0 HQ Route Uptime: 1.0 Route switches: 0.0 
+Avg:  Packets generated: 45 Packets received: 23 PDR: 0.5111111111111111 Avg delay: 0.07425634782608695 Retransmissions: 339 Packet forwards: 77 Route length: 4.0 Route uptime: 1.0 HQ Route Uptime: 1.0 Route switches: 0.0 
 
 Plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps_0.9increment_threshold/instantaneous_pdr_plot.png
 Delay-over-time plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase1_daisy_500m_mcs_adaptive_1Mbps_0.9increment_threshold/delay_over_time.png

@@ -1,0 +1,504 @@
+RESULTS_FOLDER:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/
+NETWORK_GRAPHS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${RESULTS_FOLDER}+"NetworkGraphs/"
+- substituted: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/+"NetworkGraphs/"
+  value: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/NetworkGraphs/
+PHEROMONE_GRAPHS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${RESULTS_FOLDER}+"PheromoneGraphs/"
+- substituted: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/+"PheromoneGraphs/"
+  value: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/PheromoneGraphs/
+TRAJECTORY_FOLDER:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: ./nodeTrajectories/
+DISTANCE_TRANSMISSON_POWER_FOLDER:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${RESULTS_FOLDER}+"DynamicTransmissionPower/"
+- substituted: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/+"DynamicTransmissionPower/"
+  value: ./../Results/phase3_daisy_1000m_mcs0_3Mbps/DynamicTransmissionPower/
+PRINT_LOGS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+PRINT_LOG_TOPOLOGY_METRICS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+SNAPSHOT_CODE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+ENABLE_MCS_SNR:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+CHANNEL_AWARE_ROUTE_COMPUTATION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+ENABLE_PACKET_REINSERTION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+MOBILE_SCENARIO:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+STATIC_TOPOLOGY_PATH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: ./topologies/daisy_9nodes_1000m.txt
+FORCED_ROUTES:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[[0,8]]'
+- substituted: '[[0,8]]'
+  value:
+  - - 0
+    - 8
+FORCED_ROUTE_MCS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '{}'
+- substituted: '{}'
+  value: {}
+EXT_INTERFERENCE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '{}'
+- substituted: '{}'
+  value: {}
+ENABLE_Q_MNGMNT:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+USE_FLOW_PRIORITY:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+STRICT_ROUTE_SELECTION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+QUEUE_MANAGEMENT_PLUS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+CSMA_CA_BACKOFF:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+PRIORITY_BASED_ROUTING:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+ENABLE_POWER_CONTROL:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+ENABLE_CONGESTION_DETECTION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+CONGESTION_BASED_MCS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+ROUTES_WITH_CONGESTION_BASED_MCS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[]'
+- substituted: '[]'
+  value: []
+CONGESTION_BASED_MCS_INCREMENT_THRESHOLD:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.7
+CONGESTION_BASED_MCS_DECREMENT_THRESHOLD:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.85
+CONGESTION_BASED_MCS_INCREMENT_STEP:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1
+CONGESTION_BASED_MCS_DECREMENT_STEP:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1
+TCP_ENABLED:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: false
+ENABLE_INDIVIDUAL_PKT_SINR:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+MAX_MAC_PAYLOAD_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 2312*8
+- substituted: 2312*8
+  value: 18496
+BASE_PAYLOAD_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MAX_MAC_PAYLOAD_LENGTH}
+- substituted: '18496'
+  value: 18496
+USE_PACKET_AGGREGATION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+PACKET_LOSS_RATE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0
+PAYLOAD_DATA_RATE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[3]'
+- substituted: '[3]'
+  value:
+  - 3
+TARGET_PKT_GENERATION_RATE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[round(61 * i) for i in ${PAYLOAD_DATA_RATE}]'
+- substituted: '[round(61 * i) for i in [3]]'
+  value:
+  - 183
+PACKET_INTER_ARRIVAL_TIME:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[1e9 * (1.0/i) for i in ${TARGET_PKT_GENERATION_RATE}]'
+- substituted: '[1e9 * (1.0/i) for i in [183]]'
+  value:
+  - 5464480.87431694
+PACKET_TTL:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 3*1e9
+- substituted: 3*1e9
+  value: 3000000000.0
+MOBILITY_MODEL:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: TCPIPE_BSCAP_
+AREA_X:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 8000
+AREA_Y:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${AREA_X}
+- substituted: '8000'
+  value: 8000
+NUMBER_OF_BS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1
+NUMBER_OF_NODES:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 9
+MAX_QUEUE_SIZE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: (max(${PAYLOAD_DATA_RATE}) * 1000000 * ${PACKET_TTL} * (len(${FORCED_ROUTES})
+    if ${FORCED_ROUTES} else len(${MOBILITY.TARGET_LOCATION})))/(${BASE_PAYLOAD_LENGTH}
+    * 8 * 1000)
+- substituted: (max([3]) * 1000000 * 3000000000.0 * (len([[0, 8]]) if [[0, 8]] else
+    len([[2000, 4000]])))/(18496 * 8 * 1000)
+  value: 60823961.93771626
+NODE_SPEED:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 40
+LLT_SAMPLE_FILE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '"GM_RelavantSamples1.2km" + str(${NODE_SPEED}) + "m-s.dat"'
+- substituted: '"GM_RelavantSamples1.2km" + str(40) + "m-s.dat"'
+  value: GM_RelavantSamples1.2km40m-s.dat
+PKT_GENERATION_START_SEC:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 2000
+PKT_GENERATION_END_SEC:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${PKT_GENERATION_START_SEC} + 100
+- substituted: 2000 + 100
+  value: 2100
+PKT_GENERATION_START_TIME:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${PKT_GENERATION_START_SEC} * 1e9
+- substituted: 2000 * 1e9
+  value: 2000000000000.0
+PKT_GENERATION_END_TIME:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${PKT_GENERATION_END_SEC} * 1e9
+- substituted: 2100 * 1e9
+  value: 2100000000000.0
+SIM_TIME:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${PKT_GENERATION_END_TIME} + (${PACKET_TTL} if (${PACKET_TTL} != simpy.core.Infinity)
+    else 0) + 1e9
+- substituted: 2100000000000.0 + (3000000000.0 if (3000000000.0 != simpy.core.Infinity)
+    else 0) + 1e9
+  value: 2104000000000.0
+PKT_FORWARDED_SUCCESSFULLY:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0
+PKT_DROPPED:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1
+DROP_REASON_OVERFLOW:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: Overflow
+DROP_REASON_EXPIRY:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: Expiry
+DROP_REASON_Q_MNGMNT:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: QueueManagement
+DROP_REASON_RETRYLIMIT:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: RetryLimit
+DROP_REASON_NO_ROUTE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: NoRoute
+WAITING_FOR_TX:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: Still in Queue
+MCS_SNR_TABLE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: "{\n  0:{'Modulation':'BPSK','Coding':1/2,'MinSNR(dB)':2,'MinSNR':1.5849,'DataRate':11},\n\
+    \  1:{'Modulation':'QPSK','Coding':1/2,'MinSNR(dB)':5,'MinSNR':3.1623,'DataRate':22},\n\
+    \  2:{'Modulation':'QPSK','Coding':3/4,'MinSNR(dB)':9,'MinSNR':7.9433,'DataRate':33},\n\
+    \  3:{'Modulation':'16-QAM','Coding':1/2,'MinSNR(dB)':11,'MinSNR':12.5893,'DataRate':44}\n\
+    }\n"
+- substituted: "{\n  0:{'Modulation':'BPSK','Coding':1/2,'MinSNR(dB)':2,'MinSNR':1.5849,'DataRate':11},\n\
+    \  1:{'Modulation':'QPSK','Coding':1/2,'MinSNR(dB)':5,'MinSNR':3.1623,'DataRate':22},\n\
+    \  2:{'Modulation':'QPSK','Coding':3/4,'MinSNR(dB)':9,'MinSNR':7.9433,'DataRate':33},\n\
+    \  3:{'Modulation':'16-QAM','Coding':1/2,'MinSNR(dB)':11,'MinSNR':12.5893,'DataRate':44}\n\
+    }\n"
+  value:
+    0:
+      Modulation: BPSK
+      Coding: 0.5
+      MinSNR(dB): 2
+      MinSNR: 1.5849
+      DataRate: 11
+    1:
+      Modulation: QPSK
+      Coding: 0.5
+      MinSNR(dB): 5
+      MinSNR: 3.1623
+      DataRate: 22
+    2:
+      Modulation: QPSK
+      Coding: 0.75
+      MinSNR(dB): 9
+      MinSNR: 7.9433
+      DataRate: 33
+    3:
+      Modulation: 16-QAM
+      Coding: 0.5
+      MinSNR(dB): 11
+      MinSNR: 12.5893
+      DataRate: 44
+DEFAULT_DATA_MCS_INDEX:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0
+MAX_DATA_MCS_INDEX:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: min(1, len(${MCS_SNR_TABLE})-1)
+- substituted: 'min(1, len({0: {''Modulation'': ''BPSK'', ''Coding'': 0.5, ''MinSNR(dB)'':
+    2, ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'': ''QPSK'', ''Coding'':
+    0.5, ''MinSNR(dB)'': 5, ''MinSNR'': 3.1623, ''DataRate'': 22}, 2: {''Modulation'':
+    ''QPSK'', ''Coding'': 0.75, ''MinSNR(dB)'': 9, ''MinSNR'': 7.9433, ''DataRate'':
+    33}, 3: {''Modulation'': ''16-QAM'', ''Coding'': 0.5, ''MinSNR(dB)'': 11, ''MinSNR'':
+    12.5893, ''DataRate'': 44}})-1)'
+  value: 1
+CONTROL_MCS_INDEX:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0
+MIN_MIN_REQUIRED_SINR:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MCS_SNR_TABLE}[${CONTROL_MCS_INDEX}]["MinSNR"]
+- substituted: '{0: {''Modulation'': ''BPSK'', ''Coding'': 0.5, ''MinSNR(dB)'': 2,
+    ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'': ''QPSK'', ''Coding'':
+    0.5, ''MinSNR(dB)'': 5, ''MinSNR'': 3.1623, ''DataRate'': 22}, 2: {''Modulation'':
+    ''QPSK'', ''Coding'': 0.75, ''MinSNR(dB)'': 9, ''MinSNR'': 7.9433, ''DataRate'':
+    33}, 3: {''Modulation'': ''16-QAM'', ''Coding'': 0.5, ''MinSNR(dB)'': 11, ''MinSNR'':
+    12.5893, ''DataRate'': 44}}[0]["MinSNR"]'
+  value: 1.5849
+MAX_MIN_REQUIRED_SINR:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MCS_SNR_TABLE}[len(${MCS_SNR_TABLE})-1]["MinSNR"]
+- substituted: '{0: {''Modulation'': ''BPSK'', ''Coding'': 0.5, ''MinSNR(dB)'': 2,
+    ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'': ''QPSK'', ''Coding'':
+    0.5, ''MinSNR(dB)'': 5, ''MinSNR'': 3.1623, ''DataRate'': 22}, 2: {''Modulation'':
+    ''QPSK'', ''Coding'': 0.75, ''MinSNR(dB)'': 9, ''MinSNR'': 7.9433, ''DataRate'':
+    33}, 3: {''Modulation'': ''16-QAM'', ''Coding'': 0.5, ''MinSNR(dB)'': 11, ''MinSNR'':
+    12.5893, ''DataRate'': 44}}[len({0: {''Modulation'': ''BPSK'', ''Coding'': 0.5,
+    ''MinSNR(dB)'': 2, ''MinSNR'': 1.5849, ''DataRate'': 11}, 1: {''Modulation'':
+    ''QPSK'', ''Coding'': 0.5, ''MinSNR(dB)'': 5, ''MinSNR'': 3.1623, ''DataRate'':
+    22}, 2: {''Modulation'': ''QPSK'', ''Coding'': 0.75, ''MinSNR(dB)'': 9, ''MinSNR'':
+    7.9433, ''DataRate'': 33}, 3: {''Modulation'': ''16-QAM'', ''Coding'': 0.5, ''MinSNR(dB)'':
+    11, ''MinSNR'': 12.5893, ''DataRate'': 44}})-1]["MinSNR"]'
+  value: 12.5893
+FREQUENCY:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 2.4 * 1e9
+- substituted: 2.4 * 1e9
+  value: 2400000000.0
+WAVELENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: c/${FREQUENCY}
+- substituted: c/2400000000.0
+  value: 0.12491352416666666
+RADIO_SWITCHING_TIME:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 100
+STEP_SIZE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 10
+RADIO_SENSITIVITY:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${NOISE_FLOOR} * 1.6
+- substituted: 3.16e-13 * 1.6
+  value: 5.056000000000001e-13
+NOISE_FLOOR:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 31.6e-14 * 1
+- substituted: 31.6e-14 * 1
+  value: 3.16e-13
+SLOT_DURATION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 20000
+SIFS_DURATION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 10000
+DIFS_DURATION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${SIFS_DURATION} + (2 * ${SLOT_DURATION})
+- substituted: 10000 + (2 * 20000)
+  value: 50000
+RTS_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 20*8 + 4*8
+- substituted: 20*8 + 4*8
+  value: 192
+CTS_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 14*8 + 4*8
+- substituted: 14*8 + 4*8
+  value: 144
+MAC_HEADER_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 30*8 + 1*8
+- substituted: 30*8 + 1*8
+  value: 248
+PHY_HEADER_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 128
+ACK_LENGTH:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 30*8 + 1*8
+- substituted: 30*8 + 1*8
+  value: 248
+RTS_THRESHOLD:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 255*8
+- substituted: 255*8
+  value: 2040
+USE_RTS_CTS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MAX_MAC_PAYLOAD_LENGTH} > ${RTS_THRESHOLD}
+- substituted: 18496 > 2040
+  value: true
+CW_MIN:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 16
+CW_MAX:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1024
+MAX_RETRY_LIMIT:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 7
+LOCATION_UPDATE_INTERVAL:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 1 * 1e9
+- substituted: 1 * 1e9
+  value: 1000000000.0
+QUEUE_UPDATE_INTERVAL:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: 0.2 * 1e9
+- substituted: 0.2 * 1e9
+  value: 200000000.0
+DELTA:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1000000000
+TH1:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1.5
+TH2:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1.1
+ALPHA:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.3
+W1:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.5
+W2:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.5
+HC_THRESHOLD:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 2
+SUR_THRESHOLD:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.7
+FIRST_N_PKTS:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 50
+NODE_LOCATION_WAYPOINT_LOG_FLAG:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: true
+MOBILITY.TC_PIPE_mobility_ON:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MOBILITY_MODEL} == "TCPIPE_BSCAP_"
+- substituted: TCPIPE_BSCAP_ == "TCPIPE_BSCAP_"
+  value: true
+MOBILITY.NODE_FAILURE_PERCENTAGE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0
+MOBILITY.MAX_INITIAL_ENERGY:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 360
+MOBILITY.NUM_FAILURES:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: int((${NUMBER_OF_NODES} - 1) * (${MOBILITY.NODE_FAILURE_PERCENTAGE} / 100))
+- substituted: int((9 - 1) * (0 / 100))
+  value: 0
+MOBILITY.NUM_ACTIVE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: (${NUMBER_OF_NODES} - 1) - ${MOBILITY.NUM_FAILURES}
+- substituted: (9 - 1) - 0
+  value: 8
+MOBILITY.ENERGY_NODE_FAILURE_VALUE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0
+MOBILITY.ENERGY_THRESHOLD:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MOBILITY.ENERGY_NODE_FAILURE_VALUE} + 10
+- substituted: 0 + 10
+  value: 10
+MOBILITY.ENERGY_RECHARGE_LEVEL:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: ${MOBILITY.ENERGY_NODE_FAILURE_VALUE} - 10
+- substituted: 0 - 10
+  value: -10
+MOBILITY.MAX_ENERGY_DEPLETION_RATE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 0.1
+MOBILITY.ENERGY_DEPLETION_RATE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: np.full(${NUMBER_OF_NODES} - ${NUMBER_OF_BS}, ${MOBILITY.MAX_ENERGY_DEPLETION_RATE})
+- substituted: np.full(9 - 1, 0.1)
+  value:
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+MOBILITY.ROUTING_COST_TYPE:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  value: 1
+MOBILITY.TARGET_LOCATION:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[[2000, 4000]]'
+- substituted: '[[2000, 4000]]'
+  value:
+  - - 2000
+    - 4000
+MOBILITY.BS_SCHEME:
+- source: phase3_daisy_1000m_mcs0_3Mbps.yaml
+  raw: '[[${AREA_X}, ${AREA_Y}/2], [0.0, ${AREA_Y}/2], [${AREA_X}/2, 0.0], [${AREA_X}/2,
+    ${AREA_Y}]]'
+- substituted: '[[8000, 8000/2], [0.0, 8000/2], [8000/2, 0.0], [8000/2, 8000]]'
+  value:
+  - - 8000
+    - 4000.0
+  - - 0.0
+    - 4000.0
+  - - 4000.0
+    - 0.0
+  - - 4000.0
+    - 8000

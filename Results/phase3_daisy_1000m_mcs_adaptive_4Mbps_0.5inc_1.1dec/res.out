@@ -1,0 +1,62 @@
+Rows with invalid delay (0 or inf):
+                             Pkt ID                        Route  ...  Min. Data Rate Along Route (in Mbps)  Data Rate at Flow Src (in Mbps)
+0    2000004097330_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+1    2000008200315_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+2    2000012301423_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+3    2000016403543_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+4    2000020501001_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+..                              ...                          ...  ...                                   ...                              ...
+432  2001774525283_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+433  2001778626426_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+434  2001782725467_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+435  2001786822905_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+436  2001790926075_Node0_Node8_Zero  [0, 1, 2, 3, 4, 5, 6, 7, 8]  ...                                    33                               33
+
+[399 rows x 14 columns]
+Parent directory is not in 'WARx' format.
+DEBUG Flow file=Flow_Node0-Node8.csv, Extracted src=0, dst=8
+DEBUG Route dict candidate=[0, 8]
+Unique nodes participated for this flow: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+node 0 total drops: 1 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 1 1 drop_overflow 0 0 drop_no_route 0 0
+node 1 total drops: 19 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 19 20 drop_overflow 0 0 drop_no_route 0 0
+node 2 total drops: 4 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 4 24 drop_overflow 0 0 drop_no_route 0 0
+node 3 total drops: 5 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 5 29 drop_overflow 0 0 drop_no_route 0 0
+node 4 total drops: 3 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 3 32 drop_overflow 0 0 drop_no_route 0 0
+node 5 total drops: 8 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 8 40 drop_overflow 0 0 drop_no_route 0 0
+node 6 total drops: 5 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 5 45 drop_overflow 0 0 drop_no_route 0 0
+node 7 total drops: 5 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 5 50 drop_overflow 0 0 drop_no_route 0 0
+node 8 total drops: 0 drop_expiry 0 0 drop_q_mngmnt 0 0 drop_retry 0 50 drop_overflow 0 0 drop_no_route 0 0
+Remove newline from Line 142 in main.py file! Error details: [Errno 2] No such file or directory: '/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.5inc_1.1dec/timeout_stats.csv'
+Error occurred: FileNotFoundError - [Errno 2] No such file or directory: '/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.5inc_1.1dec/timeout_stats.csv'
+                                                                                                                     File Path Run No Packets Generated Packets Received      PDR  Avg Delay #Retransmissions #Forwards  Avg Route Length  %Route Uptime  %HQ Route Uptime Route Switches Packet Drop (Expiry) Packet Drop (Queue Management) Packet Drop (Retry) Packet Drop (Overflow) Packet Drop (No Route) Packet Reinserted (TCP)          Flow_ID
+/home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.5inc_1.1dec/Flow_Node0-Node8.csv      1               437               38 0.086957   1.436361             1997      1281               8.0            1.0               1.0              0                    0                              0                  50                      0                      0                       0 Flow_Node0-Node8
+                                                                                                                          Mean                    437.0             38.0 0.086957   1.436361           1997.0    1281.0               8.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                        Median                    437.0             38.0 0.086957   1.436361           1997.0    1281.0               8.0            1.0               1.0            0.0                                                                                                                                                               
+                                                                                                                  95% CI Lower                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+                                                                                                                  95% CI Upper                      NaN              NaN      NaN        NaN              NaN       NaN               NaN            NaN               NaN            NaN                                                                                                                                                               
+Instantaneous PDR data saved to /home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.5inc_1.1dec/instantaneous_pdr.csv
+
+=== Flow-level Summary (All Metrics) ===
+Empty DataFrame
+Columns: [Pkt ID, Route, Generation Time (in s), First Tx At (in s), Delay (in s), Times Packet Forwarded, Retransmissions, Packet Size (in bytes), Tx Power (in watt), Average Transmission Power in the route (in watt), Min. SINR Along Route, SINR at Flow Dest, Min. Data Rate Along Route (in Mbps), Data Rate at Flow Src (in Mbps), Base Packet ID]
+Index: []
+
+Flow Flow_Node0-Node8:
+  Packets Generated: 437.00
+  Packets Received : 38.00
+  PDR              : 0.087
+  Avg Delay (s)    : 1.4364
+  Max Delay (s)    : 1.6672
+  95th %ile Delay(s): 1.6572
+  Retransmissions  : 1997.00
+  Forwards         : 1281.00
+  Drops (Expiry)   : 0
+  Drops (Queue Mgmt): 0
+  Drops (Retry)    : 50
+  Drops (Overflow) : 0
+  Drops (No Route) : 0
+  TCP Reinsertions : 0
+Avg:  Packets generated: 437 Packets received: 38 PDR: 0.08695652173913043 Avg delay: 1.4363606578947365 Retransmissions: 1997 Packet forwards: 1281 Route length: 8.0 Route uptime: 1.0 HQ Route Uptime: 1.0 Route switches: 0.0 
+
+Plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.5inc_1.1dec/instantaneous_pdr_plot.png
+Delay-over-time plot saved to: /home/pathey/Workspace/665/665-copy-project-7/Results/phase3_daisy_1000m_mcs_adaptive_4Mbps_0.5inc_1.1dec/delay_over_time.png
